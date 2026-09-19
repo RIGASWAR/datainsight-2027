@@ -50,9 +50,9 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 relative bg-[#071A3D] overflow-hidden">
+    <section id="contact" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
       {/* Background radial glow */}
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#19C7E8]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#176BFF]/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -64,15 +64,15 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-[#176BFF]/15 text-[#19C7E8] border border-[#19C7E8]/30 mb-3">
-            <Mail className="w-3.5 h-3.5 text-[#E9B949]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/20 mb-3 shadow-sm">
+            <Mail className="w-3.5 h-3.5 text-[#D9A441]" />
             SECRETARIAT INQUIRIES
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B2D6B]">
             CONTACT <span className="gradient-text-gold">US</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#E9B949] via-[#19C7E8] to-[#176BFF] mx-auto mt-4 rounded-full" />
-          <p className="mt-4 text-sm sm:text-base text-[#C5D4EE]">
+          <div className="w-20 h-1 bg-gradient-to-r from-[#D9A441] via-[#00A8E8] to-[#176BFF] mx-auto mt-4 rounded-full" />
+          <p className="mt-4 text-sm sm:text-base text-[#1A2B4A]/80">
             Have questions regarding paper submissions, conference registration, or sponsorship opportunities? Connect with our team.
           </p>
         </motion.div>
@@ -89,23 +89,23 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.65 }}
-              className="p-6 sm:p-7 rounded-2xl glass-card border border-[#19C7E8]/30 shadow-xl space-y-3 hover:border-[#19C7E8]/50 transition-colors"
+              className="p-6 sm:p-7 rounded-2xl bg-white border border-[#176BFF]/20 shadow-sm space-y-3 hover:border-[#176BFF]/40 transition-colors"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#176BFF] to-[#0B2859] border border-[#19C7E8]/40 flex items-center justify-center text-white">
-                  <Building className="w-5 h-5 text-[#19C7E8]" />
+                <div className="w-10 h-10 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/20 flex items-center justify-center text-[#176BFF]">
+                  <Building className="w-5 h-5 text-[#176BFF]" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-white">
+                  <h3 className="text-base font-bold text-[#0B2D6B]">
                     {CONFERENCE_DATA.contact.department}
                   </h3>
-                  <p className="text-xs text-[#E9B949] font-semibold">
+                  <p className="text-xs text-[#D9A441] font-semibold">
                     {CONFERENCE_DATA.contact.institution}
                   </p>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm text-[#C5D4EE] pt-2 border-t border-white/10 flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#19C7E8] flex-shrink-0 mt-0.5" />
+              <p className="text-xs sm:text-sm text-[#1A2B4A]/80 pt-2 border-t border-[#176BFF]/10 flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-[#176BFF] flex-shrink-0 mt-0.5" />
                 <span>{CONFERENCE_DATA.contact.location}</span>
               </p>
             </motion.div>
@@ -119,18 +119,18 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: 0.1 }}
-                className="p-4 rounded-xl glass-card border border-white/10 hover:border-[#19C7E8]/40 hover:-translate-y-0.5 transition-all flex items-center justify-between"
+                className="p-4 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#0B2859] flex items-center justify-center text-[#19C7E8]">
+                  <div className="w-8 h-8 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF]">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-[#8EA7CE] uppercase font-bold">Email Address</span>
-                    <div className="text-xs font-bold text-white">Conference Secretariat</div>
+                    <span className="text-[10px] text-[#1A2B4A]/60 uppercase font-bold">Email Address</span>
+                    <div className="text-xs font-bold text-[#0B2D6B]">Conference Secretariat</div>
                   </div>
                 </div>
-                <span className="text-xs font-mono font-bold text-[#E9B949] px-2 py-0.5 rounded bg-white/5 border border-white/10">
+                <span className="text-xs font-mono font-bold text-[#D9A441] px-2 py-0.5 rounded bg-[#FFF9E6] border border-[#D9A441]/30">
                   {CONFERENCE_DATA.contact.email}
                 </span>
               </motion.div>
@@ -141,18 +141,18 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: 0.18 }}
-                className="p-4 rounded-xl glass-card border border-white/10 hover:border-[#19C7E8]/40 hover:-translate-y-0.5 transition-all flex items-center justify-between"
+                className="p-4 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#0B2859] flex items-center justify-center text-[#19C7E8]">
+                  <div className="w-8 h-8 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF]">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-[#8EA7CE] uppercase font-bold">Phone Support</span>
-                    <div className="text-xs font-bold text-white">Desk Line</div>
+                    <span className="text-[10px] text-[#1A2B4A]/60 uppercase font-bold">Phone Support</span>
+                    <div className="text-xs font-bold text-[#0B2D6B]">Desk Line</div>
                   </div>
                 </div>
-                <span className="text-xs font-mono font-bold text-[#E9B949] px-2 py-0.5 rounded bg-white/5 border border-white/10">
+                <span className="text-xs font-mono font-bold text-[#D9A441] px-2 py-0.5 rounded bg-[#FFF9E6] border border-[#D9A441]/30">
                   {CONFERENCE_DATA.contact.phone}
                 </span>
               </motion.div>
@@ -163,18 +163,18 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: 0.26 }}
-                className="p-4 rounded-xl glass-card border border-white/10 hover:border-[#19C7E8]/40 hover:-translate-y-0.5 transition-all flex items-center justify-between"
+                className="p-4 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#0B2859] flex items-center justify-center text-[#19C7E8]">
+                  <div className="w-8 h-8 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF]">
                     <Globe className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-[#8EA7CE] uppercase font-bold">Web Portal</span>
-                    <div className="text-xs font-bold text-white">Official URL</div>
+                    <span className="text-[10px] text-[#1A2B4A]/60 uppercase font-bold">Web Portal</span>
+                    <div className="text-xs font-bold text-[#0B2D6B]">Official URL</div>
                   </div>
                 </div>
-                <span className="text-xs font-mono font-bold text-[#E9B949] px-2 py-0.5 rounded bg-white/5 border border-white/10">
+                <span className="text-xs font-mono font-bold text-[#D9A441] px-2 py-0.5 rounded bg-[#FFF9E6] border border-[#D9A441]/30">
                   {CONFERENCE_DATA.contact.website}
                 </span>
               </motion.div>
@@ -185,18 +185,18 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: 0.34 }}
-                className="p-4 rounded-xl glass-card border border-white/10 hover:border-[#19C7E8]/40 hover:-translate-y-0.5 transition-all flex items-center justify-between"
+                className="p-4 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#0B2859] flex items-center justify-center text-[#19C7E8]">
+                  <div className="w-8 h-8 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF]">
                     <Share2 className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-[#8EA7CE] uppercase font-bold">Social Media</span>
-                    <div className="text-xs font-bold text-white">Academic Channels</div>
+                    <span className="text-[10px] text-[#1A2B4A]/60 uppercase font-bold">Social Media</span>
+                    <div className="text-xs font-bold text-[#0B2D6B]">Academic Channels</div>
                   </div>
                 </div>
-                <span className="text-xs font-mono font-bold text-[#E9B949] px-2 py-0.5 rounded bg-white/5 border border-white/10">
+                <span className="text-xs font-mono font-bold text-[#D9A441] px-2 py-0.5 rounded bg-[#FFF9E6] border border-[#D9A441]/30">
                   {CONFERENCE_DATA.contact.socialMedia}
                 </span>
               </motion.div>
@@ -213,12 +213,12 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
             transition={{ duration: 0.75, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7"
           >
-            <div className="p-7 sm:p-9 rounded-3xl glass-card border border-[#19C7E8]/30 shadow-2xl space-y-6 text-left hover:border-[#19C7E8]/50 transition-colors">
+            <div className="p-7 sm:p-9 rounded-3xl bg-white border border-[#176BFF]/20 shadow-xl space-y-6 text-left hover:border-[#176BFF]/40 transition-colors">
               <div>
-                <h3 className="text-xl font-extrabold text-white">
+                <h3 className="text-xl font-extrabold text-[#0B2D6B]">
                   Send a Message to the Secretariat
                 </h3>
-                <p className="text-xs text-[#8EA7CE] mt-1">
+                <p className="text-xs text-[#1A2B4A]/70 mt-1">
                   Fill in your details below. We will attend to your inquiry at the earliest opportunity.
                 </p>
               </div>
@@ -228,8 +228,8 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                   
                   {/* Name Input */}
                   <div>
-                    <label htmlFor="name" className="block text-xs font-semibold text-[#C5D4EE] mb-1.5">
-                      Full Name <span className="text-[#E9B949]">*</span>
+                    <label htmlFor="name" className="block text-xs font-semibold text-[#1A2B4A] mb-1.5">
+                      Full Name <span className="text-[#D9A441]">*</span>
                     </label>
                     <input
                       type="text"
@@ -240,14 +240,14 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                       required
                       autoComplete="name"
                       placeholder="Dr. Jane Doe"
-                      className="w-full min-h-[48px] px-4 py-2.5 rounded-xl bg-[#0B2859]/60 border border-[#19C7E8]/30 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#19C7E8] focus:ring-2 focus:ring-[#19C7E8]/40 transition-all"
+                      className="w-full min-h-[48px] px-4 py-2.5 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/20 text-[#1A2B4A] placeholder-[#1A2B4A]/40 text-sm focus:outline-none focus:border-[#176BFF] focus:ring-2 focus:ring-[#176BFF]/20 transition-all"
                     />
                   </div>
 
                   {/* Email Input */}
                   <div>
-                    <label htmlFor="email" className="block text-xs font-semibold text-[#C5D4EE] mb-1.5">
-                      Email Address <span className="text-[#E9B949]">*</span>
+                    <label htmlFor="email" className="block text-xs font-semibold text-[#1A2B4A] mb-1.5">
+                      Email Address <span className="text-[#D9A441]">*</span>
                     </label>
                     <input
                       type="email"
@@ -258,7 +258,7 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                       required
                       autoComplete="email"
                       placeholder="author@university.edu"
-                      className="w-full min-h-[48px] px-4 py-2.5 rounded-xl bg-[#0B2859]/60 border border-[#19C7E8]/30 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#19C7E8] focus:ring-2 focus:ring-[#19C7E8]/40 transition-all"
+                      className="w-full min-h-[48px] px-4 py-2.5 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/20 text-[#1A2B4A] placeholder-[#1A2B4A]/40 text-sm focus:outline-none focus:border-[#176BFF] focus:ring-2 focus:ring-[#176BFF]/20 transition-all"
                     />
                   </div>
 
@@ -266,8 +266,8 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
 
                 {/* Subject Input */}
                 <div>
-                  <label htmlFor="subject" className="block text-xs font-semibold text-[#C5D4EE] mb-1.5">
-                    Subject <span className="text-[#8EA7CE]">(Optional)</span>
+                  <label htmlFor="subject" className="block text-xs font-semibold text-[#1A2B4A] mb-1.5">
+                    Subject <span className="text-[#1A2B4A]/60">(Optional)</span>
                   </label>
                   <input
                     type="text"
@@ -276,14 +276,14 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Paper submission inquiry / Track details"
-                    className="w-full min-h-[48px] px-4 py-2.5 rounded-xl bg-[#0B2859]/60 border border-[#19C7E8]/30 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#19C7E8] focus:ring-2 focus:ring-[#19C7E8]/40 transition-all"
+                    className="w-full min-h-[48px] px-4 py-2.5 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/20 text-[#1A2B4A] placeholder-[#1A2B4A]/40 text-sm focus:outline-none focus:border-[#176BFF] focus:ring-2 focus:ring-[#176BFF]/20 transition-all"
                   />
                 </div>
 
                 {/* Message Textarea */}
                 <div>
-                  <label htmlFor="message" className="block text-xs font-semibold text-[#C5D4EE] mb-1.5">
-                    Message <span className="text-[#E9B949]">*</span>
+                  <label htmlFor="message" className="block text-xs font-semibold text-[#1A2B4A] mb-1.5">
+                    Message <span className="text-[#D9A441]">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -293,7 +293,7 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                     required
                     rows={4}
                     placeholder="Please state your question or conference query here..."
-                    className="w-full px-4 py-3 rounded-xl bg-[#0B2859]/60 border border-[#19C7E8]/30 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#19C7E8] focus:ring-2 focus:ring-[#19C7E8]/40 transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/20 text-[#1A2B4A] placeholder-[#1A2B4A]/40 text-sm focus:outline-none focus:border-[#176BFF] focus:ring-2 focus:ring-[#176BFF]/20 transition-all"
                   />
                 </div>
 
@@ -301,7 +301,7 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full min-h-[50px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-[#176BFF] to-[#19C7E8] text-white shadow-lg shadow-[#176BFF]/30 hover:shadow-[#19C7E8]/40 hover:-translate-y-0.5 active:translate-y-0 transition-all disabled:opacity-50"
+                  className="w-full min-h-[50px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-[#176BFF] to-[#00A8E8] text-white shadow-lg shadow-[#176BFF]/25 hover:shadow-[#00A8E8]/35 hover:-translate-y-0.5 active:translate-y-0 transition-all disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <span>RECORDING...</span>

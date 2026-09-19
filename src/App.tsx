@@ -91,7 +91,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#071A3D] text-[#F7FAFF] flex flex-col font-sans selection:bg-[#19C7E8] selection:text-[#071A3D]">
+    <div className="min-h-screen bg-white text-[#1A2B4A] flex flex-col font-sans selection:bg-[#176BFF] selection:text-white">
       {/* Subtle Scroll Progress Indicator */}
       <ScrollProgress />
 

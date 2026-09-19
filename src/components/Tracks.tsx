@@ -35,9 +35,10 @@ export const Tracks: React.FC = () => {
   };
 
   return (
-    <section id="tracks" className="py-20 md:py-28 relative bg-[#071A3D] overflow-hidden">
+    <section id="tracks" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
       {/* Ambience glow */}
-      <div className="absolute top-1/3 -right-36 w-96 h-96 bg-[#19C7E8]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 -right-36 w-96 h-96 bg-[#00A8E8]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 -left-36 w-80 h-80 bg-[#176BFF]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -49,15 +50,15 @@ export const Tracks: React.FC = () => {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-[#176BFF]/15 text-[#19C7E8] border border-[#19C7E8]/30 mb-3">
-            <Layers className="w-3.5 h-3.5 text-[#E9B949]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/20 mb-3 shadow-sm">
+            <Layers className="w-3.5 h-3.5 text-[#D9A441]" />
             TECHNICAL AREAS
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B2D6B]">
             CONFERENCE <span className="gradient-text-cyan-blue">TRACKS</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#19C7E8] via-[#176BFF] to-[#E9B949] mx-auto mt-4 rounded-full" />
-          <p className="mt-4 text-sm sm:text-base text-[#C5D4EE]">
+          <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
+          <p className="mt-4 text-sm sm:text-base text-[#1A2B4A]/80">
             Eight specialized technical tracks covering contemporary challenges in multimodal analytics, intelligent systems, and trustworthy computing.
           </p>
         </motion.div>
@@ -79,10 +80,10 @@ export const Tracks: React.FC = () => {
                   delay: (index % 4) * 0.1, 
                   ease: [0.16, 1, 0.3, 1] 
                 }}
-                className={`rounded-2xl glass-card transition-all duration-300 border ${
+                className={`rounded-2xl transition-all duration-300 border ${
                   isExpanded
-                    ? 'border-[#19C7E8] bg-[#0B2859]/90 shadow-xl shadow-[#176BFF]/15'
-                    : 'border-[#19C7E8]/20 hover:border-[#19C7E8]/50 hover:bg-[#0B2859]/50 hover:-translate-y-1'
+                    ? 'border-[#176BFF] bg-white shadow-xl shadow-[#176BFF]/10 ring-1 ring-[#176BFF]/20'
+                    : 'border-[#176BFF]/15 bg-white shadow-sm hover:border-[#176BFF]/40 hover:shadow-md hover:-translate-y-1'
                 }`}
               >
                 {/* Header (Click to toggle) */}
@@ -95,10 +96,10 @@ export const Tracks: React.FC = () => {
                   <div className="flex items-start gap-4">
                     {/* Track Icon */}
                     <div 
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-md ${
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm ${
                         isExpanded
-                          ? 'bg-gradient-to-br from-[#176BFF] to-[#19C7E8] text-white shadow-[#19C7E8]/30 scale-105'
-                          : 'bg-[#0B2859] border border-[#19C7E8]/30 text-[#19C7E8] group-hover:scale-105'
+                          ? 'bg-gradient-to-br from-[#176BFF] to-[#00A8E8] text-white shadow-[#176BFF]/30 scale-105'
+                          : 'bg-[#F5F9FF] border border-[#176BFF]/20 text-[#176BFF] group-hover:scale-105 group-hover:text-[#174EA6]'
                       }`}
                     >
                       <IconComponent className="w-6 h-6" />
@@ -106,22 +107,22 @@ export const Tracks: React.FC = () => {
 
                     {/* Track Title & Meta */}
                     <div>
-                      <span className="text-[11px] font-black tracking-widest text-[#E9B949] uppercase font-mono">
+                      <span className="text-[11px] font-black tracking-widest text-[#D9A441] uppercase font-mono">
                         {track.trackNumber}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-white mt-0.5 leading-snug group-hover:text-[#19C7E8] transition-colors">
+                      <h3 className="text-base sm:text-lg font-bold text-[#0B2D6B] mt-0.5 leading-snug group-hover:text-[#176BFF] transition-colors">
                         {track.title}
                       </h3>
-                      <p className="text-xs text-[#C5D4EE] mt-1.5 line-clamp-2">
+                      <p className="text-xs text-[#1A2B4A]/80 mt-1.5 line-clamp-2">
                         {track.overview}
                       </p>
                     </div>
                   </div>
 
                   {/* Toggle Indicator */}
-                  <div className="p-1.5 rounded-lg bg-white/5 text-[#8EA7CE] flex-shrink-0 group-hover:text-white transition-colors">
+                  <div className="p-1.5 rounded-lg bg-[#F5F9FF] text-[#174EA6] border border-[#176BFF]/15 flex-shrink-0 group-hover:text-[#176BFF] transition-colors">
                     {isExpanded ? (
-                      <ChevronUp className="w-5 h-5 text-[#19C7E8]" />
+                      <ChevronUp className="w-5 h-5 text-[#176BFF]" />
                     ) : (
                       <ChevronDown className="w-5 h-5" />
                     )}
@@ -139,22 +140,22 @@ export const Tracks: React.FC = () => {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 pt-2 border-t border-white/10 space-y-4">
-                        <div className="p-4 rounded-xl bg-[#071A3D]/70 border border-[#19C7E8]/20 space-y-2">
-                          <div className="flex items-center justify-between text-xs font-bold text-[#19C7E8] uppercase tracking-wider">
+                      <div className="px-6 pb-6 pt-2 border-t border-[#176BFF]/10 space-y-4">
+                        <div className="p-4 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/15 space-y-2">
+                          <div className="flex items-center justify-between text-xs font-bold text-[#174EA6] uppercase tracking-wider">
                             <span>Topics & Sub-themes:</span>
-                            <span className="text-[#E9B949] text-[11px] font-mono px-2 py-0.5 rounded bg-white/5 border border-[#E9B949]/30">
+                            <span className="text-[#D9A441] text-[11px] font-mono px-2 py-0.5 rounded bg-white border border-[#D9A441]/30">
                               {track.topics}
                             </span>
                           </div>
-                          <p className="text-xs text-[#8EA7CE] leading-relaxed">
+                          <p className="text-xs text-[#1A2B4A]/80 leading-relaxed">
                             Detailed call-for-paper topics for {track.title} will be finalized in the formal conference call.
                           </p>
                         </div>
 
-                        <div className="flex items-center justify-between text-[11px] text-[#8EA7CE]">
+                        <div className="flex items-center justify-between text-[11px] text-[#1A2B4A]/70">
                           <span>Scope: Full Research, Short Papers & Posters</span>
-                          <span className="text-white font-medium">Peer-Reviewed Track</span>
+                          <span className="text-[#0B2D6B] font-semibold">Peer-Reviewed Track</span>
                         </div>
                       </div>
                     </motion.div>

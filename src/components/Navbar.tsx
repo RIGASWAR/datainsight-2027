@@ -77,8 +77,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
         isScrolled
-          ? 'bg-[#071A3D]/95 backdrop-blur-md border-b border-[#19C7E8]/20 shadow-lg shadow-black/40 py-2.5'
-          : 'bg-gradient-to-b from-[#071A3D]/90 via-[#071A3D]/35 to-transparent py-4'
+          ? 'bg-white/95 backdrop-blur-md border-b border-[#176BFF]/15 shadow-md shadow-[#0B2D6B]/5 py-2.5'
+          : 'bg-white/90 backdrop-blur-sm border-b border-[#176BFF]/10 py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,28 +87,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#19C7E8] rounded-lg p-1"
+            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#176BFF] rounded-lg p-1"
           >
             {/* Monogram Badge with subtle scale on hover */}
-            <div className="relative w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#0B2859] to-[#071A3D] border border-[#19C7E8]/30 shadow-md group-hover:border-[#19C7E8] transition-colors overflow-hidden">
+            <div className="relative w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#F5F9FF] to-[#EBF2FF] border border-[#176BFF]/30 shadow-sm group-hover:border-[#176BFF] transition-colors overflow-hidden">
               <img
                 src="/logo-icon.svg"
                 alt="DATAINSIGHT 2027 Logo"
                 className="w-7 h-7 object-contain group-hover:scale-110 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-[#19C7E8]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-[#176BFF]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
 
             <div className="flex flex-col text-left">
               <div className="flex items-center gap-1.5">
-                <span className="text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-[#19C7E8] transition-colors">
-                  DATAINSIGHT <span className="text-[#E9B949]">2027</span>
+                <span className="text-base sm:text-lg font-extrabold tracking-tight text-[#0B2D6B] group-hover:text-[#176BFF] transition-colors">
+                  DATAINSIGHT <span className="text-[#D9A441]">2027</span>
                 </span>
-                <span className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#176BFF]/20 text-[#19C7E8] border border-[#19C7E8]/30">
+                <span className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/25">
                   PSG Tech
                 </span>
               </div>
-              <span className="text-[10px] sm:text-[11px] text-[#8EA7CE] tracking-wider uppercase font-medium line-clamp-1">
+              <span className="text-[10px] sm:text-[11px] text-[#4A5E82] tracking-wider uppercase font-medium line-clamp-1">
                 Dept. of Information Technology
               </span>
             </div>
@@ -125,15 +125,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                   onClick={(e) => handleNavClick(e, item.href)}
                   className={`relative px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors duration-200 ${
                     isActive
-                      ? 'text-[#19C7E8] font-semibold'
-                      : 'text-[#C5D4EE] hover:text-white hover:bg-white/5'
+                      ? 'text-[#176BFF] font-bold'
+                      : 'text-[#1A2B4A] hover:text-[#176BFF] hover:bg-[#F5F9FF]'
                   }`}
                 >
                   {item.name}
                   {isActive && (
                     <motion.span
                       layoutId="activeNavIndicator"
-                      className="absolute bottom-0 left-2 right-2 h-0.5 bg-gradient-to-r from-[#19C7E8] to-[#E9B949] rounded-full shadow-[0_0_6px_#19C7E8]"
+                      className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#176BFF] rounded-full shadow-[0_0_6px_rgba(23,107,255,0.4)]"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -146,14 +146,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           <div className="hidden lg:flex items-center space-x-2.5">
             <button
               onClick={() => onActionClick('submit')}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#176BFF] hover:bg-[#1255cc] text-white shadow-md shadow-[#176BFF]/25 border border-[#19C7E8]/30 hover:scale-[1.03] active:scale-95 transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#176BFF] hover:bg-[#0A55E0] text-white shadow-md shadow-[#176BFF]/20 border border-transparent hover:scale-[1.03] active:scale-95 transition-all duration-200"
             >
               Submit Paper
               <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
             <button
               onClick={() => onActionClick('register')}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/15 text-[#E9B949] border border-[#E9B949]/40 hover:border-[#E9B949] hover:scale-[1.03] active:scale-95 transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#F5F9FF] hover:bg-[#EBF2FF] text-[#174EA6] border border-[#176BFF]/30 hover:border-[#176BFF] hover:scale-[1.03] active:scale-95 transition-all duration-200"
             >
               Register
             </button>
@@ -163,18 +163,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           <div className="flex xl:hidden items-center gap-2">
             <button
               onClick={() => onActionClick('submit')}
-              className="sm:inline-flex hidden items-center gap-1 px-3 py-1.5 rounded-md text-xs font-semibold bg-[#176BFF] text-white border border-[#19C7E8]/30"
+              className="sm:inline-flex hidden items-center gap-1 px-3 py-1.5 rounded-md text-xs font-semibold bg-[#176BFF] text-white"
             >
               Submit
             </button>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-[#C5D4EE] hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#19C7E8]"
+              className="p-2 rounded-lg text-[#1A2B4A] hover:text-[#176BFF] hover:bg-[#F5F9FF] focus:outline-none focus:ring-2 focus:ring-[#176BFF]"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6 text-[#19C7E8]" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-6 h-6 text-[#176BFF]" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -187,7 +187,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="xl:hidden mt-3 pt-3 pb-4 px-2 border-t border-[#19C7E8]/20 bg-[#071A3D]/95 backdrop-blur-xl rounded-2xl shadow-2xl"
+              className="xl:hidden mt-3 pt-3 pb-4 px-2 border border-[#176BFF]/20 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl"
             >
               <div className="grid grid-cols-2 gap-1.5 mb-4">
                 {navItems.map((item) => {
@@ -199,8 +199,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                       onClick={(e) => handleNavClick(e, item.href)}
                       className={`px-3 py-2 text-xs font-medium rounded-lg transition-colors ${
                         isActive
-                          ? 'bg-[#176BFF]/20 text-[#19C7E8] font-semibold border border-[#19C7E8]/30'
-                          : 'text-[#C5D4EE] hover:bg-white/5 hover:text-white'
+                          ? 'bg-[#176BFF]/10 text-[#176BFF] font-bold border border-[#176BFF]/25'
+                          : 'text-[#1A2B4A] hover:bg-[#F5F9FF] hover:text-[#176BFF]'
                       }`}
                     >
                       {item.name}
@@ -209,13 +209,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                 })}
               </div>
 
-              <div className="pt-2 border-t border-white/10 flex flex-col sm:flex-row gap-2">
+              <div className="pt-2 border-t border-gray-100 flex flex-col sm:flex-row gap-2">
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     onActionClick('submit');
                   }}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-bold rounded-lg bg-[#176BFF] text-white shadow-md shadow-[#176BFF]/30"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-bold rounded-lg bg-[#176BFF] text-white shadow-md shadow-[#176BFF]/20"
                 >
                   Submit Paper
                   <ArrowUpRight className="w-4 h-4" />
@@ -225,7 +225,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                     setMobileMenuOpen(false);
                     onActionClick('register');
                   }}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-bold rounded-lg bg-[#E9B949]/10 text-[#E9B949] border border-[#E9B949]/40"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-bold rounded-lg bg-[#F5F9FF] text-[#174EA6] border border-[#176BFF]/30"
                 >
                   Register Now
                 </button>

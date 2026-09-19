@@ -17,10 +17,10 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
   };
 
   return (
-    <footer className="bg-[#040E22] border-t border-[#19C7E8]/20 pt-16 pb-12 text-[#8EA7CE] relative overflow-hidden">
+    <footer className="bg-[#071A3D] border-t border-[#176BFF]/20 pt-16 pb-12 text-[#C5D4EE] relative overflow-hidden">
       
       {/* Subtle Background Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-[#176BFF]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-[#00A8E8]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
           {/* Col 1: Conference Identity & PSG Host */}
           <div className="lg:col-span-5 space-y-4 text-left">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#0B2859] border border-[#19C7E8]/40 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-[#0B2D6B] border border-[#176BFF]/40 flex items-center justify-center">
                 <img
                   src="/logo-icon.svg"
                   alt="DATAINSIGHT 2027 Logo"
@@ -38,12 +38,12 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
               </div>
               <div>
                 <span className="text-xl font-extrabold text-white tracking-tight">
-                  DATAINSIGHT <span className="text-[#E9B949]">2027</span>
+                  DATAINSIGHT <span className="text-[#D9A441]">2027</span>
                 </span>
               </div>
             </div>
 
-            <p className="text-xs font-semibold text-[#19C7E8] leading-relaxed">
+            <p className="text-xs font-semibold text-[#00A8E8] leading-relaxed">
               {CONFERENCE_DATA.fullTitle}
             </p>
 
@@ -56,11 +56,11 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
                 {CONFERENCE_DATA.institution.department}
               </div>
               <div>{CONFERENCE_DATA.institution.name}</div>
-              <div className="text-[11px] text-[#E9B949]">
+              <div className="text-[11px] text-[#D9A441]">
                 {CONFERENCE_DATA.institution.accreditation}
               </div>
               <div className="flex items-center gap-1.5 pt-1 text-[11px]">
-                <MapPin className="w-3.5 h-3.5 text-[#19C7E8]" />
+                <MapPin className="w-3.5 h-3.5 text-[#00A8E8]" />
                 <span>{CONFERENCE_DATA.institution.location}</span>
               </div>
             </div>
@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-[#C5D4EE] hover:text-[#19C7E8] transition-colors py-0.5"
+                  className="text-[#C5D4EE] hover:text-[#00A8E8] transition-colors py-0.5"
                 >
                   {item.name}
                 </a>
@@ -94,23 +94,23 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
             <div className="space-y-2">
               <button
                 onClick={() => onActionClick('submit')}
-                className="w-full flex items-center justify-between px-3.5 py-2 rounded-lg bg-[#0B2859]/80 hover:bg-[#0B2859] border border-[#19C7E8]/30 text-xs font-bold text-white transition-colors"
+                className="w-full flex items-center justify-between px-3.5 py-2 rounded-lg bg-[#0B2D6B]/80 hover:bg-[#0B2D6B] border border-[#176BFF]/40 text-xs font-bold text-white transition-colors"
               >
                 <span>Submit Paper</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#19C7E8]" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#00A8E8]" />
               </button>
 
               <button
                 onClick={() => onActionClick('register')}
-                className="w-full flex items-center justify-between px-3.5 py-2 rounded-lg bg-[#0B2859]/80 hover:bg-[#0B2859] border border-[#E9B949]/30 text-xs font-bold text-[#E9B949] transition-colors"
+                className="w-full flex items-center justify-between px-3.5 py-2 rounded-lg bg-[#0B2D6B]/80 hover:bg-[#0B2D6B] border border-[#D9A441]/40 text-xs font-bold text-[#D9A441] transition-colors"
               >
                 <span>Register for Conference</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#E9B949]" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#D9A441]" />
               </button>
 
               <button
                 onClick={() => onActionClick('cfp')}
-                className="w-full flex items-center justify-between px-3.5 py-2 rounded-lg bg-[#0B2859]/80 hover:bg-[#0B2859] border border-white/10 text-xs font-bold text-[#C5D4EE] transition-colors"
+                className="w-full flex items-center justify-between px-3.5 py-2 rounded-lg bg-[#0B2D6B]/80 hover:bg-[#0B2D6B] border border-white/10 text-xs font-bold text-[#C5D4EE] transition-colors"
               >
                 <span>Download Call for Papers</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -119,7 +119,7 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
 
             <div className="pt-2 text-[11px] text-[#8EA7CE]">
               <span>Official Contact: </span>
-              <span className="text-[#E9B949] font-mono font-semibold">TO BE INCLUDED</span>
+              <span className="text-[#D9A441] font-mono font-semibold">TO BE INCLUDED</span>
             </div>
           </div>
 

@@ -39,7 +39,7 @@ export const BackToTop: React.FC = () => {
           whileHover={shouldReduceMotion ? undefined : { scale: 1.08, y: -3 }}
           whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-6 right-6 z-40 p-3.5 rounded-xl glass-card border border-[#19C7E8]/40 text-[#19C7E8] hover:text-white hover:bg-gradient-to-r hover:from-[#176BFF] hover:to-[#19C7E8] hover:border-[#19C7E8] shadow-2xl hover:shadow-[#176BFF]/40 transition-colors focus:outline-none focus:ring-2 focus:ring-[#19C7E8]"
+          className="fixed bottom-6 right-6 z-40 p-3.5 rounded-xl bg-white border border-[#176BFF]/30 text-[#176BFF] hover:text-white hover:bg-gradient-to-r hover:from-[#176BFF] hover:to-[#00A8E8] hover:border-[#176BFF] shadow-lg hover:shadow-xl hover:shadow-[#176BFF]/30 transition-colors focus:outline-none focus:ring-2 focus:ring-[#176BFF]"
         >
           <ArrowUp className="w-5 h-5" />
         </motion.button>

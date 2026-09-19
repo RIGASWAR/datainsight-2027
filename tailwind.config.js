@@ -7,34 +7,54 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: {
-          950: '#040E22',
-          900: '#071A3D', // Deep navy
-          800: '#0B2859', // Dark blue
-          700: '#0F377A',
-          600: '#14469B',
+        primary: {
+          DEFAULT: '#0B2D6B', // Deep professional blue
+          dark: '#08204D',
+          light: '#0E3B8C',
+        },
+        secondary: {
+          DEFAULT: '#174EA6', // Medium blue
+          light: '#2563EB',
+        },
+        bodytext: {
+          DEFAULT: '#1A2B4A', // Dark navy-blue
+          muted: '#4A5E82',
+          subtle: '#6B7E9E',
+        },
+        royal: {
+          DEFAULT: '#176BFF', // Royal Blue
+          hover: '#0A55E0',
+          light: '#EBF2FF',
+          glow: 'rgba(23, 107, 255, 0.25)',
         },
         electric: {
           DEFAULT: '#176BFF',
           hover: '#0A55E0',
-          glow: 'rgba(23, 107, 255, 0.4)',
+          glow: 'rgba(23, 107, 255, 0.25)',
         },
         cyan: {
-          DEFAULT: '#19C7E8',
-          accent: '#19C7E8',
-          glow: 'rgba(25, 199, 232, 0.4)',
+          DEFAULT: '#00A8E8', // Cyan
+          accent: '#00A8E8',
+          light: '#E6F7FD',
+          glow: 'rgba(0, 168, 232, 0.25)',
         },
         gold: {
-          DEFAULT: '#E9B949',
+          DEFAULT: '#D9A441', // Gold
           light: '#F5CE68',
-          glow: 'rgba(233, 185, 73, 0.4)',
+          glow: 'rgba(217, 164, 65, 0.25)',
         },
-        light: {
-          DEFAULT: '#F7FAFF',
-          muted: '#C5D4EE',
-          dim: '#8EA7CE',
+        bg: {
+          white: '#FFFFFF',
+          alt: '#F5F9FF', // Very light blue for alternating sections
+          subtle: '#EDF4FC',
         },
-        darktext: '#10213F',
+        navy: {
+          950: '#040E22',
+          900: '#071A3D', // Footer deep navy
+          800: '#0B2859',
+          700: '#0F377A',
+          600: '#14469B',
+        },
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],

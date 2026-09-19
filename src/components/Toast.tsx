@@ -20,14 +20,14 @@ export const Toast: React.FC<ToastProps> = ({ message, onClose, duration = 4000 
 
   return (
     <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-bounce">
-      <div className="flex items-center gap-3 px-5 py-3.5 rounded-2xl glass-card border-2 border-[#19C7E8] bg-[#0B2859] shadow-2xl text-white">
-        <CheckCircle2 className="w-5 h-5 text-[#19C7E8] flex-shrink-0" />
-        <span className="text-xs sm:text-sm font-bold text-white tracking-wide">
+      <div className="flex items-center gap-3 px-5 py-3.5 rounded-2xl bg-white border-2 border-[#176BFF] shadow-2xl text-[#0B2D6B]">
+        <CheckCircle2 className="w-5 h-5 text-[#176BFF] flex-shrink-0" />
+        <span className="text-xs sm:text-sm font-bold text-[#0B2D6B] tracking-wide">
           {message}
         </span>
         <button
           onClick={onClose}
-          className="ml-2 p-1 rounded-lg hover:bg-white/10 text-[#8EA7CE] hover:text-white transition-colors"
+          className="ml-2 p-1 rounded-lg hover:bg-[#F5F9FF] text-[#1A2B4A]/60 hover:text-[#0B2D6B] transition-colors"
           aria-label="Dismiss alert"
         >
           <X className="w-4 h-4" />

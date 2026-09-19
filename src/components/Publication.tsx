@@ -7,9 +7,9 @@ export const Publication: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="publication" className="py-20 md:py-28 relative bg-[#040E22]/80 overflow-hidden">
+    <section id="publication" className="py-20 md:py-28 relative bg-white overflow-hidden">
       {/* Background Ambience */}
-      <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#19C7E8]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#00A8E8]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -21,15 +21,15 @@ export const Publication: React.FC = () => {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-[#176BFF]/15 text-[#19C7E8] border border-[#19C7E8]/30 mb-3">
-            <BookOpen className="w-3.5 h-3.5 text-[#E9B949]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/20 mb-3 shadow-sm">
+            <BookOpen className="w-3.5 h-3.5 text-[#D9A441]" />
             PROCEEDINGS & POLICIES
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B2D6B]">
             CONFERENCE <span className="gradient-text-cyan-blue">PUBLICATION</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#19C7E8] via-[#176BFF] to-[#E9B949] mx-auto mt-4 rounded-full" />
-          <p className="mt-4 text-sm sm:text-base text-[#C5D4EE]">
+          <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
+          <p className="mt-4 text-sm sm:text-base text-[#1A2B4A]/80">
             Maintaining rigorous academic peer-review standards and publishing ethics for high-impact research.
           </p>
         </motion.div>
@@ -46,14 +46,14 @@ export const Publication: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="p-4 sm:p-5 rounded-xl bg-[#0B2859]/70 border border-[#E9B949]/40 flex items-start gap-3.5 shadow-lg"
+              className="p-4 sm:p-5 rounded-xl bg-[#FFF9E6] border border-[#D9A441]/50 flex items-start gap-3.5 shadow-sm"
             >
-              <AlertCircle className="w-5 h-5 text-[#E9B949] flex-shrink-0 mt-0.5" />
+              <AlertCircle className="w-5 h-5 text-[#D9A441] flex-shrink-0 mt-0.5" />
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#E9B949]">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#D9A441]">
                   Official Notice
                 </h4>
-                <p className="text-xs sm:text-sm text-[#F7FAFF]/95 font-medium mt-0.5">
+                <p className="text-xs sm:text-sm text-[#1A2B4A] font-medium mt-0.5">
                   "{CONFERENCE_DATA.publication.note}"
                 </p>
               </div>
@@ -72,25 +72,25 @@ export const Publication: React.FC = () => {
                     delay: 0.1 + index * 0.1, 
                     ease: [0.16, 1, 0.3, 1] 
                   }}
-                  className="p-5 rounded-2xl glass-card border border-[#19C7E8]/20 hover:border-[#19C7E8]/50 transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1"
+                  className="p-5 rounded-2xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/40 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-3 hover:-translate-y-1"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-bold text-[#8EA7CE] uppercase tracking-wider">
+                    <span className="text-[11px] font-bold text-[#1A2B4A]/60 uppercase tracking-wider">
                       Item 0{index + 1}
                     </span>
-                    <FileCheck className="w-4 h-4 text-[#19C7E8]" />
+                    <FileCheck className="w-4 h-4 text-[#176BFF]" />
                   </div>
 
                   <div>
-                    <h5 className="text-sm font-bold text-white">
+                    <h5 className="text-sm font-bold text-[#0B2D6B]">
                       {item.label}
                     </h5>
-                    <div className="mt-2 inline-block px-3 py-1 rounded-md text-xs font-mono font-bold bg-[#071A3D] text-[#E9B949] border border-white/10">
+                    <div className="mt-2 inline-block px-3 py-1 rounded-md text-xs font-mono font-bold bg-[#F5F9FF] text-[#D9A441] border border-[#176BFF]/15">
                       {item.value}
                     </div>
                   </div>
 
-                  <div className="text-[11px] text-[#8EA7CE] pt-2 border-t border-white/5">
+                  <div className="text-[11px] text-[#1A2B4A]/60 pt-2 border-t border-[#176BFF]/10">
                     Official announcement pending
                   </div>
                 </motion.div>
@@ -107,32 +107,32 @@ export const Publication: React.FC = () => {
             transition={{ duration: 0.75, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 flex items-center justify-center"
           >
-            <div className="w-full max-w-md p-8 rounded-3xl glass-card border-2 border-[#19C7E8]/30 shadow-2xl relative overflow-hidden text-center space-y-6 hover:border-[#19C7E8]/60 transition-colors">
+            <div className="w-full max-w-md p-8 rounded-3xl bg-white border-2 border-[#176BFF]/20 shadow-xl relative overflow-hidden text-center space-y-6 hover:border-[#176BFF]/40 transition-colors">
               
               {/* Graphic Medallion */}
-              <div className="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-[#176BFF] via-[#0B2859] to-[#071A3D] border border-[#19C7E8] flex items-center justify-center shadow-xl shadow-[#176BFF]/25">
-                <BookOpen className="w-12 h-12 text-[#19C7E8]" />
+              <div className="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-[#176BFF] to-[#00A8E8] border border-[#176BFF]/30 flex items-center justify-center shadow-lg shadow-[#176BFF]/25">
+                <BookOpen className="w-12 h-12 text-white" />
               </div>
 
               <div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[11px] font-bold bg-[#E9B949]/20 text-[#E9B949] border border-[#E9B949]/30">
+                <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[11px] font-bold bg-[#D9A441]/15 text-[#D9A441] border border-[#D9A441]/30">
                   <Sparkles className="w-3 h-3" />
                   Peer-Reviewed Proceedings
                 </div>
-                <h3 className="text-xl font-extrabold text-white mt-2">
+                <h3 className="text-xl font-extrabold text-[#0B2D6B] mt-2">
                   Academic Integrity & Quality
                 </h3>
-                <p className="text-xs text-[#C5D4EE] mt-2 leading-relaxed">
+                <p className="text-xs text-[#1A2B4A]/80 mt-2 leading-relaxed">
                   All submitted manuscripts will undergo double-blind peer review by international technical committee reviewers to uphold the highest scholarly standards.
                 </p>
               </div>
 
               {/* Quality Badges */}
               <div className="grid grid-cols-2 gap-2 pt-2 text-[11px] font-medium">
-                <div className="p-2 rounded-lg bg-[#071A3D] border border-white/10 text-[#19C7E8]">
+                <div className="p-2 rounded-lg bg-[#F5F9FF] border border-[#176BFF]/15 text-[#176BFF] font-semibold">
                   Zero Plagiarism Tolerance
                 </div>
-                <div className="p-2 rounded-lg bg-[#071A3D] border border-white/10 text-[#E9B949]">
+                <div className="p-2 rounded-lg bg-[#FFF9E6] border border-[#D9A441]/30 text-[#D9A441] font-semibold">
                   Strict Ethical Review
                 </div>
               </div>
