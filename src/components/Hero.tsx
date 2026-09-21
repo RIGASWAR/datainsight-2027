@@ -33,7 +33,7 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
   return (
     <section 
       id="home" 
-      className="relative min-h-[96vh] lg:min-h-[100vh] pt-28 pb-20 md:pt-36 md:pb-28 lg:pt-40 lg:pb-32 flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FBFF] to-[#F0F6FF]"
+      className="relative min-h-[85vh] lg:min-h-[88vh] pt-24 pb-14 md:pt-28 md:pb-16 lg:pt-32 lg:pb-18 flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FBFF] to-[#F0F6FF]"
     >
       {/* Dynamic Background Network & Cyber Mesh with Subtle Parallax */}
       <motion.div 
@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Conference Header & Details with Parallax & Entrance */}
           <motion.div 
@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
             initial={shouldReduceMotion ? false : { opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 flex flex-col text-left space-y-7 md:space-y-8"
+            className="lg:col-span-7 flex flex-col text-left space-y-5 md:space-y-6"
           >
             
             {/* Top Badge: ISO & Host Institution */}
@@ -72,11 +72,11 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
               transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="inline-flex flex-wrap items-center gap-2"
             >
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/25 shadow-xs">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/25 shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-[#D9A441]" />
                 INTERNATIONAL CONFERENCE
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white text-[#4A5E82] border border-[#176BFF]/15 shadow-xs">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white text-[#4A5E82] border border-[#176BFF]/15 shadow-xs">
                 <FileCheck className="w-3.5 h-3.5 text-[#00A8E8]" />
                 ISO 9001:2015 Certified
               </span>
@@ -89,11 +89,11 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
               transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="flex items-baseline gap-3">
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-[5rem] font-extrabold tracking-tight text-[#0B2D6B] leading-none">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold tracking-tight text-[#0B2D6B] leading-none">
                   DATAINSIGHT <span className="text-[#176BFF] drop-shadow-[0_4px_12px_rgba(23,107,255,0.2)]">2027</span>
                 </h1>
               </div>
-              <h2 className="mt-4 md:mt-5 text-xl sm:text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.25rem] font-bold text-[#174EA6] leading-snug tracking-tight">
+              <h2 className="mt-3 md:mt-4 text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] xl:text-[1.85rem] font-bold text-[#174EA6] leading-snug tracking-tight">
                 {CONFERENCE_DATA.fullTitle}
               </h2>
             </motion.div>
@@ -103,34 +103,34 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
               initial={shouldReduceMotion ? false : { opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="relative pl-4.5 border-l-4 border-[#D9A441] py-1.5"
+              className="relative pl-4 border-l-4 border-[#D9A441] py-1"
             >
-              <p className="text-base sm:text-lg lg:text-xl xl:text-[1.35rem] italic font-medium text-[#1A2B4A] leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg italic font-medium text-[#1A2B4A] leading-relaxed">
                 "{CONFERENCE_DATA.tagline.replace(/^"|"$/g, '')}"
               </p>
             </motion.div>
 
-            {/* Host Institution & Department Info Card (Enlarged) */}
+            {/* Host Institution & Department Info Card (Optimized) */}
             <motion.div 
               initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
-              className="p-5 sm:p-6 md:p-6.5 rounded-2xl bg-white border border-[#176BFF]/20 shadow-md shadow-[#0B2D6B]/5 space-y-2.5 max-w-2xl hover:border-[#176BFF]/40 transition-colors"
+              className="p-4 sm:p-5 rounded-2xl bg-white border border-[#176BFF]/20 shadow-sm shadow-[#0B2D6B]/5 space-y-2 max-w-xl hover:border-[#176BFF]/40 transition-colors"
             >
-              <div className="flex items-center gap-2.5 text-sm sm:text-base font-bold text-[#176BFF]">
-                <Cpu className="w-4.5 h-4.5 text-[#176BFF] flex-shrink-0" />
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#176BFF]">
+                <Cpu className="w-4 h-4 text-[#176BFF] flex-shrink-0" />
                 <span>Organized by: {CONFERENCE_DATA.institution.department}</span>
               </div>
-              <div className="text-sm sm:text-base text-[#1A2B4A] font-semibold pl-0.5">
+              <div className="text-xs sm:text-sm text-[#1A2B4A] font-semibold pl-0.5">
                 {CONFERENCE_DATA.institution.name}
               </div>
-              <div className="flex flex-wrap items-center gap-y-1.5 gap-x-5 pt-2.5 text-xs sm:text-sm text-[#4A5E82] border-t border-gray-100">
-                <div className="flex items-center gap-2 text-[#0B2D6B] font-semibold">
-                  <Calendar className="w-4 h-4 text-[#D9A441]" />
+              <div className="flex flex-wrap items-center gap-y-1.5 gap-x-4 pt-2 text-xs text-[#4A5E82] border-t border-gray-100">
+                <div className="flex items-center gap-1.5 text-[#0B2D6B] font-semibold">
+                  <Calendar className="w-3.5 h-3.5 text-[#D9A441]" />
                   <span>{CONFERENCE_DATA.datesDisplay}</span>
                 </div>
-                <div className="flex items-center gap-2 font-medium">
-                  <MapPin className="w-4 h-4 text-[#00A8E8]" />
+                <div className="flex items-center gap-1.5 font-medium">
+                  <MapPin className="w-3.5 h-3.5 text-[#00A8E8]" />
                   <span>{CONFERENCE_DATA.institution.location}</span>
                 </div>
               </div>
@@ -141,11 +141,11 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
               initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="pt-3 flex flex-wrap items-center gap-4"
+              className="pt-2 flex flex-wrap items-center gap-3"
             >
               <button
                 onClick={() => onActionClick('submit')}
-                className="group relative inline-flex items-center gap-2 px-6.5 py-3.5 rounded-xl font-bold text-sm sm:text-base bg-[#176BFF] hover:bg-[#0A55E0] text-white shadow-lg shadow-[#176BFF]/25 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                className="group relative inline-flex items-center gap-1.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-bold text-xs sm:text-sm bg-[#176BFF] hover:bg-[#0A55E0] text-white shadow-md shadow-[#176BFF]/25 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
               >
                 <span>SUBMIT PAPER</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -153,14 +153,14 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
 
               <button
                 onClick={() => onActionClick('register')}
-                className="inline-flex items-center gap-2 px-6.5 py-3.5 rounded-xl font-bold text-sm sm:text-base bg-white hover:bg-[#F5F9FF] text-[#176BFF] border-2 border-[#176BFF] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                className="inline-flex items-center gap-1.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-bold text-xs sm:text-sm bg-white hover:bg-[#F5F9FF] text-[#176BFF] border border-[#176BFF] shadow-2xs hover:shadow-sm hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
               >
                 <span>REGISTER</span>
               </button>
 
               <button
                 onClick={onExploreClick}
-                className="group inline-flex items-center gap-1.5 px-4 py-3.5 rounded-xl font-semibold text-xs sm:text-sm text-[#4A5E82] hover:text-[#176BFF] hover:bg-[#F5F9FF] transition-all"
+                className="group inline-flex items-center gap-1 px-3 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-[#4A5E82] hover:text-[#176BFF] hover:bg-[#F5F9FF] transition-all cursor-pointer"
               >
                 <span>EXPLORE CONFERENCE</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#00A8E8] group-hover:translate-x-1 transition-transform" />
@@ -201,15 +201,15 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
               <div className="absolute inset-4 rounded-full border border-dashed border-[#176BFF]/25 animate-spin" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
               
               {/* Central Core Card */}
-              <div className="relative z-20 w-72 sm:w-84 p-6 sm:p-7 rounded-2xl glass-card border border-[#176BFF]/20 shadow-xl flex flex-col items-center text-center space-y-4">
+              <div className="relative z-20 w-64 sm:w-72 p-5 sm:p-6 rounded-2xl glass-card border border-[#176BFF]/20 shadow-xl flex flex-col items-center text-center space-y-3.5">
                 
                 {/* Visual Neural Shield Icon */}
-                <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-[#176BFF] via-[#0E58DB] to-[#0B2D6B] border border-[#00A8E8] flex items-center justify-center shadow-lg shadow-[#176BFF]/20">
+                <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#176BFF] via-[#0E58DB] to-[#0B2D6B] border border-[#00A8E8] flex items-center justify-center shadow-md shadow-[#176BFF]/20">
                   <div className="absolute inset-0 rounded-2xl bg-[#00A8E8]/15 animate-ping opacity-25" />
-                  <ShieldCheck className="w-10 h-10 text-white" />
-                  <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                  <ShieldCheck className="w-8 h-8 text-white" />
+                  <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D9A441] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-[#D9A441]"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#D9A441]"></span>
                   </span>
                 </div>
 

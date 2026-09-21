@@ -57,16 +57,16 @@ export default {
         },
       },
       fontSize: {
-        '2xs': ['0.75rem', { lineHeight: '1.15rem' }],
-        'xs': ['0.8125rem', { lineHeight: '1.3rem' }],
-        'sm': ['0.9375rem', { lineHeight: '1.45rem' }],
-        'base': ['1.0625rem', { lineHeight: '1.65rem' }],
-        'lg': ['1.1875rem', { lineHeight: '1.75rem' }],
-        'xl': ['1.3125rem', { lineHeight: '1.85rem' }],
-        '2xl': ['1.625rem', { lineHeight: '2.15rem' }],
-        '3xl': ['2rem', { lineHeight: '2.4rem' }],
-        '4xl': ['2.5rem', { lineHeight: '2.9rem' }],
-        '5xl': ['3.25rem', { lineHeight: '3.6rem' }],
+        '2xs': ['0.6875rem', { lineHeight: '1rem' }],    // 11px
+        'xs': ['0.75rem', { lineHeight: '1.25rem' }],     // 12px
+        'sm': ['0.875rem', { lineHeight: '1.4rem' }],     // 14px
+        'base': ['1rem', { lineHeight: '1.6rem' }],       // 16px
+        'lg': ['1.125rem', { lineHeight: '1.65rem' }],    // 18px
+        'xl': ['1.25rem', { lineHeight: '1.75rem' }],     // 20px
+        '2xl': ['1.5rem', { lineHeight: '1.9rem' }],      // 24px
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],   // 30px
+        '4xl': ['2.25rem', { lineHeight: '2.65rem' }],    // 36px
+        '5xl': ['3rem', { lineHeight: '1.15' }],          // 48px
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
