@@ -46,8 +46,8 @@ export const About: React.FC = () => {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/25 mb-3 shadow-xs">
-            <Info className="w-3.5 h-3.5 text-[#D9A441]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/25 mb-3 shadow-xs">
+            <Info className="w-4 h-4 text-[#D9A441]" />
             CONFERENCE INTRODUCTION
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B2D6B]">
@@ -68,38 +68,38 @@ export const About: React.FC = () => {
             className="lg:col-span-6 space-y-6 text-left"
           >
             <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#176BFF]/20 shadow-lg shadow-[#0B2D6B]/5 relative hover:border-[#176BFF]/40 transition-colors">
-              <div className="absolute -top-3 left-6 px-3 py-0.5 rounded text-[11px] font-bold bg-[#176BFF] text-white uppercase tracking-wider shadow-sm">
+              <div className="absolute -top-3.5 left-6 px-3.5 py-1 rounded text-xs font-bold bg-[#176BFF] text-white uppercase tracking-wider shadow-sm">
                 Mission & Scope
               </div>
-              <p className="text-sm sm:text-base leading-relaxed text-[#1A2B4A] text-justify">
+              <p className="text-base sm:text-lg leading-relaxed text-[#1A2B4A] text-justify pt-1">
                 {CONFERENCE_DATA.about.primaryText}
               </p>
             </div>
 
             {/* Poster Summary Quote */}
-            <div className="p-5 rounded-xl bg-white border-l-4 border-[#D9A441] border-y border-r border-[#176BFF]/15 shadow-sm space-y-2 hover:border-[#D9A441] transition-colors">
-              <div className="text-xs font-bold text-[#D9A441] uppercase tracking-wider flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5" />
+            <div className="p-5 sm:p-6 rounded-xl bg-white border-l-4 border-[#D9A441] border-y border-r border-[#176BFF]/15 shadow-sm space-y-2 hover:border-[#D9A441] transition-colors">
+              <div className="text-xs sm:text-sm font-bold text-[#D9A441] uppercase tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-4 h-4" />
                 <span>Interdisciplinary Horizon</span>
               </div>
-              <p className="text-xs sm:text-sm text-[#4A5E82] italic leading-relaxed">
+              <p className="text-sm sm:text-base text-[#4A5E82] italic leading-relaxed">
                 "{CONFERENCE_DATA.about.posterSummary}"
               </p>
             </div>
 
             {/* Core Metrics with subtle hover lift */}
             <div className="grid grid-cols-3 gap-3 pt-2">
-              <div className="p-3.5 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#00A8E8] transition-all">
-                <div className="text-2xl font-black text-[#00A8E8]">3 Days</div>
-                <div className="text-[11px] text-[#4A5E82] mt-0.5 font-medium">Dec 16–18, 2027</div>
+              <div className="p-4 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#00A8E8] transition-all">
+                <div className="text-2xl sm:text-3xl font-black text-[#00A8E8]">3 Days</div>
+                <div className="text-xs sm:text-sm text-[#4A5E82] mt-1 font-medium">Dec 16–18, 2027</div>
               </div>
-              <div className="p-3.5 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#D9A441] transition-all">
-                <div className="text-2xl font-black text-[#D9A441]">8 Tracks</div>
-                <div className="text-[11px] text-[#4A5E82] mt-0.5 font-medium">Multimodal AI & Security</div>
+              <div className="p-4 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#D9A441] transition-all">
+                <div className="text-2xl sm:text-3xl font-black text-[#D9A441]">8 Tracks</div>
+                <div className="text-xs sm:text-sm text-[#4A5E82] mt-1 font-medium">Multimodal AI & Security</div>
               </div>
-              <div className="p-3.5 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#176BFF] transition-all">
-                <div className="text-2xl font-black text-[#176BFF]">PSG Tech</div>
-                <div className="text-[11px] text-[#4A5E82] mt-0.5 font-medium">Coimbatore, India</div>
+              <div className="p-4 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#176BFF] transition-all">
+                <div className="text-2xl sm:text-3xl font-black text-[#176BFF]">PSG Tech</div>
+                <div className="text-xs sm:text-sm text-[#4A5E82] mt-1 font-medium">Coimbatore, India</div>
               </div>
             </div>
 
@@ -124,13 +124,13 @@ export const About: React.FC = () => {
                 <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#176BFF] to-[#00A8E8] flex items-center justify-center shadow-md shadow-[#176BFF]/20 mb-1 group-hover:scale-110 transition-transform">
                   <Brain className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-[10px] font-bold text-[#00A8E8] tracking-widest uppercase">
+                <span className="text-xs font-bold text-[#00A8E8] tracking-widest uppercase">
                   Transformation
                 </span>
-                <span className="text-xs sm:text-sm font-extrabold text-[#0B2D6B] mt-0.5">
+                <span className="text-sm sm:text-base font-extrabold text-[#0B2D6B] mt-0.5">
                   Multimodal Pipeline
                 </span>
-                <span className="text-[10px] text-[#D9A441] font-semibold mt-1">
+                <span className="text-xs text-[#D9A441] font-semibold mt-1">
                   {steps[activeStep].name} Stage
                 </span>
               </div>
@@ -169,7 +169,7 @@ export const About: React.FC = () => {
                       />
                     </div>
                     <span
-                      className={`mt-1 text-[10px] font-bold tracking-tight px-1.5 py-0.5 rounded transition-colors ${
+                      className={`mt-1 text-xs font-bold tracking-tight px-2 py-0.5 rounded transition-colors ${
                         isActive ? 'text-white bg-[#0B2D6B] shadow-xs' : 'text-[#1A2B4A] bg-white/95 border border-[#176BFF]/15 shadow-xs'
                       }`}
                     >
@@ -182,13 +182,13 @@ export const About: React.FC = () => {
             </div>
 
             {/* Active Node Detail Card */}
-            <div className="mt-4 w-full max-w-md p-3.5 rounded-xl bg-white border border-[#176BFF]/20 text-center shadow-md transition-all">
-              <div className="flex items-center justify-center gap-2 text-xs font-bold text-[#176BFF] uppercase tracking-wider">
+            <div className="mt-4 w-full max-w-md p-4 rounded-xl bg-white border border-[#176BFF]/20 text-center shadow-md transition-all">
+              <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-[#176BFF] uppercase tracking-wider">
                 <span>Stage {activeStep + 1} of {steps.length}:</span>
                 <span className="text-[#0B2D6B]">{steps[activeStep].name}</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#D9A441]" />
+                <ArrowRight className="w-4 h-4 text-[#D9A441]" />
               </div>
-              <p className="text-xs text-[#4A5E82] mt-1">
+              <p className="text-xs sm:text-sm text-[#4A5E82] mt-1.5 leading-relaxed">
                 {steps[activeStep].desc}
               </p>
             </div>

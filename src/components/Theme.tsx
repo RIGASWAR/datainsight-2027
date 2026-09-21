@@ -48,7 +48,7 @@ export const Theme: React.FC = () => {
             CONFERENCE <span className="text-[#176BFF]">THEMES</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
-          <p className="mt-4 text-sm sm:text-base text-[#4A5E82]">
+          <p className="mt-4 text-base sm:text-lg text-[#4A5E82]">
             Interdisciplinary convergence across four core domains advancing intelligent and secure insights.
           </p>
         </motion.div>
@@ -69,38 +69,38 @@ export const Theme: React.FC = () => {
                   delay: index * 0.12, 
                   ease: [0.16, 1, 0.3, 1] 
                 }}
-                className="p-6 sm:p-7 rounded-2xl bg-white border border-[#176BFF]/20 hover:border-[#176BFF] transition-all duration-300 hover:-translate-y-1.5 shadow-md shadow-[#0B2D6B]/5 flex flex-col justify-between"
+                className="p-7 sm:p-8 rounded-2xl bg-white border border-[#176BFF]/20 hover:border-[#176BFF] transition-all duration-300 hover:-translate-y-1.5 shadow-md shadow-[#0B2D6B]/5 flex flex-col justify-between"
               >
                 <div>
                   {/* Header with Number & Icon */}
                   <div className="flex items-center justify-between mb-5">
-                    <span className="text-2xl font-black text-[#D9A441] font-mono">
+                    <span className="text-3xl font-black text-[#D9A441] font-mono">
                       {theme.number}
                     </span>
-                    <div className="w-12 h-12 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/20 flex items-center justify-center text-[#176BFF] shadow-xs">
-                      <IconComponent className="w-6 h-6 text-[#176BFF]" />
+                    <div className="w-13 h-13 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/20 flex items-center justify-center text-[#176BFF] shadow-xs">
+                      <IconComponent className="w-6.5 h-6.5 text-[#176BFF]" />
                     </div>
                   </div>
 
                   {/* Theme Title */}
-                  <h3 className="text-base sm:text-lg font-bold text-[#0B2D6B] leading-snug">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0B2D6B] leading-snug">
                     {theme.title}
                   </h3>
 
                   {/* Theme Description */}
-                  <p className="mt-2 text-xs text-[#4A5E82] leading-relaxed">
+                  <p className="mt-3 text-sm sm:text-base text-[#4A5E82] leading-relaxed">
                     {theme.description}
                   </p>
 
                   {/* Subtopics from Poster */}
-                  <div className="mt-5 space-y-2 pt-4 border-t border-gray-100">
-                    <div className="text-[11px] font-bold text-[#00A8E8] uppercase tracking-wider">
+                  <div className="mt-6 space-y-2.5 pt-4 border-t border-gray-100">
+                    <div className="text-xs font-bold text-[#00A8E8] uppercase tracking-wider">
                       Focus Areas:
                     </div>
-                    <ul className="space-y-1.5">
+                    <ul className="space-y-2">
                       {theme.topics.map((topic) => (
-                        <li key={topic} className="flex items-center gap-2 text-xs text-[#1A2B4A]">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#176BFF] flex-shrink-0" />
+                        <li key={topic} className="flex items-center gap-2.5 text-sm text-[#1A2B4A] font-medium">
+                          <CheckCircle2 className="w-4 h-4 text-[#176BFF] flex-shrink-0" />
                           <span>{topic}</span>
                         </li>
                       ))}
@@ -108,8 +108,8 @@ export const Theme: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-gray-100 flex items-center justify-between text-[10px] text-[#4A5E82]">
-                  <span>Track Integration</span>
+                <div className="mt-6 pt-3.5 border-t border-gray-100 flex items-center justify-between text-xs sm:text-sm text-[#4A5E82]">
+                  <span className="font-medium">Track Integration</span>
                   <span className="text-[#176BFF] font-semibold">Active</span>
                 </div>
               </motion.div>
@@ -126,10 +126,10 @@ export const Theme: React.FC = () => {
           className="mt-16 pt-8 max-w-2xl mx-auto"
         >
           <div className="text-center mb-6">
-            <div className="text-xs uppercase tracking-widest text-[#D9A441] font-bold">
+            <div className="text-sm uppercase tracking-widest text-[#D9A441] font-bold">
               Convergence Architecture
             </div>
-            <div className="text-sm font-semibold text-[#1A2B4A] mt-1">
+            <div className="text-base font-semibold text-[#1A2B4A] mt-1.5">
               Themes integrate seamlessly into a continuous pipeline of value
             </div>
           </div>
@@ -145,18 +145,18 @@ export const Theme: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="w-full max-w-sm flex items-center justify-between p-3.5 rounded-xl bg-[#F5F9FF] border border-[#00A8E8]/35 shadow-xs hover:border-[#00A8E8] transition-colors"
+                className="w-full max-w-md flex items-center justify-between p-4 rounded-xl bg-[#F5F9FF] border border-[#00A8E8]/35 shadow-xs hover:border-[#00A8E8] transition-colors"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#00A8E8]/15 flex items-center justify-center text-[#00A8E8]">
+                  <div className="w-11 h-11 rounded-lg bg-[#00A8E8]/15 flex items-center justify-center text-[#00A8E8]">
                     <Database className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-extrabold uppercase tracking-wider text-[#00A8E8]">Phase 1</div>
-                    <div className="text-base font-extrabold text-[#0B2D6B]">DATA</div>
+                    <div className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#00A8E8]">Phase 1</div>
+                    <div className="text-lg font-black text-[#0B2D6B]">DATA</div>
                   </div>
                 </div>
-                <span className="text-xs text-[#4A5E82] font-medium hidden sm:inline">
+                <span className="text-xs sm:text-sm text-[#4A5E82] font-semibold hidden sm:inline">
                   Multimodal Raw Streams
                 </span>
               </motion.div>
@@ -172,18 +172,18 @@ export const Theme: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: 0.25 }}
-                className="w-full max-w-sm flex items-center justify-between p-3.5 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/35 shadow-xs hover:border-[#176BFF] transition-colors"
+                className="w-full max-w-md flex items-center justify-between p-4 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/35 shadow-xs hover:border-[#176BFF] transition-colors"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#176BFF]/15 flex items-center justify-center text-[#176BFF]">
+                  <div className="w-11 h-11 rounded-lg bg-[#176BFF]/15 flex items-center justify-center text-[#176BFF]">
                     <Brain className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-extrabold uppercase tracking-wider text-[#176BFF]">Phase 2</div>
-                    <div className="text-base font-extrabold text-[#0B2D6B]">INTELLIGENCE</div>
+                    <div className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#176BFF]">Phase 2</div>
+                    <div className="text-lg font-black text-[#0B2D6B]">INTELLIGENCE</div>
                   </div>
                 </div>
-                <span className="text-xs text-[#4A5E82] font-medium hidden sm:inline">
+                <span className="text-xs sm:text-sm text-[#4A5E82] font-semibold hidden sm:inline">
                   AI & Cognitive Reasoning
                 </span>
               </motion.div>
@@ -199,18 +199,18 @@ export const Theme: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="w-full max-w-sm flex items-center justify-between p-3.5 rounded-xl bg-[#F5F9FF] border border-[#D9A441]/35 shadow-xs hover:border-[#D9A441] transition-colors"
+                className="w-full max-w-md flex items-center justify-between p-4 rounded-xl bg-[#F5F9FF] border border-[#D9A441]/35 shadow-xs hover:border-[#D9A441] transition-colors"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#D9A441]/15 flex items-center justify-center text-[#D9A441]">
+                  <div className="w-11 h-11 rounded-lg bg-[#D9A441]/15 flex items-center justify-center text-[#D9A441]">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-extrabold uppercase tracking-wider text-[#D9A441]">Phase 3</div>
-                    <div className="text-base font-extrabold text-[#0B2D6B]">SECURITY</div>
+                    <div className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#D9A441]">Phase 3</div>
+                    <div className="text-lg font-black text-[#0B2D6B]">SECURITY</div>
                   </div>
                 </div>
-                <span className="text-xs text-[#4A5E82] font-medium hidden sm:inline">
+                <span className="text-xs sm:text-sm text-[#4A5E82] font-semibold hidden sm:inline">
                   Trustworthy & Verified Action
                 </span>
               </motion.div>

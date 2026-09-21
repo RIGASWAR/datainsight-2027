@@ -29,7 +29,7 @@ export const ImportantDates: React.FC = () => {
             IMPORTANT <span className="text-[#176BFF]">DATES</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#D9A441] via-[#00A8E8] to-[#176BFF] mx-auto mt-4 rounded-full" />
-          <p className="mt-4 text-sm sm:text-base text-[#4A5E82]">
+          <p className="mt-4 text-base sm:text-lg text-[#4A5E82]">
             Track essential submission deadlines and registration schedules for DATAINSIGHT 2027.
           </p>
         </motion.div>
@@ -85,24 +85,24 @@ export const ImportantDates: React.FC = () => {
 
                   {/* Date Card with slide into position */}
                   <div 
-                    className={`w-full p-4 rounded-xl bg-white transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between min-h-[140px] shadow-sm ${
+                    className={`w-full p-5 sm:p-5.5 rounded-2xl bg-white transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between min-h-[160px] shadow-sm ${
                       item.isHighlighted 
                         ? 'border-2 border-[#D9A441] shadow-lg shadow-[#D9A441]/15' 
                         : 'border border-[#176BFF]/20 hover:border-[#176BFF] hover:shadow-md'
                     }`}
                   >
                     <div>
-                      <span className="text-[11px] font-bold text-[#176BFF] uppercase tracking-wider block mb-1">
+                      <span className="text-xs font-bold text-[#176BFF] uppercase tracking-wider block mb-1.5">
                         Step 0{index + 1}
                       </span>
-                      <h4 className="text-sm font-bold text-[#0B2D6B] leading-snug">
+                      <h4 className="text-base font-bold text-[#0B2D6B] leading-snug">
                         {item.title}
                       </h4>
                     </div>
 
-                    <div className="mt-3 pt-3 border-t border-gray-100">
+                    <div className="mt-3.5 pt-3.5 border-t border-gray-100">
                       <span 
-                        className={`inline-block px-2.5 py-1 rounded text-xs font-extrabold tracking-wide ${
+                        className={`inline-block px-3 py-1.5 rounded-lg text-sm font-extrabold tracking-wide ${
                           item.isHighlighted
                             ? 'bg-[#D9A441] text-white shadow-xs'
                             : 'bg-[#F5F9FF] text-[#174EA6] border border-[#176BFF]/20'
@@ -140,32 +140,32 @@ export const ImportantDates: React.FC = () => {
                       : 'bg-[#176BFF] text-white'
                   }`}
                 >
-                  <span className="text-[11px] font-bold">{index + 1}</span>
+                  <span className="text-xs font-bold">{index + 1}</span>
                 </div>
 
                 {/* Vertical Card */}
                 <div 
-                  className={`p-4 sm:p-5 rounded-xl bg-white shadow-sm transition-all ${
+                  className={`p-5 sm:p-6 rounded-2xl bg-white shadow-sm transition-all ${
                     item.isHighlighted
                       ? 'border-2 border-[#D9A441] shadow-md shadow-[#D9A441]/10'
                       : 'border border-[#176BFF]/20'
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2">
-                    <h4 className="text-sm sm:text-base font-bold text-[#0B2D6B]">
+                    <h4 className="text-base sm:text-lg font-bold text-[#0B2D6B]">
                       {item.title}
                     </h4>
                     {item.isHighlighted && (
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#D9A441] text-white shadow-xs">
+                      <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-[#D9A441] text-white shadow-xs">
                         Conference
                       </span>
                     )}
                   </div>
 
-                  <div className="mt-2 pt-2 border-t border-gray-100 flex items-center justify-between">
-                    <span className="text-xs text-[#4A5E82]">Schedule:</span>
+                  <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between">
+                    <span className="text-sm text-[#4A5E82] font-medium">Schedule:</span>
                     <span 
-                      className={`text-xs font-bold px-2 py-1 rounded ${
+                      className={`text-sm font-extrabold px-3 py-1.5 rounded-lg ${
                         item.isHighlighted 
                           ? 'bg-[#D9A441]/15 text-[#B58226] border border-[#D9A441]/30' 
                           : 'text-[#174EA6] bg-[#F5F9FF] border border-[#176BFF]/20'
@@ -187,9 +187,9 @@ export const ImportantDates: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="mt-12 max-w-2xl mx-auto p-4 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/20 text-center text-xs text-[#4A5E82] flex items-center justify-center gap-2 shadow-xs"
+          className="mt-12 max-w-2xl mx-auto p-5 rounded-2xl bg-[#F5F9FF] border border-[#176BFF]/20 text-center text-sm text-[#4A5E82] flex items-center justify-center gap-2.5 shadow-xs"
         >
-          <AlertCircle className="w-4 h-4 text-[#D9A441] flex-shrink-0" />
+          <AlertCircle className="w-5 h-5 text-[#D9A441] flex-shrink-0" />
           <span>
             Deadlines marked <strong>TO BE INCLUDED</strong> will be officially confirmed and notified to authors.
           </span>

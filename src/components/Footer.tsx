@@ -43,24 +43,24 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
               </div>
             </div>
 
-            <p className="text-xs font-semibold text-[#00A8E8] leading-relaxed">
+            <p className="text-sm font-semibold text-[#00A8E8] leading-relaxed">
               {CONFERENCE_DATA.fullTitle}
             </p>
 
-            <p className="text-xs text-[#C5D4EE] italic">
+            <p className="text-sm text-[#C5D4EE] italic">
               {CONFERENCE_DATA.tagline}
             </p>
 
-            <div className="pt-2 text-xs space-y-1 text-[#8EA7CE]">
+            <div className="pt-2 text-sm space-y-1.5 text-[#8EA7CE]">
               <div className="font-semibold text-white">
                 {CONFERENCE_DATA.institution.department}
               </div>
               <div>{CONFERENCE_DATA.institution.name}</div>
-              <div className="text-[11px] text-[#D9A441]">
+              <div className="text-xs text-[#D9A441] font-medium">
                 {CONFERENCE_DATA.institution.accreditation}
               </div>
-              <div className="flex items-center gap-1.5 pt-1 text-[11px]">
-                <MapPin className="w-3.5 h-3.5 text-[#00A8E8]" />
+              <div className="flex items-center gap-1.5 pt-1 text-xs">
+                <MapPin className="w-4 h-4 text-[#00A8E8]" />
                 <span>{CONFERENCE_DATA.institution.location}</span>
               </div>
             </div>
@@ -68,16 +68,16 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
 
           {/* Col 2: Quick Links */}
           <div className="lg:col-span-4 text-left">
-            <h4 className="text-xs font-extrabold uppercase tracking-widest text-white mb-4">
+            <h4 className="text-sm font-extrabold uppercase tracking-widest text-white mb-4">
               Quick Navigation
             </h4>
-            <div className="grid grid-cols-2 gap-2 text-xs">
+            <div className="grid grid-cols-2 gap-2 text-sm">
               {CONFERENCE_DATA.footer.quickLinks.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-[#C5D4EE] hover:text-[#00A8E8] transition-colors py-0.5"
+                  className="text-[#C5D4EE] hover:text-[#00A8E8] transition-colors py-1"
                 >
                   {item.name}
                 </a>
@@ -87,37 +87,37 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
 
           {/* Col 3: Conference Action Links & Status */}
           <div className="lg:col-span-3 text-left space-y-4">
-            <h4 className="text-xs font-extrabold uppercase tracking-widest text-white mb-4">
+            <h4 className="text-sm font-extrabold uppercase tracking-widest text-white mb-4">
               Delegate Portal
             </h4>
             
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               <button
                 onClick={() => onActionClick('submit')}
-                className="w-full flex items-center justify-between px-3.5 py-2 rounded-lg bg-[#0B2D6B]/80 hover:bg-[#0B2D6B] border border-[#176BFF]/40 text-xs font-bold text-white transition-colors"
+                className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#0B2D6B]/80 hover:bg-[#0B2D6B] border border-[#176BFF]/40 text-sm font-bold text-white transition-colors"
               >
                 <span>Submit Paper</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#00A8E8]" />
+                <ArrowUpRight className="w-4 h-4 text-[#00A8E8]" />
               </button>
 
               <button
                 onClick={() => onActionClick('register')}
-                className="w-full flex items-center justify-between px-3.5 py-2 rounded-lg bg-[#0B2D6B]/80 hover:bg-[#0B2D6B] border border-[#D9A441]/40 text-xs font-bold text-[#D9A441] transition-colors"
+                className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#0B2D6B]/80 hover:bg-[#0B2D6B] border border-[#D9A441]/40 text-sm font-bold text-[#D9A441] transition-colors"
               >
                 <span>Register for Conference</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#D9A441]" />
+                <ArrowUpRight className="w-4 h-4 text-[#D9A441]" />
               </button>
 
               <button
                 onClick={() => onActionClick('cfp')}
-                className="w-full flex items-center justify-between px-3.5 py-2 rounded-lg bg-[#0B2D6B]/80 hover:bg-[#0B2D6B] border border-white/10 text-xs font-bold text-[#C5D4EE] transition-colors"
+                className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#0B2D6B]/80 hover:bg-[#0B2D6B] border border-white/10 text-sm font-bold text-[#C5D4EE] transition-colors"
               >
                 <span>Download Call for Papers</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
 
-            <div className="pt-2 text-[11px] text-[#8EA7CE]">
+            <div className="pt-2 text-xs text-[#8EA7CE]">
               <span>Official Contact: </span>
               <span className="text-[#D9A441] font-mono font-semibold">TO BE INCLUDED</span>
             </div>
@@ -126,7 +126,7 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
         </div>
 
         {/* Bottom Bar: Copyright & Legal */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8EA7CE]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-[#8EA7CE]">
           <div>
             {CONFERENCE_DATA.footer.copyright}
           </div>

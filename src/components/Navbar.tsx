@@ -104,11 +104,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                 <span className="text-base sm:text-lg font-extrabold tracking-tight text-[#0B2D6B] group-hover:text-[#176BFF] transition-colors">
                   DATAINSIGHT <span className="text-[#D9A441]">2027</span>
                 </span>
-                <span className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/25">
+                <span className="hidden md:inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/25">
                   PSG Tech
                 </span>
               </div>
-              <span className="text-[10px] sm:text-[11px] text-[#4A5E82] tracking-wider uppercase font-medium line-clamp-1">
+              <span className="text-xs text-[#4A5E82] tracking-wider uppercase font-semibold line-clamp-1">
                 Dept. of Information Technology
               </span>
             </div>
@@ -123,7 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className={`relative px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors duration-200 ${
+                  className={`relative px-2.5 py-1.5 text-sm font-semibold rounded-md transition-colors duration-200 ${
                     isActive
                       ? 'text-[#176BFF] font-bold'
                       : 'text-[#1A2B4A] hover:text-[#176BFF] hover:bg-[#F5F9FF]'
@@ -146,14 +146,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           <div className="hidden lg:flex items-center space-x-2.5">
             <button
               onClick={() => onActionClick('submit')}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#176BFF] hover:bg-[#0A55E0] text-white shadow-md shadow-[#176BFF]/20 border border-transparent hover:scale-[1.03] active:scale-95 transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold bg-[#176BFF] hover:bg-[#0A55E0] text-white shadow-md shadow-[#176BFF]/20 border border-transparent hover:scale-[1.03] active:scale-95 transition-all duration-200"
             >
               Submit Paper
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => onActionClick('register')}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#F5F9FF] hover:bg-[#EBF2FF] text-[#174EA6] border border-[#176BFF]/30 hover:border-[#176BFF] hover:scale-[1.03] active:scale-95 transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold bg-[#F5F9FF] hover:bg-[#EBF2FF] text-[#174EA6] border border-[#176BFF]/30 hover:border-[#176BFF] hover:scale-[1.03] active:scale-95 transition-all duration-200"
             >
               Register
             </button>
@@ -163,7 +163,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           <div className="flex xl:hidden items-center gap-2">
             <button
               onClick={() => onActionClick('submit')}
-              className="sm:inline-flex hidden items-center gap-1 px-3 py-1.5 rounded-md text-xs font-semibold bg-[#176BFF] text-white"
+              className="sm:inline-flex hidden items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-bold bg-[#176BFF] text-white"
             >
               Submit
             </button>
@@ -197,7 +197,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}
-                      className={`px-3 py-2 text-xs font-medium rounded-lg transition-colors ${
+                      className={`px-3.5 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
                         isActive
                           ? 'bg-[#176BFF]/10 text-[#176BFF] font-bold border border-[#176BFF]/25'
                           : 'text-[#1A2B4A] hover:bg-[#F5F9FF] hover:text-[#176BFF]'
@@ -215,7 +215,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                     setMobileMenuOpen(false);
                     onActionClick('submit');
                   }}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-bold rounded-lg bg-[#176BFF] text-white shadow-md shadow-[#176BFF]/20"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 text-sm font-bold rounded-xl bg-[#176BFF] text-white shadow-md shadow-[#176BFF]/20"
                 >
                   Submit Paper
                   <ArrowUpRight className="w-4 h-4" />
@@ -225,7 +225,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                     setMobileMenuOpen(false);
                     onActionClick('register');
                   }}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-bold rounded-lg bg-[#F5F9FF] text-[#174EA6] border border-[#176BFF]/30"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 text-sm font-bold rounded-xl bg-[#F5F9FF] text-[#174EA6] border border-[#176BFF]/30"
                 >
                   Register Now
                 </button>

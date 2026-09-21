@@ -58,7 +58,7 @@ export const Tracks: React.FC = () => {
             CONFERENCE <span className="gradient-text-cyan-blue">TRACKS</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
-          <p className="mt-4 text-sm sm:text-base text-[#1A2B4A]/80">
+          <p className="mt-4 text-base sm:text-lg text-[#1A2B4A]/80">
             Eight specialized technical tracks covering contemporary challenges in multimodal analytics, intelligent systems, and trustworthy computing.
           </p>
         </motion.div>
@@ -90,37 +90,37 @@ export const Tracks: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => toggleTrack(track.id)}
-                  className="w-full p-6 text-left flex items-start justify-between gap-4 focus:outline-none group"
+                  className="w-full p-6 sm:p-7 text-left flex items-start justify-between gap-4 focus:outline-none group"
                   aria-expanded={isExpanded}
                 >
                   <div className="flex items-start gap-4">
                     {/* Track Icon */}
                     <div 
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm ${
+                      className={`w-13 h-13 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm ${
                         isExpanded
                           ? 'bg-gradient-to-br from-[#176BFF] to-[#00A8E8] text-white shadow-[#176BFF]/30 scale-105'
                           : 'bg-[#F5F9FF] border border-[#176BFF]/20 text-[#176BFF] group-hover:scale-105 group-hover:text-[#174EA6]'
                       }`}
                     >
-                      <IconComponent className="w-6 h-6" />
+                      <IconComponent className="w-6.5 h-6.5" />
                     </div>
 
                     {/* Track Title & Meta */}
                     <div>
-                      <span className="text-[11px] font-black tracking-widest text-[#D9A441] uppercase font-mono">
+                      <span className="text-xs font-black tracking-widest text-[#D9A441] uppercase font-mono">
                         {track.trackNumber}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-[#0B2D6B] mt-0.5 leading-snug group-hover:text-[#176BFF] transition-colors">
+                      <h3 className="text-lg sm:text-xl font-bold text-[#0B2D6B] mt-0.5 leading-snug group-hover:text-[#176BFF] transition-colors">
                         {track.title}
                       </h3>
-                      <p className="text-xs text-[#1A2B4A]/80 mt-1.5 line-clamp-2">
+                      <p className="text-sm sm:text-base text-[#1A2B4A]/85 mt-2 line-clamp-2 leading-relaxed">
                         {track.overview}
                       </p>
                     </div>
                   </div>
 
                   {/* Toggle Indicator */}
-                  <div className="p-1.5 rounded-lg bg-[#F5F9FF] text-[#174EA6] border border-[#176BFF]/15 flex-shrink-0 group-hover:text-[#176BFF] transition-colors">
+                  <div className="p-2 rounded-lg bg-[#F5F9FF] text-[#174EA6] border border-[#176BFF]/15 flex-shrink-0 group-hover:text-[#176BFF] transition-colors">
                     {isExpanded ? (
                       <ChevronUp className="w-5 h-5 text-[#176BFF]" />
                     ) : (
@@ -141,19 +141,19 @@ export const Tracks: React.FC = () => {
                       className="overflow-hidden"
                     >
                       <div className="px-6 pb-6 pt-2 border-t border-[#176BFF]/10 space-y-4">
-                        <div className="p-4 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/15 space-y-2">
-                          <div className="flex items-center justify-between text-xs font-bold text-[#174EA6] uppercase tracking-wider">
+                        <div className="p-4.5 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/15 space-y-2.5">
+                          <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-bold text-[#174EA6] uppercase tracking-wider">
                             <span>Topics & Sub-themes:</span>
-                            <span className="text-[#D9A441] text-[11px] font-mono px-2 py-0.5 rounded bg-white border border-[#D9A441]/30">
+                            <span className="text-[#D9A441] text-xs sm:text-sm font-mono font-bold px-2.5 py-1 rounded-md bg-white border border-[#D9A441]/30">
                               {track.topics}
                             </span>
                           </div>
-                          <p className="text-xs text-[#1A2B4A]/80 leading-relaxed">
+                          <p className="text-sm text-[#1A2B4A]/85 leading-relaxed">
                             Detailed call-for-paper topics for {track.title} will be finalized in the formal conference call.
                           </p>
                         </div>
 
-                        <div className="flex items-center justify-between text-[11px] text-[#1A2B4A]/70">
+                        <div className="flex items-center justify-between text-xs sm:text-sm text-[#1A2B4A]/75">
                           <span>Scope: Full Research, Short Papers & Posters</span>
                           <span className="text-[#0B2D6B] font-semibold">Peer-Reviewed Track</span>
                         </div>

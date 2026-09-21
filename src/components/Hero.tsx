@@ -172,14 +172,14 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
               initial={shouldReduceMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.48 }}
-              className="pt-2 flex flex-wrap items-center gap-2 text-xs text-[#4A5E82]"
+              className="pt-2 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[#4A5E82]"
             >
               <span className="font-semibold text-[#0B2D6B]">Key Focus:</span>
-              <span className="px-2.5 py-1 rounded-md bg-white border border-[#176BFF]/15 text-[#1A2B4A] shadow-xs">Multimodal AI</span>
-              <span className="px-2.5 py-1 rounded-md bg-white border border-[#176BFF]/15 text-[#1A2B4A] shadow-xs">Computer Vision</span>
-              <span className="px-2.5 py-1 rounded-md bg-white border border-[#176BFF]/15 text-[#1A2B4A] shadow-xs">Speech & NLP</span>
-              <span className="px-2.5 py-1 rounded-md bg-white border border-[#176BFF]/15 text-[#1A2B4A] shadow-xs">Cybersecurity</span>
-              <span className="px-2.5 py-1 rounded-md bg-white border border-[#176BFF]/15 text-[#1A2B4A] shadow-xs">Trustworthy Systems</span>
+              <span className="px-3 py-1.5 rounded-md bg-white border border-[#176BFF]/15 text-[#1A2B4A] font-medium shadow-xs">Multimodal AI</span>
+              <span className="px-3 py-1.5 rounded-md bg-white border border-[#176BFF]/15 text-[#1A2B4A] font-medium shadow-xs">Computer Vision</span>
+              <span className="px-3 py-1.5 rounded-md bg-white border border-[#176BFF]/15 text-[#1A2B4A] font-medium shadow-xs">Speech & NLP</span>
+              <span className="px-3 py-1.5 rounded-md bg-white border border-[#176BFF]/15 text-[#1A2B4A] font-medium shadow-xs">Cybersecurity</span>
+              <span className="px-3 py-1.5 rounded-md bg-white border border-[#176BFF]/15 text-[#1A2B4A] font-medium shadow-xs">Trustworthy Systems</span>
             </motion.div>
 
           </motion.div>
@@ -201,7 +201,7 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
               <div className="absolute inset-4 rounded-full border border-dashed border-[#176BFF]/25 animate-spin" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
               
               {/* Central Core Card */}
-              <div className="relative z-20 w-68 sm:w-80 p-6 sm:p-7 rounded-2xl glass-card border border-[#176BFF]/20 shadow-xl flex flex-col items-center text-center space-y-4">
+              <div className="relative z-20 w-72 sm:w-84 p-6 sm:p-7 rounded-2xl glass-card border border-[#176BFF]/20 shadow-xl flex flex-col items-center text-center space-y-4">
                 
                 {/* Visual Neural Shield Icon */}
                 <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-[#176BFF] via-[#0E58DB] to-[#0B2D6B] border border-[#00A8E8] flex items-center justify-center shadow-lg shadow-[#176BFF]/20">
@@ -214,72 +214,72 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
                 </div>
 
                 <div>
-                  <div className="text-xs uppercase tracking-widest text-[#00A8E8] font-bold">Multimodal Convergence</div>
-                  <div className="text-lg font-extrabold text-[#0B2D6B] mt-0.5">DATA &bull; AI &bull; SECURITY</div>
-                  <p className="text-[11px] text-[#4A5E82] mt-1 line-clamp-2">
+                  <div className="text-xs sm:text-sm uppercase tracking-widest text-[#00A8E8] font-bold">Multimodal Convergence</div>
+                  <div className="text-xl font-extrabold text-[#0B2D6B] mt-0.5">DATA &bull; AI &bull; SECURITY</div>
+                  <p className="text-xs sm:text-sm text-[#4A5E82] mt-1.5 leading-relaxed line-clamp-2">
                     Harmonizing vision, audio, text, sensors & cryptographic security into unified insights.
                   </p>
                 </div>
 
                 {/* Micro Signal Meters */}
-                <div className="w-full grid grid-cols-3 gap-2 pt-2 border-t border-gray-100 text-[10px]">
-                  <div className="p-1.5 rounded bg-[#F5F9FF] border border-[#176BFF]/15 flex flex-col items-center">
+                <div className="w-full grid grid-cols-3 gap-2 pt-2.5 border-t border-gray-100 text-xs">
+                  <div className="p-2 rounded bg-[#F5F9FF] border border-[#176BFF]/15 flex flex-col items-center">
                     <span className="text-[#0B2D6B] font-bold">8 Tracks</span>
-                    <span className="text-[#4A5E82]">Specialized</span>
+                    <span className="text-[#4A5E82] text-[11px]">Specialized</span>
                   </div>
-                  <div className="p-1.5 rounded bg-[#F5F9FF] border border-[#176BFF]/15 flex flex-col items-center">
+                  <div className="p-2 rounded bg-[#F5F9FF] border border-[#176BFF]/15 flex flex-col items-center">
                     <span className="text-[#D9A441] font-bold">3 Days</span>
-                    <span className="text-[#4A5E82]">Dec 16-18</span>
+                    <span className="text-[#4A5E82] text-[11px]">Dec 16-18</span>
                   </div>
-                  <div className="p-1.5 rounded bg-[#F5F9FF] border border-[#176BFF]/15 flex flex-col items-center">
+                  <div className="p-2 rounded bg-[#F5F9FF] border border-[#176BFF]/15 flex flex-col items-center">
                     <span className="text-[#176BFF] font-bold">Global</span>
-                    <span className="text-[#4A5E82]">Exchange</span>
+                    <span className="text-[#4A5E82] text-[11px]">Exchange</span>
                   </div>
                 </div>
               </div>
 
               {/* Floating Orbiting Nodes */}
               {/* Top Node: Vision & Image */}
-              <div className="absolute -top-2 left-1/2 -translate-x-1/2 z-30 px-3 py-1.5 rounded-xl glass-card border border-[#176BFF]/25 shadow-md flex items-center gap-2 animate-float">
-                <div className="w-6 h-6 rounded-lg bg-[#00A8E8]/15 flex items-center justify-center text-[#00A8E8]">
-                  <Layers className="w-3.5 h-3.5" />
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-30 px-3.5 py-2 rounded-xl glass-card border border-[#176BFF]/25 shadow-md flex items-center gap-2.5 animate-float">
+                <div className="w-7 h-7 rounded-lg bg-[#00A8E8]/15 flex items-center justify-center text-[#00A8E8]">
+                  <Layers className="w-4 h-4" />
                 </div>
                 <div className="text-left">
-                  <div className="text-[10px] font-bold text-[#0B2D6B]">Computer Vision</div>
-                  <div className="text-[9px] text-[#4A5E82]">Object & Video Analysis</div>
+                  <div className="text-xs font-bold text-[#0B2D6B]">Computer Vision</div>
+                  <div className="text-[10px] text-[#4A5E82]">Object & Video Analysis</div>
                 </div>
               </div>
 
               {/* Right Node: Cybersecurity & Cryptography */}
-              <div className="absolute top-1/2 -right-6 -translate-y-1/2 z-30 px-3 py-1.5 rounded-xl glass-card border border-[#176BFF]/25 shadow-md flex items-center gap-2 animate-float-reverse">
-                <div className="w-6 h-6 rounded-lg bg-[#176BFF]/15 flex items-center justify-center text-[#176BFF]">
-                  <Lock className="w-3.5 h-3.5" />
+              <div className="absolute top-1/2 -right-6 -translate-y-1/2 z-30 px-3.5 py-2 rounded-xl glass-card border border-[#176BFF]/25 shadow-md flex items-center gap-2.5 animate-float-reverse">
+                <div className="w-7 h-7 rounded-lg bg-[#176BFF]/15 flex items-center justify-center text-[#176BFF]">
+                  <Lock className="w-4 h-4" />
                 </div>
                 <div className="text-left">
-                  <div className="text-[10px] font-bold text-[#0B2D6B]">Cybersecurity</div>
-                  <div className="text-[9px] text-[#4A5E82]">Zero-Trust & Biometrics</div>
+                  <div className="text-xs font-bold text-[#0B2D6B]">Cybersecurity</div>
+                  <div className="text-[10px] text-[#4A5E82]">Zero-Trust & Biometrics</div>
                 </div>
               </div>
 
               {/* Bottom Node: Speech & Language Processing */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-30 px-3 py-1.5 rounded-xl glass-card border border-[#D9A441]/35 shadow-md flex items-center gap-2 animate-float">
-                <div className="w-6 h-6 rounded-lg bg-[#D9A441]/15 flex items-center justify-center text-[#D9A441]">
-                  <Radio className="w-3.5 h-3.5" />
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-30 px-3.5 py-2 rounded-xl glass-card border border-[#D9A441]/35 shadow-md flex items-center gap-2.5 animate-float">
+                <div className="w-7 h-7 rounded-lg bg-[#D9A441]/15 flex items-center justify-center text-[#D9A441]">
+                  <Radio className="w-4 h-4" />
                 </div>
                 <div className="text-left">
-                  <div className="text-[10px] font-bold text-[#0B2D6B]">Speech & NLP</div>
-                  <div className="text-[9px] text-[#4A5E82]">Cross-Modal Mining</div>
+                  <div className="text-xs font-bold text-[#0B2D6B]">Speech & NLP</div>
+                  <div className="text-[10px] text-[#4A5E82]">Cross-Modal Mining</div>
                 </div>
               </div>
 
               {/* Left Node: Sensor & IoT Streams */}
-              <div className="absolute top-1/2 -left-6 -translate-y-1/2 z-30 px-3 py-1.5 rounded-xl glass-card border border-[#176BFF]/25 shadow-md flex items-center gap-2 animate-float-reverse">
-                <div className="w-6 h-6 rounded-lg bg-[#00A8E8]/15 flex items-center justify-center text-[#00A8E8]">
-                  <Database className="w-3.5 h-3.5" />
+              <div className="absolute top-1/2 -left-6 -translate-y-1/2 z-30 px-3.5 py-2 rounded-xl glass-card border border-[#176BFF]/25 shadow-md flex items-center gap-2.5 animate-float-reverse">
+                <div className="w-7 h-7 rounded-lg bg-[#00A8E8]/15 flex items-center justify-center text-[#00A8E8]">
+                  <Database className="w-4 h-4" />
                 </div>
                 <div className="text-left">
-                  <div className="text-[10px] font-bold text-[#0B2D6B]">IoT & Sensors</div>
-                  <div className="text-[9px] text-[#4A5E82]">Edge Intelligence</div>
+                  <div className="text-xs font-bold text-[#0B2D6B]">IoT & Sensors</div>
+                  <div className="text-[10px] text-[#4A5E82]">Edge Intelligence</div>
                 </div>
               </div>
 

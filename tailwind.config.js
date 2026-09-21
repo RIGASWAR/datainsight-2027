@@ -56,6 +56,18 @@ export default {
           600: '#14469B',
         },
       },
+      fontSize: {
+        '2xs': ['0.75rem', { lineHeight: '1.15rem' }],
+        'xs': ['0.8125rem', { lineHeight: '1.3rem' }],
+        'sm': ['0.9375rem', { lineHeight: '1.45rem' }],
+        'base': ['1.0625rem', { lineHeight: '1.65rem' }],
+        'lg': ['1.1875rem', { lineHeight: '1.75rem' }],
+        'xl': ['1.3125rem', { lineHeight: '1.85rem' }],
+        '2xl': ['1.625rem', { lineHeight: '2.15rem' }],
+        '3xl': ['2rem', { lineHeight: '2.4rem' }],
+        '4xl': ['2.5rem', { lineHeight: '2.9rem' }],
+        '5xl': ['3.25rem', { lineHeight: '3.6rem' }],
+      },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
         display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
