@@ -44,8 +44,8 @@ export const Theme: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5 text-[#D9A441]" />
             OFFICIAL POSTER THEMES
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B2D6B]">
-            CONFERENCE <span className="text-[#176BFF]">THEMES</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-brand-primary">
+            CONFERENCE THEMES
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
           <p className="mt-4 text-base sm:text-lg text-[#4A5E82]">

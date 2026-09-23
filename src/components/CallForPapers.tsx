@@ -56,7 +56,7 @@ export const CallForPapers: React.FC<CallForPapersProps> = ({ onActionClick }) =
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.18 }}
-                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0B2D6B] leading-tight"
+                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-brand-primary leading-tight"
               >
                 {CONFERENCE_DATA.callForPapers.heading}
               </motion.h2>

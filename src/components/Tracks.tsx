@@ -54,8 +54,8 @@ export const Tracks: React.FC = () => {
             <Layers className="w-3.5 h-3.5 text-[#D9A441]" />
             TECHNICAL AREAS
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B2D6B]">
-            CONFERENCE <span className="gradient-text-cyan-blue">TRACKS</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-brand-primary">
+            CONFERENCE TRACKS
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
           <p className="mt-4 text-base sm:text-lg text-[#1A2B4A]/80">

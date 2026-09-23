@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --brand-primary: #244A91;
+  --brand-on-dark: #8AB4FF;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -57,6 +62,14 @@
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(23, 107, 255, 0.12);
     box-shadow: 0 4px 20px -4px rgba(11, 45, 107, 0.06);
+  }
+
+  .text-brand-primary {
+    color: var(--brand-primary);
+  }
+
+  .text-brand-on-dark {
+    color: var(--brand-on-dark);
   }
 
   .gradient-text-cyan-blue {

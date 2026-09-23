@@ -25,8 +25,8 @@ export const Speakers: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5 text-[#D9A441]" />
             DISTINGUISHED GUESTS
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B2D6B]">
-            KEYNOTE <span className="gradient-text-gold">SPEAKERS</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-brand-primary">
+            KEYNOTE SPEAKERS
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#D9A441] via-[#00A8E8] to-[#176BFF] mx-auto mt-4 rounded-full" />
           <p className="mt-4 text-base sm:text-lg text-[#1A2B4A]/80">

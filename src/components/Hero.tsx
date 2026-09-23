@@ -86,8 +86,8 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
               transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="flex items-baseline gap-3">
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold tracking-tight text-[#0B2D6B] leading-none">
-                  DATAINSIGHT <span className="text-[#176BFF] drop-shadow-[0_4px_12px_rgba(23,107,255,0.2)]">2027</span>
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold tracking-tight text-brand-primary leading-none">
+                  DATAINSIGHT 2027
                 </h1>
               </div>
               <h2 className="mt-3 md:mt-4 text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] xl:text-[1.85rem] font-bold text-[#174EA6] leading-snug tracking-tight">

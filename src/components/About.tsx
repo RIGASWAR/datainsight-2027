@@ -50,8 +50,8 @@ export const About: React.FC = () => {
             <Info className="w-4 h-4 text-[#D9A441]" />
             CONFERENCE INTRODUCTION
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B2D6B]">
-            ABOUT <span className="text-[#176BFF]">DATAINSIGHT 2027</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-brand-primary">
+            ABOUT DATAINSIGHT 2027
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
         </motion.div>

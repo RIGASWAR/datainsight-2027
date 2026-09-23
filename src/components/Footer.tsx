@@ -37,8 +37,8 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
                 />
               </div>
               <div>
-                <span className="text-xl font-extrabold text-white tracking-tight">
-                  DATAINSIGHT <span className="text-[#D9A441]">2027</span>
+                <span className="text-xl font-extrabold text-brand-on-dark tracking-tight">
+                  DATAINSIGHT 2027
                 </span>
               </div>
             </div>

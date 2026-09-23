@@ -134,8 +134,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
 
             <div className="flex flex-col text-left">
               <div className="flex items-center gap-1.5">
-                <span className="text-base sm:text-lg font-extrabold tracking-tight text-[#0B2D6B] group-hover:text-[#176BFF] transition-colors leading-tight">
-                  DATAINSIGHT <span className="text-[#D9A441]">2027</span>
+                <span className="text-base sm:text-lg font-extrabold tracking-tight text-brand-primary group-hover:opacity-90 transition-opacity leading-tight">
+                  DATAINSIGHT 2027
                 </span>
                 <span className="hidden xl:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/25">
                   PSG Tech

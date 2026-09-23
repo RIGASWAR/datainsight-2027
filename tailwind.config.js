@@ -7,6 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
+        brand: {
+          primary: '#244A91', // Standardized brand color for DATAINSIGHT 2027 and section headings
+          'on-dark': '#8AB4FF', // High-contrast brand color for dark backgrounds (footer)
+        },
         primary: {
           DEFAULT: '#0B2D6B', // Deep professional blue
           dark: '#08204D',
