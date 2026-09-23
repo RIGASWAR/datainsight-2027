@@ -85,7 +85,7 @@ export const CONFERENCE_DATA = {
     name: 'PSG College of Technology',
     accreditation: 'An ISO 9001 : 2015 Certified Institution',
     department: 'Department of Information Technology',
-    location: 'Peelamedu, Coimbatore – 641004, Tamil Nadu, India',
+    location: 'Peelamedu Campus, 641004, Tamil Nadu, India',
     city: 'Coimbatore, Tamil Nadu, India',
   },
   navigation: [

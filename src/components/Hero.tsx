@@ -6,10 +6,7 @@ import {
   ShieldCheck, 
   Cpu, 
   Sparkles, 
-  Layers, 
-  Lock, 
   Database,
-  Radio,
   FileCheck
 } from 'lucide-react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
@@ -62,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
             initial={shouldReduceMotion ? false : { opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 flex flex-col text-left space-y-5 md:space-y-6"
+            className="lg:col-span-8 flex flex-col text-left space-y-5 md:space-y-6"
           >
             
             {/* Top Badge: ISO & Host Institution */}
@@ -110,28 +107,49 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
               </p>
             </motion.div>
 
-            {/* Host Institution & Department Info Card (Optimized) */}
+            {/* Host Institution & Department Info Card (Enlarged & Prominent) */}
             <motion.div 
               initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
-              className="p-4 sm:p-5 rounded-2xl bg-white border border-[#176BFF]/20 shadow-sm shadow-[#0B2D6B]/5 space-y-2 max-w-xl hover:border-[#176BFF]/40 transition-colors"
+              className="p-5 sm:p-6 lg:p-6.5 rounded-2xl bg-white border border-[#176BFF]/25 shadow-md shadow-[#0B2D6B]/5 max-w-2xl hover:border-[#176BFF]/45 transition-all"
             >
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#176BFF]">
-                <Cpu className="w-4 h-4 text-[#176BFF] flex-shrink-0" />
-                <span>Organized by: {CONFERENCE_DATA.institution.department}</span>
-              </div>
-              <div className="text-xs sm:text-sm text-[#1A2B4A] font-semibold pl-0.5">
-                {CONFERENCE_DATA.institution.name}
-              </div>
-              <div className="flex flex-wrap items-center gap-y-1.5 gap-x-4 pt-2 text-xs text-[#4A5E82] border-t border-gray-100">
-                <div className="flex items-center gap-1.5 text-[#0B2D6B] font-semibold">
-                  <Calendar className="w-3.5 h-3.5 text-[#D9A441]" />
-                  <span>{CONFERENCE_DATA.datesDisplay}</span>
+              {/* Row 1: Organized by */}
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-lg bg-[#176BFF]/10 border border-[#176BFF]/20 flex items-center justify-center flex-shrink-0">
+                  <Cpu className="w-4 h-4 text-[#176BFF]" />
                 </div>
-                <div className="flex items-center gap-1.5 font-medium">
-                  <MapPin className="w-3.5 h-3.5 text-[#00A8E8]" />
-                  <span>{CONFERENCE_DATA.institution.location}</span>
+                <span className="text-sm sm:text-base font-bold text-[#176BFF] tracking-wide">
+                  Organized by: Department of Information Technology
+                </span>
+              </div>
+
+              {/* Row 2: Institution Name */}
+              <div className="mt-2 pl-0.5">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B2D6B] tracking-tight">
+                  PSG College of Technology
+                </h3>
+              </div>
+
+              {/* Divider */}
+              <div className="border-t border-[#176BFF]/15 my-3.5 sm:my-4" />
+
+              {/* Row 3: Date and Location (Horizontal on desktop, stacked on mobile) */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-6 text-sm sm:text-base">
+                {/* Date */}
+                <div className="flex items-center gap-2.5 text-[#0B2D6B] font-bold flex-shrink-0">
+                  <div className="w-7 h-7 rounded-lg bg-[#D9A441]/10 border border-[#D9A441]/25 flex items-center justify-center flex-shrink-0">
+                    <Calendar className="w-4 h-4 text-[#D9A441]" />
+                  </div>
+                  <span>December 16–18, 2027</span>
+                </div>
+
+                {/* Location */}
+                <div className="flex items-center gap-2.5 text-[#1A2B4A] font-semibold">
+                  <div className="w-7 h-7 rounded-lg bg-[#00A8E8]/10 border border-[#00A8E8]/25 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-4 h-4 text-[#00A8E8]" />
+                  </div>
+                  <span>Peelamedu Campus, 641004, Tamil Nadu, India</span>
                 </div>
               </div>
             </motion.div>
@@ -184,105 +202,101 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
 
           </motion.div>
 
-          {/* Right Column: Interactive Multimodal AI & Cyber Graphic with Parallax */}
+          {/* Right Column: Compact Futuristic Multimodal-AI Animated Visual Component */}
           <motion.div 
             style={shouldReduceMotion ? {} : { y: graphicY }}
-            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.94 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 flex items-center justify-center relative"
+            className="lg:col-span-4 flex flex-col items-center justify-center relative w-full"
           >
             
-            {/* Outer Decorative Orbit Ring */}
-            <div className="relative w-full max-w-[490px] xl:max-w-[520px] aspect-square flex items-center justify-center">
+            {/* Visual Orbit Container (Occupying ~30-35% hero width) */}
+            <div className="relative w-full max-w-[320px] sm:max-w-[350px] aspect-square flex items-center justify-center">
               
-              {/* Spinning background halo */}
-              <div className="absolute inset-0 rounded-full border border-[#00A8E8]/20 animate-spin" style={{ animationDuration: '40s' }} />
-              <div className="absolute inset-4 rounded-full border border-dashed border-[#176BFF]/25 animate-spin" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
+              {/* Ambient Glows */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#176BFF]/10 via-[#00A8E8]/10 to-[#D9A441]/10 rounded-full blur-2xl pointer-events-none" />
               
-              {/* Central Core Card */}
-              <div className="relative z-20 w-64 sm:w-72 p-5 sm:p-6 rounded-2xl glass-card border border-[#176BFF]/20 shadow-xl flex flex-col items-center text-center space-y-3.5">
-                
-                {/* Visual Neural Shield Icon */}
-                <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#176BFF] via-[#0E58DB] to-[#0B2D6B] border border-[#00A8E8] flex items-center justify-center shadow-md shadow-[#176BFF]/20">
-                  <div className="absolute inset-0 rounded-2xl bg-[#00A8E8]/15 animate-ping opacity-25" />
-                  <ShieldCheck className="w-8 h-8 text-white" />
-                  <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D9A441] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#D9A441]"></span>
-                  </span>
-                </div>
+              {/* Subtle Spinning Orbit Tracks */}
+              <div className="absolute inset-2 rounded-full border border-[#176BFF]/20 animate-spin" style={{ animationDuration: '36s' }} />
+              <div className="absolute inset-8 rounded-full border border-dashed border-[#00A8E8]/25 animate-spin" style={{ animationDuration: '48s', animationDirection: 'reverse' }} />
+              
+              {/* Flow Path SVG: DATA → INTELLIGENCE → SECURITY */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 320 320">
+                <defs>
+                  <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#00A8E8" stopOpacity="0.7" />
+                    <stop offset="50%" stopColor="#176BFF" stopOpacity="0.7" />
+                    <stop offset="100%" stopColor="#D9A441" stopOpacity="0.7" />
+                  </linearGradient>
+                </defs>
+                {/* Orbital connecting pathway */}
+                <circle cx="160" cy="160" r="105" fill="none" stroke="url(#flowGrad)" strokeWidth="1.5" strokeDasharray="4 6" opacity="0.65" />
+                {/* Subtle rays to core */}
+                <line x1="160" y1="55" x2="160" y2="120" stroke="#00A8E8" strokeWidth="1" strokeDasharray="2 3" opacity="0.4" />
+                <line x1="70" y1="225" x2="125" y2="185" stroke="#176BFF" strokeWidth="1" strokeDasharray="2 3" opacity="0.4" />
+                <line x1="250" y1="225" x2="195" y2="185" stroke="#D9A441" strokeWidth="1" strokeDasharray="2 3" opacity="0.4" />
+              </svg>
 
-                <div>
-                  <div className="text-xs sm:text-sm uppercase tracking-widest text-[#00A8E8] font-bold">Multimodal Convergence</div>
-                  <div className="text-xl font-extrabold text-[#0B2D6B] mt-0.5">DATA &bull; AI &bull; SECURITY</div>
-                  <p className="text-xs sm:text-sm text-[#4A5E82] mt-1.5 leading-relaxed line-clamp-2">
-                    Harmonizing vision, audio, text, sensors & cryptographic security into unified insights.
-                  </p>
+              {/* Central Intelligent Core (Compact AI Center) */}
+              <div className="relative z-20 w-22 h-22 sm:w-24 sm:h-24 rounded-full bg-white/95 backdrop-blur-md border border-[#176BFF]/30 shadow-lg shadow-[#176BFF]/15 flex flex-col items-center justify-center group">
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#00A8E8]/25 via-[#176BFF]/25 to-[#D9A441]/25 animate-pulse opacity-70" />
+                <div className="relative w-10 h-10 rounded-full bg-gradient-to-br from-[#176BFF] via-[#0E58DB] to-[#0B2D6B] flex items-center justify-center text-white shadow-xs">
+                  <Sparkles className="w-5 h-5 text-[#D9A441] animate-pulse" />
                 </div>
+                <span className="text-[9px] font-extrabold tracking-widest text-[#0B2D6B] mt-1 uppercase">
+                  CONVERGENCE
+                </span>
+              </div>
 
-                {/* Micro Signal Meters */}
-                <div className="w-full grid grid-cols-3 gap-2 pt-2.5 border-t border-gray-100 text-xs">
-                  <div className="p-2 rounded bg-[#F5F9FF] border border-[#176BFF]/15 flex flex-col items-center">
-                    <span className="text-[#0B2D6B] font-bold">8 Tracks</span>
-                    <span className="text-[#4A5E82] text-[11px]">Specialized</span>
+              {/* Node 1: DATA (Top) */}
+              <div className="absolute top-2 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center animate-float">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#00A8E8]/40 shadow-md shadow-[#00A8E8]/10 hover:border-[#00A8E8] transition-all">
+                  <div className="w-6 h-6 rounded-lg bg-[#00A8E8]/15 flex items-center justify-center text-[#00A8E8]">
+                    <Database className="w-3.5 h-3.5" />
                   </div>
-                  <div className="p-2 rounded bg-[#F5F9FF] border border-[#176BFF]/15 flex flex-col items-center">
-                    <span className="text-[#D9A441] font-bold">3 Days</span>
-                    <span className="text-[#4A5E82] text-[11px]">Dec 16-18</span>
-                  </div>
-                  <div className="p-2 rounded bg-[#F5F9FF] border border-[#176BFF]/15 flex flex-col items-center">
-                    <span className="text-[#176BFF] font-bold">Global</span>
-                    <span className="text-[#4A5E82] text-[11px]">Exchange</span>
+                  <div className="text-left pr-1">
+                    <div className="text-[11px] font-extrabold text-[#0B2D6B] leading-none">DATA</div>
+                    <div className="text-[9px] font-semibold text-[#00A8E8] mt-0.5">Multimodal</div>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Orbiting Nodes */}
-              {/* Top Node: Vision & Image */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-30 px-3.5 py-2 rounded-xl glass-card border border-[#176BFF]/25 shadow-md flex items-center gap-2.5 animate-float">
-                <div className="w-7 h-7 rounded-lg bg-[#00A8E8]/15 flex items-center justify-center text-[#00A8E8]">
-                  <Layers className="w-4 h-4" />
-                </div>
-                <div className="text-left">
-                  <div className="text-xs font-bold text-[#0B2D6B]">Computer Vision</div>
-                  <div className="text-[10px] text-[#4A5E82]">Object & Video Analysis</div>
-                </div>
-              </div>
-
-              {/* Right Node: Cybersecurity & Cryptography */}
-              <div className="absolute top-1/2 -right-6 -translate-y-1/2 z-30 px-3.5 py-2 rounded-xl glass-card border border-[#176BFF]/25 shadow-md flex items-center gap-2.5 animate-float-reverse">
-                <div className="w-7 h-7 rounded-lg bg-[#176BFF]/15 flex items-center justify-center text-[#176BFF]">
-                  <Lock className="w-4 h-4" />
-                </div>
-                <div className="text-left">
-                  <div className="text-xs font-bold text-[#0B2D6B]">Cybersecurity</div>
-                  <div className="text-[10px] text-[#4A5E82]">Zero-Trust & Biometrics</div>
+              {/* Node 2: INTELLIGENCE (Bottom-Left) */}
+              <div className="absolute bottom-5 left-0 sm:left-1 z-30 flex flex-col items-center animate-float-reverse">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#176BFF]/40 shadow-md shadow-[#176BFF]/10 hover:border-[#176BFF] transition-all">
+                  <div className="w-6 h-6 rounded-lg bg-[#176BFF]/15 flex items-center justify-center text-[#176BFF]">
+                    <Cpu className="w-3.5 h-3.5" />
+                  </div>
+                  <div className="text-left pr-1">
+                    <div className="text-[11px] font-extrabold text-[#0B2D6B] leading-none">INTELLIGENCE</div>
+                    <div className="text-[9px] font-semibold text-[#176BFF] mt-0.5">Applied AI/ML</div>
+                  </div>
                 </div>
               </div>
 
-              {/* Bottom Node: Speech & Language Processing */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-30 px-3.5 py-2 rounded-xl glass-card border border-[#D9A441]/35 shadow-md flex items-center gap-2.5 animate-float">
-                <div className="w-7 h-7 rounded-lg bg-[#D9A441]/15 flex items-center justify-center text-[#D9A441]">
-                  <Radio className="w-4 h-4" />
-                </div>
-                <div className="text-left">
-                  <div className="text-xs font-bold text-[#0B2D6B]">Speech & NLP</div>
-                  <div className="text-[10px] text-[#4A5E82]">Cross-Modal Mining</div>
-                </div>
-              </div>
-
-              {/* Left Node: Sensor & IoT Streams */}
-              <div className="absolute top-1/2 -left-6 -translate-y-1/2 z-30 px-3.5 py-2 rounded-xl glass-card border border-[#176BFF]/25 shadow-md flex items-center gap-2.5 animate-float-reverse">
-                <div className="w-7 h-7 rounded-lg bg-[#00A8E8]/15 flex items-center justify-center text-[#00A8E8]">
-                  <Database className="w-4 h-4" />
-                </div>
-                <div className="text-left">
-                  <div className="text-xs font-bold text-[#0B2D6B]">IoT & Sensors</div>
-                  <div className="text-[10px] text-[#4A5E82]">Edge Intelligence</div>
+              {/* Node 3: SECURITY (Bottom-Right) */}
+              <div className="absolute bottom-5 right-0 sm:right-1 z-30 flex flex-col items-center animate-float">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#D9A441]/45 shadow-md shadow-[#D9A441]/10 hover:border-[#D9A441] transition-all">
+                  <div className="w-6 h-6 rounded-lg bg-[#D9A441]/15 flex items-center justify-center text-[#D9A441]">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                  </div>
+                  <div className="text-left pr-1">
+                    <div className="text-[11px] font-extrabold text-[#0B2D6B] leading-none">SECURITY</div>
+                    <div className="text-[9px] font-semibold text-[#D9A441] mt-0.5">Trust & Privacy</div>
+                  </div>
                 </div>
               </div>
 
+            </div>
+
+            {/* Subtle Subtitle Flow Pill */}
+            <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#176BFF]/20 text-[11px] font-bold text-[#0B2D6B] shadow-2xs">
+              <span className="text-[#00A8E8]">DATA</span>
+              <span className="text-gray-400">→</span>
+              <span className="text-[#176BFF]">INTELLIGENCE</span>
+              <span className="text-gray-400">→</span>
+              <span className="text-[#D9A441]">SECURITY</span>
             </div>
 
           </motion.div>
