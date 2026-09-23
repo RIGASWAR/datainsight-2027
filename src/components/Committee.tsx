@@ -1,7 +1,100 @@
 import React, { useState } from 'react';
-import { Users, ChevronDown, ChevronUp, User, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { CONFERENCE_DATA } from '../data/conference';
+import { Sparkles, Users, ChevronUp, ChevronDown } from 'lucide-react';
+import { CONFERENCE_DATA, type CommitteeMember, type CommitteeSecretary } from '../data/conference';
+
+interface CommitteeCardProps {
+  member: CommitteeMember | CommitteeSecretary;
+  variant: 'chief' | 'featured' | 'secretary';
+  delay?: number;
+}
+
+const CommitteeMemberCard: React.FC<CommitteeCardProps> = ({ member, variant, delay = 0.1 }) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  // Consistent portrait display dimensions adhering to requested ranges:
+  // Desktop: 150-180px W x 180-220px H
+  // Tablet: 130-160px W x 160-200px H
+  // Mobile: 120-150px W x 150-190px H
+  const photoSizeClasses = 
+    variant === 'chief'
+      ? 'w-[140px] sm:w-[160px] md:w-[175px] h-[175px] sm:h-[200px] md:h-[220px]'
+      : variant === 'featured'
+        ? 'w-[130px] sm:w-[150px] md:w-[165px] h-[165px] sm:h-[190px] md:h-[210px]'
+        : 'w-[125px] sm:w-[140px] md:w-[155px] h-[160px] sm:h-[180px] md:h-[195px]';
+
+  const cardContainerClasses =
+    variant === 'chief'
+      ? 'p-7 sm:p-9 rounded-3xl bg-white border-2 border-[#D9A441]/45 hover:border-[#D9A441] shadow-xl hover:shadow-2xl'
+      : variant === 'featured'
+        ? 'p-6 sm:p-8 rounded-2xl bg-white border border-[#176BFF]/20 hover:border-[#176BFF]/50 shadow-md hover:shadow-lg'
+        : 'p-6 sm:p-7 rounded-2xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/45 shadow-sm hover:shadow-md';
+
+  const nameSizeClasses =
+    variant === 'chief'
+      ? 'text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B2D6B]'
+      : variant === 'featured'
+        ? 'text-xl sm:text-2xl font-bold text-[#0B2D6B]'
+        : 'text-lg sm:text-xl font-bold text-[#0B2D6B]';
+
+  const roleBadge = variant === 'chief' ? (
+    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold bg-[#D9A441]/15 text-[#D9A441] border border-[#D9A441]/40 uppercase tracking-wider shadow-xs">
+      <Sparkles className="w-3.5 h-3.5 text-[#D9A441]" />
+      {member.role}
+    </span>
+  ) : (
+    <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs sm:text-sm font-bold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/20 uppercase tracking-wider shadow-xs">
+      {member.role}
+    </span>
+  );
+
+  return (
+    <motion.div
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 25, scale: variant === 'chief' ? 0.96 : 1 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.65, delay, ease: [0.16, 1, 0.3, 1] }}
+      className={`${cardContainerClasses} hover:-translate-y-1 transition-all text-center flex flex-col items-center justify-between relative overflow-hidden group`}
+    >
+      {variant === 'chief' && (
+        <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#D9A441]/10 rounded-full blur-xl pointer-events-none" />
+      )}
+
+      {/* 1. OFFICIAL MEMBER PHOTO (Clearly ABOVE the corresponding member's name) */}
+      <div className={`${photoSizeClasses} mx-auto rounded-2xl overflow-hidden border-2 ${variant === 'chief' ? 'border-[#D9A441]/50 group-hover:border-[#D9A441]' : 'border-[#176BFF]/25 group-hover:border-[#176BFF]/50'} shadow-md shadow-[#0B2D6B]/5 group-hover:shadow-lg transition-all mb-4 bg-[#F5F9FF] shrink-0`}>
+        <img
+          src={member.image}
+          alt={member.imageAlt}
+          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          style={{ objectPosition: member.objectPosition || 'center' }}
+          loading="lazy"
+        />
+      </div>
+
+      {/* 2. Member Name */}
+      <h3 className={`${nameSizeClasses} tracking-tight leading-snug`}>
+        {member.name}
+      </h3>
+
+      {/* 3. Designation */}
+      <div className="mt-1.5 sm:mt-2 space-y-0.5">
+        <p className={`${variant === 'chief' ? 'text-base sm:text-lg font-semibold text-[#176BFF]' : 'text-sm sm:text-base font-semibold text-[#174EA6]'} leading-snug`}>
+          {member.designation}
+        </p>
+        {member.institution && (
+          <p className="text-xs sm:text-sm text-[#1A2B4A]/70 leading-relaxed">
+            {member.institution}
+          </p>
+        )}
+      </div>
+
+      {/* 4. Committee Role */}
+      <div className="mt-4 pt-0.5">
+        {roleBadge}
+      </div>
+    </motion.div>
+  );
+};
 
 export const Committee: React.FC = () => {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
@@ -39,99 +132,31 @@ export const Committee: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Tier 1: Chief Patron (Featured Primary Card with Stronger Entrance) */}
-        <motion.div 
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 35, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl mx-auto mb-10"
-        >
-          <div className="p-7 sm:p-9 rounded-3xl bg-white border-2 border-[#D9A441]/50 shadow-xl text-center relative overflow-hidden group hover:border-[#D9A441] transition-all">
-            
-            <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#D9A441]/10 rounded-full blur-xl pointer-events-none" />
-            
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold bg-[#D9A441]/15 text-[#D9A441] border border-[#D9A441]/40 mb-4 uppercase tracking-wider">
-              <Sparkles className="w-4 h-4" />
-              CHIEF PATRON
-            </div>
-
-            <div className="w-22 h-22 mx-auto rounded-full bg-gradient-to-tr from-[#D9A441] to-[#F5CE68] p-0.5 shadow-md shadow-[#D9A441]/20 mb-4 group-hover:scale-105 transition-transform">
-              <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                <User className="w-10 h-10 text-[#D9A441]" />
-              </div>
-            </div>
-
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-[#0B2D6B] tracking-tight">
-              {CONFERENCE_DATA.committee.chiefPatron.name}
-            </h3>
-            <p className="text-base sm:text-lg font-semibold text-[#176BFF] mt-1.5">
-              {CONFERENCE_DATA.committee.chiefPatron.affiliation}
-            </p>
-            <p className="text-sm text-[#1A2B4A]/70 mt-1">
-              {CONFERENCE_DATA.institution.name}, Coimbatore
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Tier 2: Patron & Convener (Two Featured Cards with Staggered Entrance) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
-          
-          {/* Patron */}
-          <motion.div 
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.65, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="p-7 sm:p-8 rounded-2xl bg-white border border-[#176BFF]/20 hover:border-[#176BFF]/50 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all text-center flex flex-col items-center justify-center space-y-3.5"
-          >
-            <span className="px-3.5 py-1 rounded-full text-xs sm:text-sm font-bold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/20 uppercase tracking-wider">
-              PATRON
-            </span>
-            <div className="w-18 h-18 rounded-full bg-[#F5F9FF] border-2 border-[#176BFF]/30 flex items-center justify-center text-[#176BFF] shadow-sm">
-              <User className="w-9 h-9" />
-            </div>
-            <div>
-              <h4 className="text-2xl font-bold text-[#0B2D6B]">
-                {CONFERENCE_DATA.committee.patron.name}
-              </h4>
-              <p className="text-sm sm:text-base font-semibold text-[#174EA6] mt-1">
-                {CONFERENCE_DATA.committee.patron.affiliation}
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Convener */}
-          <motion.div 
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.65, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-            className="p-7 sm:p-8 rounded-2xl bg-white border border-[#176BFF]/20 hover:border-[#176BFF]/50 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all text-center flex flex-col items-center justify-center space-y-3.5"
-          >
-            <span className="px-3.5 py-1 rounded-full text-xs sm:text-sm font-bold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/20 uppercase tracking-wider">
-              CONVENER
-            </span>
-            <div className="w-18 h-18 rounded-full bg-[#F5F9FF] border-2 border-[#176BFF]/30 flex items-center justify-center text-[#176BFF] shadow-sm">
-              <User className="w-9 h-9" />
-            </div>
-            <div>
-              <h4 className="text-2xl font-bold text-[#0B2D6B]">
-                {CONFERENCE_DATA.committee.convener.name}
-              </h4>
-              <p className="text-sm sm:text-base font-semibold text-[#174EA6] mt-1">
-                {CONFERENCE_DATA.committee.convener.department}
-              </p>
-              <p className="text-sm text-[#1A2B4A]/70">
-                {CONFERENCE_DATA.institution.name}
-              </p>
-            </div>
-          </motion.div>
-
+        {/* Tier 1: Chief Patron (Featured Primary Card with Official Photo) */}
+        <div className="max-w-2xl sm:max-w-3xl mx-auto mb-10">
+          <CommitteeMemberCard 
+            member={CONFERENCE_DATA.committee.chiefPatron} 
+            variant="chief" 
+            delay={0.05} 
+          />
         </div>
 
-        {/* Tier 3: Organizing Secretaries (Three Dedicated Cards) */}
-        <div className="max-w-4xl mx-auto mb-14">
+        {/* Tier 2: Patron & Convener (Two Featured Cards in a Grid) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
+          <CommitteeMemberCard 
+            member={CONFERENCE_DATA.committee.patron} 
+            variant="featured" 
+            delay={0.1} 
+          />
+          <CommitteeMemberCard 
+            member={CONFERENCE_DATA.committee.convener} 
+            variant="featured" 
+            delay={0.18} 
+          />
+        </div>
+
+        {/* Tier 3: Organizing Secretaries (Three Cards: 3 on Desktop, 2 on Tablet, 1 on Mobile) */}
+        <div className="max-w-5xl mx-auto mb-14">
           <div className="text-center mb-6">
             <h4 className="text-base font-extrabold uppercase tracking-widest text-[#D9A441]">
               ORGANIZING SECRETARIES
@@ -139,33 +164,14 @@ export const Committee: React.FC = () => {
             <div className="w-16 h-1 bg-[#D9A441] mx-auto mt-2 rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {CONFERENCE_DATA.committee.organizingSecretaries.map((sec, idx) => (
-              <motion.div
-                key={sec.name}
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: 0.1 + idx * 0.1, 
-                  ease: [0.16, 1, 0.3, 1] 
-                }}
-                className="p-6 sm:p-7 rounded-2xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/40 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all text-center space-y-2.5"
-              >
-                <div className="w-13 h-13 mx-auto rounded-full bg-[#F5F9FF] border border-[#176BFF]/20 flex items-center justify-center text-[#176BFF]">
-                  <User className="w-6.5 h-6.5" />
-                </div>
-                <h5 className="text-lg font-bold text-[#0B2D6B]">
-                  {sec.name}
-                </h5>
-                <p className="text-sm text-[#174EA6] font-semibold">
-                  {sec.role}
-                </p>
-                <p className="text-xs sm:text-sm text-[#1A2B4A]/70">
-                  Dept. of Information Technology
-                </p>
-              </motion.div>
+              <CommitteeMemberCard 
+                key={sec.name} 
+                member={sec} 
+                variant="secretary" 
+                delay={0.1 + idx * 0.1} 
+              />
             ))}
           </div>
         </div>

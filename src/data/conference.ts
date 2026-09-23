@@ -1,3 +1,10 @@
+import chiefPatronPhoto from '../assets/committee/g_sir.png';
+import patronPhoto from '../assets/committee/p_mam.png';
+import convenerPhoto from '../assets/committee/v_sir.png';
+import secSarvamangiPhoto from '../assets/committee/s_mam.png';
+import secVairamPhoto from '../assets/committee/v_mam.png';
+import secHemapriyaPhoto from '../assets/committee/t_mam.png';
+
 export interface NavItem {
   name: string;
   href: string;
@@ -47,27 +54,33 @@ export interface SpeakerItem {
   isPlaceholder: boolean;
 }
 
+export interface CommitteeMember {
+  name: string;
+  role: string;
+  designation: string;
+  institution?: string;
+  image: string;
+  imageAlt: string;
+  objectPosition?: string;
+  title?: string;
+  affiliation?: string;
+  department?: string;
+}
+
 export interface CommitteeSecretary {
   name: string;
   role: string;
+  designation: string;
+  institution?: string;
+  image: string;
+  imageAlt: string;
+  objectPosition?: string;
 }
 
 export interface CommitteeData {
-  chiefPatron: {
-    name: string;
-    title: string;
-    affiliation: string;
-  };
-  patron: {
-    name: string;
-    title: string;
-    affiliation: string;
-  };
-  convener: {
-    name: string;
-    title: string;
-    department: string;
-  };
+  chiefPatron: CommitteeMember;
+  patron: CommitteeMember;
+  convener: CommitteeMember;
   organizingSecretaries: CommitteeSecretary[];
   additionalRoles: {
     category: string;
@@ -359,23 +372,64 @@ export const CONFERENCE_DATA = {
   committee: {
     chiefPatron: {
       name: 'Shri. L. Gopalakrishnan',
+      role: 'Chief Patron',
       title: 'Chief Patron',
+      designation: "Managing Trustee, PSG & Sons' Charities",
       affiliation: "Managing Trustee, PSG & Sons' Charities",
+      institution: 'PSG College of Technology, Coimbatore',
+      image: chiefPatronPhoto,
+      imageAlt: 'Photograph of Shri. L. Gopalakrishnan, Chief Patron',
+      objectPosition: '53% 20%',
     },
     patron: {
       name: 'Dr. G. Thilagavathi',
+      role: 'Patron',
       title: 'Patron',
+      designation: 'Principal, PSG College of Technology',
       affiliation: 'Principal, PSG College of Technology',
+      image: patronPhoto,
+      imageAlt: 'Photograph of Dr. G. Thilagavathi, Patron',
+      objectPosition: '48% 22%',
     },
     convener: {
       name: 'Dr. B. Vinoth Kumar',
+      role: 'Convener',
       title: 'Convener',
+      designation: 'Professor and Head, Department of Information Technology',
       department: 'Professor and Head, Department of Information Technology',
+      institution: 'PSG College of Technology',
+      image: convenerPhoto,
+      imageAlt: 'Photograph of Dr. B. Vinoth Kumar, Convener',
+      objectPosition: 'center',
     },
     organizingSecretaries: [
-      { name: 'Dr. S. Sarathambekai', role: 'Organizing Secretary' },
-      { name: 'Dr. T. Vairam', role: 'Organizing Secretary' },
-      { name: 'Dr. N. Hemapriya', role: 'Organizing Secretary' },
+      {
+        name: 'Dr. Sarvamangi',
+        role: 'Organizing Secretary',
+        designation: 'Organizing Secretary',
+        institution: 'Dept. of Information Technology, PSG College of Technology',
+        image: secSarvamangiPhoto,
+        imageAlt: 'Photograph of Dr. Sarvamangi, Organizing Secretary',
+        objectPosition: 'center',
+      },
+      {
+        name: 'Dr. T. Vairam',
+        role: 'Organizing Secretary',
+        designation: 'Organizing Secretary',
+        institution: 'Dept. of Information Technology, PSG College of Technology',
+        image: secVairamPhoto,
+        imageAlt: 'Photograph of Dr. T. Vairam, Organizing Secretary',
+        objectPosition: 'center',
+      },
+      {
+        name: 'Dr. N. Hemapriya',
+        role: 'Organizing Secretary',
+        designation: 'Organizing Secretary',
+        institution: 'Dept. of Information Technology, PSG College of Technology',
+        image: secHemapriyaPhoto,
+        imageAlt: 'Photograph of Dr. N. Hemapriya, Organizing Secretary',
+        objectPosition: 'center',
+      },
     ],
     additionalRoles: [
       { category: 'General Chairs', status: 'TO BE INCLUDED' },
