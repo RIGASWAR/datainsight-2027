@@ -1,7 +1,7 @@
 import chiefPatronPhoto from '../assets/committee/g_sir.png';
 import patronPhoto from '../assets/committee/p_mam.png';
 import convenerPhoto from '../assets/committee/v_sir.png';
-import secSarvamangiPhoto from '../assets/committee/s_mam.png';
+import secSarathambekaiPhoto from '../assets/committee/s_mam.png';
 import secVairamPhoto from '../assets/committee/v_mam.png';
 import secHemapriyaPhoto from '../assets/committee/t_mam.png';
 
@@ -385,8 +385,9 @@ export const CONFERENCE_DATA = {
       name: 'Dr. G. Thilagavathi',
       role: 'Patron',
       title: 'Patron',
-      designation: 'Principal, PSG College of Technology',
+      designation: 'Principal',
       affiliation: 'Principal, PSG College of Technology',
+      institution: 'PSG College of Technology',
       image: patronPhoto,
       imageAlt: 'Photograph of Dr. G. Thilagavathi, Patron',
       objectPosition: '48% 22%',
@@ -395,21 +396,21 @@ export const CONFERENCE_DATA = {
       name: 'Dr. B. Vinoth Kumar',
       role: 'Convener',
       title: 'Convener',
-      designation: 'Professor and Head, Department of Information Technology',
-      department: 'Professor and Head, Department of Information Technology',
-      institution: 'PSG College of Technology',
+      designation: 'Professor and Head',
+      department: 'Department of Information Technology',
+      institution: 'Department of Information Technology, PSG College of Technology',
       image: convenerPhoto,
       imageAlt: 'Photograph of Dr. B. Vinoth Kumar, Convener',
       objectPosition: 'center',
     },
     organizingSecretaries: [
       {
-        name: 'Dr. Sarvamangi',
+        name: 'Dr. S. Sarathambekai',
         role: 'Organizing Secretary',
         designation: 'Organizing Secretary',
         institution: 'Dept. of Information Technology, PSG College of Technology',
-        image: secSarvamangiPhoto,
-        imageAlt: 'Photograph of Dr. Sarvamangi, Organizing Secretary',
+        image: secSarathambekaiPhoto,
+        imageAlt: 'Photograph of Dr. S. Sarathambekai, Organizing Secretary',
         objectPosition: 'center',
       },
       {
