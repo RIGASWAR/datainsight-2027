@@ -59,11 +59,11 @@ export const Tracks: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
           <p className="mt-4 text-base sm:text-lg text-[#1A2B4A]/80">
-            Eight specialized technical tracks covering contemporary challenges in multimodal analytics, intelligent systems, and trustworthy computing.
+            Five specialized technical tracks covering contemporary challenges in multimodal analytics, intelligent systems, and trustworthy computing.
           </p>
         </motion.div>
 
-        {/* 8 Tracks Grid with Staggered Entrance */}
+        {/* 5 Tracks Grid with Staggered Entrance */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {CONFERENCE_DATA.tracks.map((track, index) => {
             const IconComponent = iconMap[track.iconName] || Network;
