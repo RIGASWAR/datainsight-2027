@@ -131,11 +131,11 @@ export const About: React.FC = () => {
                   Multimodal Pipeline
                 </span>
                 <span className="text-xs text-[#D9A441] font-semibold mt-1">
-                  {steps[activeStep].name} Stage
+                  {steps[activeStep].name} Modality
                 </span>
               </div>
 
-              {/* 8 Circular Nodes along perimeter */}
+              {/* Multimodal Modality Nodes along perimeter */}
               {steps.map((step, idx) => {
                 const total = steps.length;
                 const angle = (idx / total) * 2 * Math.PI - Math.PI / 2;
@@ -184,7 +184,7 @@ export const About: React.FC = () => {
             {/* Active Node Detail Card */}
             <div className="mt-4 w-full max-w-md p-4 rounded-xl bg-white border border-[#176BFF]/20 text-center shadow-md transition-all">
               <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-[#176BFF] uppercase tracking-wider">
-                <span>Stage {activeStep + 1} of {steps.length}:</span>
+                <span>MULTIMODAL DATA:</span>
                 <span className="text-[#0B2D6B]">{steps[activeStep].name}</span>
                 <ArrowRight className="w-4 h-4 text-[#D9A441]" />
               </div>
