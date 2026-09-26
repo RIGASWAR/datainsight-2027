@@ -94,7 +94,7 @@ export const About: React.FC = () => {
                 <div className="text-xs sm:text-sm text-[#4A5E82] mt-1 font-medium">Dec 16–18, 2027</div>
               </div>
               <div className="p-4 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#D9A441] transition-all">
-                <div className="text-2xl sm:text-3xl font-black text-[#D9A441]">8 Tracks</div>
+                <div className="text-2xl sm:text-3xl font-black text-[#D9A441]">5 Tracks</div>
                 <div className="text-xs sm:text-sm text-[#4A5E82] mt-1 font-medium">Multimodal AI & Security</div>
               </div>
               <div className="p-4 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#176BFF] transition-all">
