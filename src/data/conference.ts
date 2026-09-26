@@ -98,7 +98,7 @@ export const CONFERENCE_DATA = {
     name: 'PSG College of Technology',
     accreditation: 'An ISO 9001 : 2015 Certified Institution',
     department: 'Department of Information Technology',
-    location: 'Peelamedu Campus, 641004, Tamil Nadu, India',
+    location: 'PSG College of Technology, Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu, 641004, India.',
     city: 'Coimbatore, Tamil Nadu, India',
   },
   navigation: [
@@ -431,6 +431,7 @@ export const CONFERENCE_DATA = {
     pincode: '641004',
     state: 'Tamil Nadu',
     country: 'India',
+    address: 'PSG College of Technology, Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu, 641004, India.',
     mapLink: 'TO BE INCLUDED',
     subsections: [
       { title: 'How to Reach', info: 'TO BE INCLUDED' },
@@ -443,7 +444,7 @@ export const CONFERENCE_DATA = {
   contact: {
     department: 'Department of Information Technology',
     institution: 'PSG College of Technology',
-    location: 'Peelamedu, Coimbatore – 641004, Tamil Nadu, India',
+    location: 'PSG College of Technology, Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu, 641004, India.',
     email: 'TO BE INCLUDED',
     phone: 'TO BE INCLUDED',
     website: 'TO BE INCLUDED',

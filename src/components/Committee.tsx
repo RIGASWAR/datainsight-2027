@@ -158,10 +158,10 @@ export const Committee: React.FC = () => {
         {/* Tier 3: Organizing Secretaries (Three Cards: 3 on Desktop, 2 on Tablet, 1 on Mobile) */}
         <div className="max-w-5xl mx-auto mb-14">
           <div className="text-center mb-6">
-            <h4 className="text-base font-extrabold uppercase tracking-widest text-[#D9A441]">
+            <h4 className="text-base font-extrabold uppercase tracking-widest text-brand-primary">
               ORGANIZING SECRETARIES
             </h4>
-            <div className="w-16 h-1 bg-[#D9A441] mx-auto mt-2 rounded-full" />
+            <div className="w-16 h-1 bg-[#244A91] mx-auto mt-2 rounded-full" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

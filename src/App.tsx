@@ -60,7 +60,7 @@ export function App() {
   const handleMapClick = () => {
     setModalContent({
       title: 'PSG College of Technology Campus Map',
-      subtitle: 'Peelamedu, Coimbatore – 641004, Tamil Nadu, India',
+      subtitle: 'PSG College of Technology, Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu, 641004, India.',
       details:
         'Live interactive navigation and detailed building-level route maps for the Department of Information Technology at PSG College of Technology will be linked here. Status: TO BE INCLUDED',
       statusBadge: 'TO BE INCLUDED',

@@ -126,7 +126,7 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
 
               {/* Row 2: Institution Name */}
               <div className="mt-2 pl-0.5">
-                <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B2D6B] tracking-tight">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B2D6B] tracking-tight">
                   PSG College of Technology
                 </h3>
               </div>
@@ -135,21 +135,21 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
               <div className="border-t border-[#176BFF]/15 my-3.5 sm:my-4" />
 
               {/* Row 3: Date and Location (Horizontal on desktop, stacked on mobile) */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 md:gap-6 text-sm sm:text-base">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 sm:gap-4 text-sm sm:text-base">
                 {/* Date */}
                 <div className="flex items-center gap-2.5 text-[#0B2D6B] font-bold flex-shrink-0">
-                  <div className="w-7 h-7 rounded-lg bg-[#D9A441]/10 border border-[#D9A441]/25 flex items-center justify-center flex-shrink-0">
-                    <Calendar className="w-4 h-4 text-[#D9A441]" />
+                  <div className="w-8 h-8 rounded-lg bg-[#D9A441]/10 border border-[#D9A441]/25 flex items-center justify-center flex-shrink-0">
+                    <Calendar className="w-4.5 h-4.5 text-[#D9A441]" />
                   </div>
-                  <span className="whitespace-nowrap">December 16–18, 2027</span>
+                  <span className="text-lg sm:text-xl font-extrabold whitespace-nowrap">December 16–18, 2027</span>
                 </div>
 
                 {/* Location */}
-                <div className="flex items-center gap-2.5 text-[#1A2B4A] font-semibold flex-shrink-0 sm:flex-shrink">
-                  <div className="w-7 h-7 rounded-lg bg-[#00A8E8]/10 border border-[#00A8E8]/25 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start sm:items-center gap-2.5 text-[#1A2B4A] font-semibold text-xs sm:text-sm">
+                  <div className="w-7 h-7 rounded-lg bg-[#00A8E8]/10 border border-[#00A8E8]/25 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
                     <MapPin className="w-4 h-4 text-[#00A8E8]" />
                   </div>
-                  <span className="sm:whitespace-nowrap">Peelamedu Campus, 641004, Tamil Nadu, India</span>
+                  <span className="leading-snug">PSG College of Technology, Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu, 641004, India.</span>
                 </div>
               </div>
             </motion.div>

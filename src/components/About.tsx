@@ -89,16 +89,16 @@ export const About: React.FC = () => {
 
             {/* Core Metrics with subtle hover lift */}
             <div className="grid grid-cols-3 gap-3 pt-2">
-              <div className="p-4 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#00A8E8] transition-all">
-                <div className="text-2xl sm:text-3xl font-black text-[#00A8E8]">3 Days</div>
+              <div className="p-4 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#244A91]/40 transition-all">
+                <div className="text-2xl sm:text-3xl font-black text-brand-primary">3 Days</div>
                 <div className="text-xs sm:text-sm text-[#4A5E82] mt-1 font-medium">Dec 16–18, 2027</div>
               </div>
-              <div className="p-4 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#D9A441] transition-all">
-                <div className="text-2xl sm:text-3xl font-black text-[#D9A441]">5 Tracks</div>
+              <div className="p-4 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#244A91]/40 transition-all">
+                <div className="text-2xl sm:text-3xl font-black text-brand-primary">5 Tracks</div>
                 <div className="text-xs sm:text-sm text-[#4A5E82] mt-1 font-medium">Multimodal AI & Security</div>
               </div>
-              <div className="p-4 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#176BFF] transition-all">
-                <div className="text-2xl sm:text-3xl font-black text-[#176BFF]">PSG Tech</div>
+              <div className="p-4 rounded-xl bg-white text-center border border-[#176BFF]/15 shadow-xs hover:-translate-y-1 hover:border-[#244A91]/40 transition-all">
+                <div className="text-2xl sm:text-3xl font-black text-brand-primary">PSG Tech</div>
                 <div className="text-xs sm:text-sm text-[#4A5E82] mt-1 font-medium">Coimbatore, India</div>
               </div>
             </div>

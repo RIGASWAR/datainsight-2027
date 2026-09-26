@@ -142,7 +142,7 @@ export const Venue: React.FC<VenueProps> = ({ onMapClick }) => {
                 {CONFERENCE_DATA.venue.department}
               </p>
               <p className="text-sm sm:text-base text-[#1A2B4A]/85 leading-relaxed">
-                {CONFERENCE_DATA.venue.area}, {CONFERENCE_DATA.venue.city} – {CONFERENCE_DATA.venue.pincode}, {CONFERENCE_DATA.venue.state}, {CONFERENCE_DATA.venue.country}
+                {CONFERENCE_DATA.venue.address}
               </p>
             </div>
 

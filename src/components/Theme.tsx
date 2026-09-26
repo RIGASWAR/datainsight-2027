@@ -126,7 +126,7 @@ export const Theme: React.FC = () => {
           className="mt-16 pt-8 max-w-2xl mx-auto"
         >
           <div className="text-center mb-6">
-            <div className="text-sm uppercase tracking-widest text-[#D9A441] font-bold">
+            <div className="text-sm uppercase tracking-widest text-brand-primary font-bold">
               Convergence Architecture
             </div>
             <div className="text-base font-semibold text-[#1A2B4A] mt-1.5">
