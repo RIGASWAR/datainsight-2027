@@ -98,8 +98,8 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
         className="relative z-20 w-[94%] sm:w-[90%] md:w-[84%] max-w-3xl lg:max-w-4xl mx-auto rounded-2xl bg-[#061228]/48 sm:bg-[#061228]/42 backdrop-blur-[4px] sm:backdrop-blur-[6px] border border-white/25 shadow-2xl shadow-black/30 p-5 sm:p-7 md:p-9 text-center text-white"
       >
         {/* Category Header */}
-        <div className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm md:text-[0.95rem] font-extrabold uppercase tracking-[0.22em] text-white/95">
-          <Sparkles className="w-3.5 h-3.5 text-[#D9A353]" />
+        <div className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm md:text-[0.95rem] font-extrabold uppercase tracking-[0.22em] text-[#FFFFFF]" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.45)' }}>
+          <Sparkles className="w-3.5 h-3.5 text-[#E6B85C]" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }} />
           <span>INTERNATIONAL CONFERENCE</span>
         </div>
 
@@ -107,7 +107,7 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
         <div className="w-20 sm:w-28 h-[1.5px] bg-gradient-to-r from-transparent via-white/50 to-transparent mx-auto my-2 sm:my-2.5" />
 
         {/* Linking text "on" */}
-        <div className="text-xs sm:text-sm italic font-medium text-white/80">
+        <div className="text-xs sm:text-sm italic font-semibold text-[#F5F8FF]" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.45)' }}>
           on
         </div>
 
@@ -115,33 +115,33 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
         <div className="w-20 sm:w-28 h-[1.5px] bg-gradient-to-r from-transparent via-white/50 to-transparent mx-auto my-2 sm:my-2.5" />
 
         {/* Main Conference Name: DATAINSIGHT 2027 */}
-        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-white leading-tight mt-1 text-shadow-md">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-[#FFFFFF] leading-tight mt-1" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.55)' }}>
           DATAINSIGHT 2027
         </h1>
 
         {/* Full Conference Title */}
-        <h2 className="mt-2.5 sm:mt-3 text-xs sm:text-base md:text-lg lg:text-xl font-bold text-white/95 max-w-2xl mx-auto leading-snug">
+        <h2 className="mt-2.5 sm:mt-3 text-xs sm:text-base md:text-lg lg:text-xl font-bold text-[#FFFFFF] max-w-2xl mx-auto leading-snug" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.5)' }}>
           {CONFERENCE_DATA.fullTitle}
         </h2>
 
         {/* Official Tagline */}
-        <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base italic text-[#E2E8F0] font-medium max-w-xl mx-auto">
+        <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base italic text-[#F5F8FF] font-semibold max-w-xl mx-auto" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.45)' }}>
           {CONFERENCE_DATA.tagline.replace(/^"|"$/g, '')}
         </p>
 
         {/* Gold Separator */}
-        <div className="w-24 sm:w-36 h-[2px] bg-gradient-to-r from-transparent via-[#D9A353] to-transparent mx-auto my-3 sm:my-4" />
+        <div className="w-24 sm:w-36 h-[2px] bg-gradient-to-r from-transparent via-[#E6B85C] to-transparent mx-auto my-3 sm:my-4" />
 
         {/* Conference Dates */}
-        <div className="inline-flex items-center justify-center gap-2 text-base sm:text-xl md:text-2xl font-extrabold text-[#D9A353] tracking-wide">
-          <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#D9A353]" />
+        <div className="inline-flex items-center justify-center gap-2 text-base sm:text-xl md:text-2xl font-extrabold text-[#E6B85C] tracking-wide" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.55)' }}>
+          <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#E6B85C]" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }} />
           <span>{CONFERENCE_DATA.datesDisplay}</span>
         </div>
 
         {/* Dynamic Countdown Timer Component */}
         <div className="mt-4 sm:mt-6">
           {timeLeft.isLive ? (
-            <div className="py-2.5 px-6 rounded-xl bg-gradient-to-r from-[#244A91] via-[#00A8E8] to-[#D9A353] text-white font-extrabold text-sm sm:text-base tracking-wider shadow-lg">
+            <div className="py-2.5 px-6 rounded-xl bg-gradient-to-r from-[#244A91] via-[#00A8E8] to-[#E6B85C] text-white font-extrabold text-sm sm:text-base tracking-wider shadow-lg">
               DATAINSIGHT 2027 IS CURRENTLY LIVE
             </div>
           ) : (
@@ -149,12 +149,12 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
               {countdownUnits.map((unit) => (
                 <div
                   key={unit.label}
-                  className="flex flex-col items-center justify-center px-2 py-2 sm:px-3 sm:py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-md group hover:border-[#D9A353]/60 transition-colors"
+                  className="flex flex-col items-center justify-center px-2 py-2 sm:px-3 sm:py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-md group hover:border-[#E6B85C]/60 transition-colors"
                 >
-                  <span className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#D9A353] tabular-nums leading-none">
+                  <span className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#F0C66A] tabular-nums leading-none" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.5)' }}>
                     {String(unit.value).padStart(2, '0')}
                   </span>
-                  <span className="text-[10px] sm:text-xs font-semibold text-white/90 uppercase tracking-wider mt-1 sm:mt-1.5">
+                  <span className="text-[10px] sm:text-xs font-bold text-[#F5F8FF] uppercase tracking-wider mt-1 sm:mt-1.5" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.45)' }}>
                     {unit.label}
                   </span>
                 </div>

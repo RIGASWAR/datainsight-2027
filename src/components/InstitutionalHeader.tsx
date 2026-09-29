@@ -14,7 +14,7 @@ export const InstitutionalHeader: React.FC = () => {
             <img
               src={psgLogo}
               alt="PSG College of Technology official logo"
-              className="h-14 w-auto object-contain flex-shrink-0"
+              className="h-16 w-auto object-contain flex-shrink-0"
             />
             <img
               src={datainsightLogo}
@@ -40,12 +40,12 @@ export const InstitutionalHeader: React.FC = () => {
         {/* Desktop & Tablet View (>= 640px): 3-column grid ensuring mathematically equal logo distance from center anchor */}
         <div className="hidden sm:grid grid-cols-[1fr_auto_1fr] items-center w-full">
           
-          {/* LEFT: PSG College of Technology official logo (aligned toward center with equal gap) */}
+          {/* LEFT: PSG College of Technology official logo (increased size for balanced visual presence) */}
           <div className="flex items-center justify-end pr-6 md:pr-10 lg:pr-14 xl:pr-16">
             <img
               src={psgLogo}
               alt="PSG College of Technology official logo"
-              className="h-20 sm:h-22 md:h-24 lg:h-26 w-auto max-w-[130px] md:max-w-[150px] lg:max-w-[170px] object-contain transition-transform duration-300 hover:scale-105"
+              className="h-24 sm:h-28 md:h-32 lg:h-[8.5rem] xl:h-[9rem] w-auto max-w-[160px] md:max-w-[180px] lg:max-w-[200px] object-contain transition-transform duration-300 hover:scale-105"
             />
           </div>
 
