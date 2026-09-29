@@ -106,8 +106,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
     <header className="sticky top-0 left-0 right-0 z-50 bg-[#244A91] border-b border-[#16366B] shadow-md">
       <div className="max-w-[1560px] mx-auto px-3 sm:px-6">
         
-        {/* Mobile Header Bar (< 1080px) */}
-        <div className="flex xl:hidden items-center justify-between py-2.5">
+        {/* Mobile Header Bar (< 1024px) */}
+        <div className="flex lg:hidden items-center justify-between py-2.5">
           <a
             href="#home"
             onClick={(e) => {
@@ -143,8 +143,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           </div>
         </div>
 
-        {/* Desktop Navigation (>= 1080px): Pure horizontal academic navbar */}
-        <nav className="hidden xl:flex items-center justify-center space-x-1 lg:space-x-1.5 xl:space-x-2 py-2 overflow-x-auto scrollbar-none">
+        {/* Desktop Navigation (>= 1024px): Pure horizontal academic navbar */}
+        <nav className="hidden lg:flex items-center justify-center space-x-1 lg:space-x-1.5 xl:space-x-2 py-2 overflow-x-auto scrollbar-none">
           {navItems.map((item) => {
             const isActive = activeSection === item.name;
             return (
@@ -152,7 +152,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`px-2.5 xl:px-3 py-1.5 text-xs xl:text-[13.5px] font-semibold tracking-wide rounded-md transition-all duration-200 whitespace-nowrap ${
+                className={`px-2 lg:px-2.5 xl:px-3 py-1.5 text-xs lg:text-[13px] xl:text-[13.5px] font-semibold tracking-wide rounded-md transition-all duration-200 whitespace-nowrap ${
                   isActive
                     ? 'text-[#D9A353] bg-[#16366B]/90 font-bold shadow-xs border-b-2 border-[#D9A353]'
                     : 'text-white hover:text-[#D9A353] hover:bg-white/10'
@@ -172,7 +172,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: 'easeInOut' }}
-              className="xl:hidden overflow-hidden border-t border-[#16366B] bg-[#1F407F] px-2 py-3"
+              className="lg:hidden overflow-hidden border-t border-[#16366B] bg-[#1F407F] px-2 py-3"
             >
               <div className="grid grid-cols-2 gap-1.5">
                 {navItems.map((item) => {
