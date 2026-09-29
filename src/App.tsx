@@ -15,7 +15,6 @@ import { Registration } from './components/Registration';
 import { ExpertOpinions } from './components/ExpertOpinions';
 import { Events } from './components/Events';
 import { Committee } from './components/Committee';
-import { AdditionalCommittees } from './components/AdditionalCommittees';
 import { Venue } from './components/Venue';
 import { Contact } from './components/Contact';
 import { Sponsors } from './components/Sponsors';
@@ -191,26 +190,21 @@ export function App() {
 
         <SectionDivider variant="blue-gold" />
 
-        {/* 15. Additional Committees and Advisory Bodies */}
-        <AdditionalCommittees />
-
-        <SectionDivider variant="gold-cyan" />
-
-        {/* 16. Conference Venue */}
+        {/* 15. Conference Venue */}
         <Venue onMapClick={handleMapClick} />
 
         <SectionDivider variant="cyan-blue" />
 
-        {/* 17. Contact Us */}
+        {/* 16. Contact Us */}
         <Contact onFormSuccess={handleFormSuccess} />
 
         <SectionDivider variant="blue-gold" />
 
-        {/* 18. Sponsors (EXACTLY 4 sponsor boxes: SPONSOR 1 to SPONSOR 4 TO BE ANNOUNCED) */}
+        {/* 17. Sponsors (EXACTLY 4 sponsor boxes: SPONSOR 1 to SPONSOR 4 TO BE ANNOUNCED) */}
         <Sponsors onActionClick={handleActionClick} />
       </main>
 
-      {/* 19. Footer */}
+      {/* 18. Footer */}
       <Footer
         onActionClick={handleActionClick}
         onLegalClick={handleLegalClick}

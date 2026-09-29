@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { CONFERENCE_DATA } from '../data/conference';
+import datainsightLogo from '../assets/datainsight_logo.png';
 
 export const About: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number>(0);
@@ -44,7 +45,7 @@ export const About: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-14"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/25 mb-3 shadow-xs">
             <Info className="w-4 h-4 text-[#D9A441]" />
@@ -54,6 +55,17 @@ export const About: React.FC = () => {
             ABOUT DATAINSIGHT 2027
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
+
+          {/* Official DATAINSIGHT Logo Branding */}
+          <div className="mt-6 flex justify-center items-center">
+            <div className="p-3 sm:p-4 rounded-2xl bg-white border border-[#176BFF]/20 shadow-md shadow-[#0B2D6B]/5 inline-flex items-center justify-center">
+              <img
+                src={datainsightLogo}
+                alt="DATAINSIGHT 2027 Conference Logo"
+                className="h-12 sm:h-16 w-auto max-w-[220px] sm:max-w-[280px] object-contain drop-shadow-sm"
+              />
+            </div>
+          </div>
         </motion.div>
 
         {/* Two-Column Layout */}

@@ -118,14 +118,14 @@ export const ExpertOpinions: React.FC = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="w-full bg-white rounded-3xl border-2 border-[#176BFF]/20 p-7 sm:p-10 shadow-xl relative overflow-hidden"
+                className="w-full bg-white rounded-3xl border-2 border-[#176BFF]/20 p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden"
               >
                 {/* Big decorative quote mark in background */}
                 <div className="absolute top-4 right-6 text-[#176BFF]/10 pointer-events-none">
-                  <Quote className="w-24 h-24 stroke-[1]" />
+                  <Quote className="w-20 h-20 sm:w-24 sm:h-24 stroke-[1]" />
                 </div>
 
-                <div className="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
+                <div className="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-8">
                   {/* Expert Avatar / Image Area */}
                   <div className="flex-shrink-0 text-center">
                     <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-br from-[#176BFF] to-[#00A8E8] p-1 shadow-lg shadow-[#176BFF]/20">
@@ -184,7 +184,7 @@ export const ExpertOpinions: React.FC = () => {
           </div>
 
           {/* Carousel Controls & Pagination Dots */}
-          <div className="mt-8 flex items-center justify-between px-2">
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 px-2">
             
             {/* Left/Right Navigation Buttons */}
             <div className="flex items-center gap-2">

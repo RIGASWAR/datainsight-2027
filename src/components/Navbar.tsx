@@ -40,7 +40,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
         { id: 'sponsors', label: 'Sponsors' },
         { id: 'contact', label: 'Venue & Contact' },
         { id: 'venue', label: 'Venue & Contact' },
-        { id: 'advisory-bodies', label: 'Committee' },
         { id: 'committee', label: 'Committee' },
         { id: 'events', label: 'Events' },
         { id: 'expert-opinions', label: 'Expert Opinions' },
@@ -175,7 +174,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item)}
-                      className={`px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
+                      className={`px-2.5 py-2 text-[11px] sm:text-xs font-semibold rounded-lg transition-colors leading-snug break-words flex items-center justify-center text-center ${
                         isActive
                           ? 'bg-[#16366B] text-[#D9A353] font-bold border border-[#D9A353]/40'
                           : 'text-white hover:bg-white/10 hover:text-[#D9A353]'

@@ -24,7 +24,7 @@ interface VenueProps {
 
 export const Venue: React.FC<VenueProps> = () => {
   const shouldReduceMotion = useReducedMotion();
-  const [activeAccordion, setActiveAccordion] = useState<string | null>('how-to-reach');
+  const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
 
   const toggleAccordion = (id: string) => {
     setActiveAccordion(prev => (prev === id ? null : id));
@@ -105,19 +105,19 @@ export const Venue: React.FC<VenueProps> = () => {
                 </div>
               </div>
 
-              {/* Map Preview Bar with Fully Functional Google Maps Button */}
+              {/* Map Action Bar with Single Primary VIEW ON MAP Button */}
               <div className="p-5 bg-[#F5F9FF] border-t border-[#176BFF]/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                  <div className="text-sm font-bold text-[#0B2D6B]">Interactive Location Services</div>
+                  <div className="text-sm font-bold text-[#0B2D6B]">Campus Navigation & Directions</div>
                   <div className="text-xs text-[#1A2B4A]/70">Avinashi Road, Peelamedu, Coimbatore</div>
                 </div>
                 <a
                   href={venue.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-[#176BFF] hover:bg-[#1255cc] text-white shadow-md border border-[#176BFF]/30 hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer group/btn"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-bold bg-gradient-to-r from-[#176BFF] to-[#00A8E8] hover:from-[#0B2D6B] hover:to-[#176BFF] text-white shadow-md shadow-[#176BFF]/25 border border-[#176BFF]/30 hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer group/btn w-full sm:w-auto"
                 >
-                  <Map className="w-4 h-4" />
+                  <Map className="w-4 h-4 text-[#D9A441]" />
                   <span>VIEW ON MAP</span>
                   <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </a>
@@ -151,20 +151,6 @@ export const Venue: React.FC<VenueProps> = () => {
                 <p className="text-sm sm:text-base text-[#1A2B4A] font-medium leading-relaxed">
                   {venue.address}
                 </p>
-              </div>
-
-              {/* Direct Map CTA */}
-              <div className="pt-2">
-                <a
-                  href={venue.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-[#244A91] hover:bg-[#1A3870] text-white shadow-sm hover:-translate-y-0.5 transition-all"
-                >
-                  <Navigation className="w-4 h-4 text-[#D9A441]" />
-                  <span>Open in Google Maps</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
               </div>
             </div>
 

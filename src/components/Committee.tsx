@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Sparkles, Users, ChevronUp, ChevronDown } from 'lucide-react';
+import React from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Sparkles, Users } from 'lucide-react';
 import { CONFERENCE_DATA, type CommitteeMember, type CommitteeSecretary } from '../data/conference';
 
 interface CommitteeCardProps {
@@ -97,12 +97,7 @@ const CommitteeMemberCard: React.FC<CommitteeCardProps> = ({ member, variant, de
 };
 
 export const Committee: React.FC = () => {
-  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const shouldReduceMotion = useReducedMotion();
-
-  const toggleCategory = (cat: string) => {
-    setExpandedCategory(expandedCategory === cat ? null : cat);
-  };
 
   return (
     <section id="committee" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
@@ -175,71 +170,6 @@ export const Committee: React.FC = () => {
             ))}
           </div>
         </div>
-
-        {/* Tier 4: Additional Committee Categories (Expandable Placeholders) */}
-        <motion.div 
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="max-w-4xl mx-auto pt-6 border-t border-[#176BFF]/15"
-        >
-          <div className="text-center mb-6">
-            <h4 className="text-sm font-bold uppercase tracking-widest text-[#174EA6]">
-              Additional Committees & Advisory Bodies
-            </h4>
-            <p className="text-sm text-[#1A2B4A]/70 mt-1">
-              Member appointments and international advisory boards in formation.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            {CONFERENCE_DATA.committee.additionalRoles.map((role) => {
-              const isExpanded = expandedCategory === role.category;
-
-              return (
-                <div
-                  key={role.category}
-                  className="rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 shadow-sm transition-all overflow-hidden"
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggleCategory(role.category)}
-                    className="w-full p-4.5 text-left flex items-center justify-between text-sm sm:text-base font-bold text-[#0B2D6B] focus:outline-none"
-                  >
-                    <span>{role.category}</span>
-                    <div className="flex items-center gap-2.5">
-                      <span className="text-xs text-[#D9A441] font-mono font-bold px-2.5 py-1 rounded-md bg-[#FFF9E6] border border-[#D9A441]/30">
-                        {role.status}
-                      </span>
-                      {isExpanded ? (
-                        <ChevronUp className="w-4.5 h-4.5 text-[#176BFF]" />
-                      ) : (
-                        <ChevronDown className="w-4.5 h-4.5 text-[#174EA6]" />
-                      )}
-                    </div>
-                  </button>
-
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div 
-                        initial={shouldReduceMotion ? false : { height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                        className="px-5 pb-5 pt-1.5 text-xs sm:text-sm text-[#1A2B4A]/85 border-t border-[#176BFF]/10 bg-[#F5F9FF] overflow-hidden space-y-1 leading-relaxed"
-                      >
-                        <p>
-                          The roster for <strong>{role.category}</strong> is being finalized by the organizing secretariat and will be posted upon institutional confirmation.
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
-        </motion.div>
 
       </div>
     </section>

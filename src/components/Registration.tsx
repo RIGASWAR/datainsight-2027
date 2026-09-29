@@ -77,11 +77,11 @@ export const Registration: React.FC<RegistrationProps> = ({ onActionClick }) => 
           </div>
         </motion.div>
 
-        {/* 2-Column Layout: Categories Table & Payment Details Table */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Vertically Stacked Layout: Categories Table Above, Payment Details Table Below */}
+        <div className="flex flex-col gap-10 max-w-4xl mx-auto w-full">
           
-          {/* Left Column: Delegate Categories & Fee Table */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* Top Block: Delegate Categories & Fee Table */}
+          <div className="w-full space-y-6">
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -90,9 +90,9 @@ export const Registration: React.FC<RegistrationProps> = ({ onActionClick }) => 
               className="bg-white rounded-2xl border border-[#176BFF]/20 shadow-md overflow-hidden"
             >
               {/* Card Header */}
-              <div className="p-5 sm:p-6 bg-gradient-to-r from-[#F5F9FF] to-white border-b border-[#176BFF]/15 flex items-center justify-between">
+              <div className="p-5 sm:p-6 bg-gradient-to-r from-[#F5F9FF] to-white border-b border-[#176BFF]/15 flex items-center justify-between flex-wrap gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#176BFF]/10 text-[#176BFF] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-[#176BFF]/10 text-[#176BFF] flex items-center justify-center flex-shrink-0">
                     <Receipt className="w-5 h-5" />
                   </div>
                   <div>
@@ -109,25 +109,25 @@ export const Registration: React.FC<RegistrationProps> = ({ onActionClick }) => 
 
               {/* Table */}
               <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+                <table className="w-full text-left border-collapse min-w-[500px] sm:min-w-0">
                   <thead>
                     <tr className="bg-[#0B2D6B]/5 border-b border-[#176BFF]/15 text-[11px] font-bold text-[#0B2D6B] uppercase tracking-wider">
-                      <th className="py-3 px-5 sm:px-6">Delegate Category</th>
-                      <th className="py-3 px-5 sm:px-6">Entitlements</th>
-                      <th className="py-3 px-5 sm:px-6 text-right">Registration Fee</th>
+                      <th className="py-3 px-4 sm:px-6">Delegate Category</th>
+                      <th className="py-3 px-4 sm:px-6">Entitlements</th>
+                      <th className="py-3 px-4 sm:px-6 text-right">Registration Fee</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#176BFF]/10 text-sm">
                     {regData.categories.map((cat, idx) => (
                       <tr key={idx} className="hover:bg-[#F5F9FF]/60 transition-colors">
-                        <td className="py-3.5 px-5 sm:px-6 font-semibold text-[#0B2D6B]">
+                        <td className="py-3.5 px-4 sm:px-6 font-semibold text-[#0B2D6B] text-xs sm:text-sm">
                           {cat.category}
                         </td>
-                        <td className="py-3.5 px-5 sm:px-6 text-xs text-[#1A2B4A]/75">
+                        <td className="py-3.5 px-4 sm:px-6 text-xs text-[#1A2B4A]/75">
                           {cat.details}
                         </td>
-                        <td className="py-3.5 px-5 sm:px-6 text-right font-mono font-bold text-[#D9A441]">
-                          <span className="inline-block px-2.5 py-1 rounded bg-[#FFF9E6] border border-[#D9A441]/30 text-xs">
+                        <td className="py-3.5 px-4 sm:px-6 text-right font-mono font-bold text-[#D9A441]">
+                          <span className="inline-block px-2.5 py-1 rounded bg-[#FFF9E6] border border-[#D9A441]/30 text-xs whitespace-nowrap">
                             {cat.fee}
                           </span>
                         </td>
@@ -144,19 +144,19 @@ export const Registration: React.FC<RegistrationProps> = ({ onActionClick }) => 
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#1A2B4A]/80">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-3.5 h-3.5 text-[#176BFF]" />
+                    <CheckCircle className="w-3.5 h-3.5 text-[#176BFF] flex-shrink-0" />
                     <span>Access to all 5 technical tracks</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-3.5 h-3.5 text-[#176BFF]" />
+                    <CheckCircle className="w-3.5 h-3.5 text-[#176BFF] flex-shrink-0" />
                     <span>Keynote addresses & plenary talks</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-3.5 h-3.5 text-[#176BFF]" />
+                    <CheckCircle className="w-3.5 h-3.5 text-[#176BFF] flex-shrink-0" />
                     <span>Official conference delegate kit</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-3.5 h-3.5 text-[#176BFF]" />
+                    <CheckCircle className="w-3.5 h-3.5 text-[#176BFF] flex-shrink-0" />
                     <span>Proceedings & presentation certificate</span>
                   </div>
                 </div>
@@ -164,19 +164,19 @@ export const Registration: React.FC<RegistrationProps> = ({ onActionClick }) => 
             </motion.div>
           </div>
 
-          {/* Right Column: Payment Information Table */}
-          <div className="lg:col-span-5 space-y-6">
+          {/* Bottom Block: Payment Information Table */}
+          <div className="w-full space-y-6">
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="bg-white rounded-2xl border border-[#176BFF]/20 shadow-md overflow-hidden"
             >
               {/* Header */}
-              <div className="p-5 sm:p-6 bg-gradient-to-r from-[#F5F9FF] to-white border-b border-[#176BFF]/15 flex items-center justify-between">
+              <div className="p-5 sm:p-6 bg-gradient-to-r from-[#F5F9FF] to-white border-b border-[#176BFF]/15 flex items-center justify-between flex-wrap gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#00A8E8]/10 text-[#00A8E8] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-[#00A8E8]/10 text-[#00A8E8] flex items-center justify-center flex-shrink-0">
                     <Building2 className="w-5 h-5" />
                   </div>
                   <div>
@@ -194,12 +194,12 @@ export const Registration: React.FC<RegistrationProps> = ({ onActionClick }) => 
               {/* Key-Value Details Table */}
               <div className="p-5 sm:p-6 divide-y divide-[#176BFF]/10 text-sm">
                 {paymentFields.map((field) => (
-                  <div key={field.label} className="py-2.5 first:pt-0 last:pb-0 flex items-center justify-between gap-4">
+                  <div key={field.label} className="py-2.5 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4">
                     <span className="text-xs sm:text-sm font-semibold text-[#1A2B4A]/70">
                       {field.label}:
                     </span>
-                    <span className={`text-xs sm:text-sm font-mono font-bold ${
-                      field.isConfirmed ? 'text-[#0B2D6B]' : 'text-[#D9A441] bg-[#FFF9E6] px-2 py-0.5 rounded border border-[#D9A441]/30'
+                    <span className={`text-xs sm:text-sm font-mono font-bold break-all sm:break-normal ${
+                      field.isConfirmed ? 'text-[#0B2D6B]' : 'text-[#D9A441] bg-[#FFF9E6] px-2 py-0.5 rounded border border-[#D9A441]/30 self-start sm:self-auto'
                     }`}>
                       {field.value}
                     </span>

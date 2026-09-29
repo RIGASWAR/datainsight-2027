@@ -119,10 +119,10 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: 0.1 }}
-                className="p-4 sm:p-5 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex items-center justify-between"
+                className="p-4 sm:p-5 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-4"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF]">
+                  <div className="w-9 h-9 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF] flex-shrink-0">
                     <Mail className="w-4.5 h-4.5" />
                   </div>
                   <div>
@@ -130,7 +130,7 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                     <div className="text-sm sm:text-base font-bold text-[#0B2D6B]">Conference Secretariat</div>
                   </div>
                 </div>
-                <span className="text-xs sm:text-sm font-mono font-bold text-[#D9A441] px-3 py-1 rounded bg-[#FFF9E6] border border-[#D9A441]/30">
+                <span className="text-xs sm:text-sm font-mono font-bold text-[#D9A441] px-3 py-1 rounded bg-[#FFF9E6] border border-[#D9A441]/30 break-all sm:break-normal self-start sm:self-auto">
                   {CONFERENCE_DATA.contact.email}
                 </span>
               </motion.div>
@@ -141,10 +141,10 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: 0.18 }}
-                className="p-4 sm:p-5 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex items-center justify-between"
+                className="p-4 sm:p-5 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-4"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF]">
+                  <div className="w-9 h-9 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF] flex-shrink-0">
                     <Phone className="w-4.5 h-4.5" />
                   </div>
                   <div>
@@ -152,7 +152,7 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                     <div className="text-sm sm:text-base font-bold text-[#0B2D6B]">Desk Line</div>
                   </div>
                 </div>
-                <span className="text-xs sm:text-sm font-mono font-bold text-[#D9A441] px-3 py-1 rounded bg-[#FFF9E6] border border-[#D9A441]/30">
+                <span className="text-xs sm:text-sm font-mono font-bold text-[#D9A441] px-3 py-1 rounded bg-[#FFF9E6] border border-[#D9A441]/30 self-start sm:self-auto">
                   {CONFERENCE_DATA.contact.phone}
                 </span>
               </motion.div>
@@ -163,10 +163,10 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: 0.26 }}
-                className="p-4 sm:p-5 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex items-center justify-between"
+                className="p-4 sm:p-5 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-4"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF]">
+                  <div className="w-9 h-9 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF] flex-shrink-0">
                     <Globe className="w-4.5 h-4.5" />
                   </div>
                   <div>
@@ -174,7 +174,7 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                     <div className="text-sm sm:text-base font-bold text-[#0B2D6B]">Official URL</div>
                   </div>
                 </div>
-                <span className="text-xs sm:text-sm font-mono font-bold text-[#D9A441] px-3 py-1 rounded bg-[#FFF9E6] border border-[#D9A441]/30">
+                <span className="text-xs sm:text-sm font-mono font-bold text-[#D9A441] px-3 py-1 rounded bg-[#FFF9E6] border border-[#D9A441]/30 self-start sm:self-auto">
                   {CONFERENCE_DATA.contact.website}
                 </span>
               </motion.div>
@@ -185,10 +185,10 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: 0.34 }}
-                className="p-4 sm:p-5 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex items-center justify-between"
+                className="p-4 sm:p-5 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/35 hover:-translate-y-0.5 shadow-sm transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-4"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF]">
+                  <div className="w-9 h-9 rounded-lg bg-[#F5F9FF] flex items-center justify-center text-[#176BFF] flex-shrink-0">
                     <Share2 className="w-4.5 h-4.5" />
                   </div>
                   <div>
@@ -196,7 +196,7 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
                     <div className="text-sm sm:text-base font-bold text-[#0B2D6B]">Academic Channels</div>
                   </div>
                 </div>
-                <span className="text-xs sm:text-sm font-mono font-bold text-[#D9A441] px-3 py-1 rounded bg-[#FFF9E6] border border-[#D9A441]/30">
+                <span className="text-xs sm:text-sm font-mono font-bold text-[#D9A441] px-3 py-1 rounded bg-[#FFF9E6] border border-[#D9A441]/30 self-start sm:self-auto">
                   {CONFERENCE_DATA.contact.socialMedia}
                 </span>
               </motion.div>

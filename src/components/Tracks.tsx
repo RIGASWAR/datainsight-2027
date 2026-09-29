@@ -86,7 +86,7 @@ export const Tracks: React.FC = () => {
                   delay: (index % 3) * 0.12, 
                   ease: [0.16, 1, 0.3, 1] 
                 }}
-                className={`[perspective:1200px] h-[360px] sm:h-[370px] w-full ${
+                className={`[perspective:1200px] h-[410px] sm:h-[420px] w-full ${
                   index === 4 ? 'md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none' : ''
                 }`}
               >
@@ -107,38 +107,38 @@ export const Tracks: React.FC = () => {
                 >
                   {/* FRONT SIDE */}
                   <div
-                    className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-[#176BFF]/20 shadow-md hover:shadow-xl hover:border-[#176BFF]/50 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between"
+                    className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-[#176BFF]/20 shadow-md hover:shadow-xl hover:border-[#176BFF]/50 transition-all duration-300 p-5 sm:p-6 flex flex-col justify-between overflow-hidden"
                     style={{
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
                     }}
                   >
-                    <div>
+                    <div className="flex-1 overflow-y-auto pr-0.5 space-y-3">
                       {/* Top Bar: Track Badge & Icon */}
-                      <div className="flex items-center justify-between mb-5">
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black tracking-widest text-[#174EA6] bg-[#176BFF]/10 border border-[#176BFF]/20 font-mono">
+                      <div className="flex items-center justify-between">
+                        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-black tracking-widest text-[#174EA6] bg-[#176BFF]/10 border border-[#176BFF]/20 font-mono">
                           {track.trackNumber}
                         </span>
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#176BFF] to-[#00A8E8] text-white flex items-center justify-center shadow-md shadow-[#176BFF]/25">
-                          <IconComponent className="w-6 h-6" />
+                        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#176BFF] to-[#00A8E8] text-white flex items-center justify-center shadow-md shadow-[#176BFF]/25">
+                          <IconComponent className="w-5 h-5" />
                         </div>
                       </div>
 
                       {/* Track Title */}
-                      <h3 className="text-xl sm:text-2xl font-bold text-[#0B2D6B] leading-snug group-hover:text-[#176BFF] transition-colors">
+                      <h3 className="text-lg sm:text-xl font-bold text-[#0B2D6B] leading-snug group-hover:text-[#176BFF] transition-colors">
                         {track.title}
                       </h3>
 
                       {/* DATAINSIGHT Visual Accent */}
-                      <div className="w-12 h-1 bg-gradient-to-r from-[#176BFF] to-[#00A8E8] rounded-full my-3.5" />
+                      <div className="w-12 h-1 bg-gradient-to-r from-[#176BFF] to-[#00A8E8] rounded-full" />
 
-                      <p className="text-sm text-[#1A2B4A]/75 line-clamp-3 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#1A2B4A]/75 line-clamp-3 leading-relaxed">
                         Official technical track for original peer-reviewed research papers and applications at DATAINSIGHT 2027.
                       </p>
                     </div>
 
-                    {/* Bottom Prompt: Click to view topics */}
-                    <div className="pt-4 border-t border-[#176BFF]/10 flex items-center justify-between text-sm font-semibold text-[#176BFF] hover:text-[#0B2D6B] transition-colors">
+                    {/* Bottom Prompt: Click to view topics - firmly inside */}
+                    <div className="pt-3 mt-2 border-t border-[#176BFF]/10 flex items-center justify-between text-xs sm:text-sm font-semibold text-[#176BFF] hover:text-[#0B2D6B] transition-colors flex-shrink-0">
                       <span className="inline-flex items-center gap-1.5">
                         <Info className="w-4 h-4 text-[#D9A441]" />
                         Click to view topics
@@ -151,32 +151,32 @@ export const Tracks: React.FC = () => {
 
                   {/* BACK SIDE */}
                   <div
-                    className="absolute inset-0 w-full h-full rounded-2xl bg-gradient-to-br from-[#0B2D6B] via-[#0D3B82] to-[#174EA6] text-white border border-[#00A8E8]/30 shadow-xl p-6 sm:p-7 flex flex-col justify-between"
+                    className="absolute inset-0 w-full h-full rounded-2xl bg-gradient-to-br from-[#0B2D6B] via-[#0D3B82] to-[#174EA6] text-white border border-[#00A8E8]/30 shadow-xl p-5 sm:p-6 flex flex-col justify-between overflow-hidden"
                     style={{
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
                       transform: 'rotateY(180deg)',
                     }}
                   >
-                    <div>
+                    <div className="flex-1 overflow-y-auto pr-1 space-y-2.5">
                       {/* Top Header */}
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold tracking-wider text-[#D9A441] bg-[#D9A441]/15 border border-[#D9A441]/30 font-mono">
+                      <div className="flex items-center justify-between">
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold tracking-wider text-[#D9A441] bg-[#D9A441]/15 border border-[#D9A441]/30 font-mono">
                           {track.trackNumber} DETAILS
                         </span>
-                        <span className="text-xs text-white/70">DATAINSIGHT 2027</span>
+                        <span className="text-[10px] sm:text-xs text-white/70">DATAINSIGHT 2027</span>
                       </div>
 
                       {/* Title */}
-                      <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">
+                      <h4 className="text-base sm:text-lg font-bold text-white leading-snug">
                         {track.title}
                       </h4>
 
                       {/* Topics / Details Area */}
-                      <div className="mt-4 p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 space-y-2">
-                        <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-cyan-200">
+                      <div className="p-3 sm:p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 space-y-1.5">
+                        <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-cyan-200">
                           <span>Track Topics</span>
-                          <span className="px-2 py-0.5 rounded bg-[#D9A441]/20 text-[#D9A441] font-mono text-[11px]">
+                          <span className="px-1.5 py-0.5 rounded bg-[#D9A441]/20 text-[#D9A441] font-mono text-[10px]">
                             {track.topics}
                           </span>
                         </div>
@@ -185,18 +185,18 @@ export const Tracks: React.FC = () => {
                         </p>
                       </div>
 
-                      <p className="mt-3 text-xs text-white/70 leading-relaxed">
+                      <p className="text-[11px] sm:text-xs text-white/70 leading-relaxed">
                         Peer-reviewed submissions will be evaluated by international program committee reviewers.
                       </p>
                     </div>
 
-                    {/* Bottom Prompt: Click to flip back */}
-                    <div className="pt-3 border-t border-white/15 flex items-center justify-between text-sm font-semibold text-cyan-200">
+                    {/* Bottom Prompt: Click to flip back - GUARANTEED INSIDE CARD */}
+                    <div className="pt-3 mt-2 border-t border-white/20 flex items-center justify-between text-xs sm:text-sm font-semibold text-cyan-200 flex-shrink-0">
                       <span className="inline-flex items-center gap-1.5">
                         <RotateCw className="w-4 h-4 text-[#D9A441]" />
                         Click to flip back
                       </span>
-                      <span className="text-xs px-2.5 py-1 rounded-md bg-white/15 text-white">
+                      <span className="text-[11px] px-2.5 py-1 rounded-md bg-white/15 text-white">
                         Return
                       </span>
                     </div>

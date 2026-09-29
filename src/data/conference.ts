@@ -536,44 +536,6 @@ export const CONFERENCE_DATA = {
       status: 'TO BE ANNOUNCED',
     },
   ],
-  additionalCommittees: [
-    {
-      id: 'comm-1',
-      title: 'Technical Program Committee',
-      role: 'Peer Review & Scientific Quality Assessment',
-      members: 'TO BE INCLUDED',
-    },
-    {
-      id: 'comm-2',
-      title: 'International Advisory Committee',
-      role: 'Global Strategic Direction & Academic Partnerships',
-      members: 'TO BE INCLUDED',
-    },
-    {
-      id: 'comm-3',
-      title: 'Publication Committee',
-      role: 'Proceedings Editing, Camera-Ready Compliance & Indexing',
-      members: 'TO BE INCLUDED',
-    },
-    {
-      id: 'comm-4',
-      title: 'Finance & Registration Committee',
-      role: 'Delegate Enrollment & Accounts Management',
-      members: 'TO BE INCLUDED',
-    },
-    {
-      id: 'comm-5',
-      title: 'Hospitality & Logistics Committee',
-      role: 'Campus Accommodations, Travel & Guest Relations',
-      members: 'TO BE INCLUDED',
-    },
-    {
-      id: 'comm-6',
-      title: 'Media, Publicity & Web Committee',
-      role: 'Global Outreach, Digital Dissemination & Portal Management',
-      members: 'TO BE INCLUDED',
-    },
-  ],
   sponsors: [
     { id: 'sponsor-1', label: 'SPONSOR 1', status: 'TO BE ANNOUNCED' },
     { id: 'sponsor-2', label: 'SPONSOR 2', status: 'TO BE ANNOUNCED' },
@@ -642,15 +604,6 @@ export const CONFERENCE_DATA = {
         imageAlt: 'Photograph of Dr. N. Hemapriya, Organizing Secretary',
         objectPosition: 'center',
       },
-    ],
-    additionalRoles: [
-      { category: 'General Chairs', status: 'TO BE INCLUDED' },
-      { category: 'Conference Chairs', status: 'TO BE INCLUDED' },
-      { category: 'Technical Program Chairs', status: 'TO BE INCLUDED' },
-      { category: 'Publication Chairs', status: 'TO BE INCLUDED' },
-      { category: 'Finance Chair', status: 'TO BE INCLUDED' },
-      { category: 'Organizing Committee', status: 'TO BE INCLUDED' },
-      { category: 'Advisory Committee', status: 'TO BE INCLUDED' },
     ],
   },
   venue: {
