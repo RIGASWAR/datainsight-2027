@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Navbar } from './components/Navbar';
+import { InstitutionalHeader } from './components/InstitutionalHeader';
 import { Hero } from './components/Hero';
-import { Countdown } from './components/Countdown';
 import { About } from './components/About';
 import { Highlights } from './components/Highlights';
 import { Theme } from './components/Theme';
@@ -26,7 +26,7 @@ export function App() {
   const [modalContent, setModalContent] = useState<ModalContent | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  const handleActionClick = (actionType: 'submit' | 'register' | 'cfp') => {
+  const handleActionClick = (actionType: 'submit' | 'register' | 'cfp' | 'sponsors') => {
     if (actionType === 'submit') {
       setModalContent({
         title: 'Paper Submission System',
@@ -51,6 +51,15 @@ export function App() {
         subtitle: 'Official Conference Circular Download',
         details:
           'The complete high-resolution CFP circular containing submission formatting guidelines and author instructions will be available for download here. Status: TO BE INCLUDED',
+        statusBadge: 'TO BE INCLUDED',
+      });
+      setModalOpen(true);
+    } else if (actionType === 'sponsors') {
+      setModalContent({
+        title: 'Conference Sponsorship',
+        subtitle: 'Industry & Academic Partnership Opportunities',
+        details:
+          'DATAINSIGHT 2027 offers comprehensive sponsorship packages, exhibition booth allocations, and branding opportunities for technology organizations and research institutions. Status: TO BE INCLUDED',
         statusBadge: 'TO BE INCLUDED',
       });
       setModalOpen(true);
@@ -91,23 +100,23 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#1A2B4A] flex flex-col font-sans selection:bg-[#176BFF] selection:text-white">
+    <div className="min-h-screen bg-white text-[#1A2B4A] flex flex-col font-sans selection:bg-[#244A91] selection:text-white">
       {/* Subtle Scroll Progress Indicator */}
       <ScrollProgress />
 
       {/* Top Sticky Navigation */}
       <Navbar onActionClick={handleActionClick} />
 
+      {/* Institutional Header with PSG & DATAINSIGHT Logos */}
+      <InstitutionalHeader />
+
       {/* Main Page Flow */}
       <main className="flex-1 flex flex-col">
-        {/* Hero Section */}
+        {/* Full-width Drone Video Hero with Centered Translucent Box & Countdown */}
         <Hero
           onActionClick={handleActionClick}
           onExploreClick={handleExploreClick}
         />
-
-        {/* Live Conference Countdown */}
-        <Countdown />
 
         <SectionDivider variant="cyan-blue" />
 
