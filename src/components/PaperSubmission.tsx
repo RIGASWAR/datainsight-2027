@@ -20,7 +20,7 @@ export const PaperSubmission: React.FC<PaperSubmissionProps> = ({ onActionClick 
   const subData = CONFERENCE_DATA.paperSubmission;
 
   return (
-    <section id="submission" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
+    <section id="submission" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F5F9FF] via-[#EEF5FF]/60 to-[#F5F9FF] overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#176BFF]/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 -right-32 w-80 h-80 bg-[#00A8E8]/10 rounded-full blur-[120px] pointer-events-none" />
@@ -60,10 +60,10 @@ export const PaperSubmission: React.FC<PaperSubmissionProps> = ({ onActionClick 
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="p-6 sm:p-7 rounded-2xl bg-white border border-[#176BFF]/20 shadow-md space-y-4"
+              className="p-6 sm:p-7 rounded-2xl bg-white border border-[#176BFF]/20 shadow-md space-y-4 hover:border-[#176BFF]/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#176BFF]/10 text-[#176BFF] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[#176BFF]/10 text-[#176BFF] flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <FileText className="w-5 h-5" />
                 </div>
                 <div>
@@ -89,9 +89,9 @@ export const PaperSubmission: React.FC<PaperSubmissionProps> = ({ onActionClick 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="p-5 sm:p-6 rounded-2xl bg-white border border-[#176BFF]/20 shadow-md space-y-3"
+                className="p-5 sm:p-6 rounded-2xl bg-white border border-[#176BFF]/20 shadow-md space-y-3 hover:border-[#176BFF]/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
               >
-                <div className="w-9 h-9 rounded-lg bg-[#00A8E8]/10 text-[#00A8E8] flex items-center justify-center">
+                <div className="w-9 h-9 rounded-lg bg-[#00A8E8]/10 text-[#00A8E8] flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
                   <FileCheck2 className="w-5 h-5" />
                 </div>
                 <h4 className="text-base font-bold text-[#0B2D6B]">
@@ -110,9 +110,9 @@ export const PaperSubmission: React.FC<PaperSubmissionProps> = ({ onActionClick 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="p-5 sm:p-6 rounded-2xl bg-white border border-[#176BFF]/20 shadow-md space-y-3"
+                className="p-5 sm:p-6 rounded-2xl bg-white border border-[#176BFF]/20 shadow-md space-y-3 hover:border-[#176BFF]/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
               >
-                <div className="w-9 h-9 rounded-lg bg-[#176BFF]/10 text-[#176BFF] flex items-center justify-center">
+                <div className="w-9 h-9 rounded-lg bg-[#176BFF]/10 text-[#176BFF] flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <h4 className="text-base font-bold text-[#0B2D6B]">
@@ -132,9 +132,9 @@ export const PaperSubmission: React.FC<PaperSubmissionProps> = ({ onActionClick 
               {subData.instructions.map((inst) => (
                 <div 
                   key={inst.title}
-                  className="p-4 rounded-xl bg-white border border-[#176BFF]/15 flex items-start gap-3 shadow-sm"
+                  className="p-4 rounded-xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/45 flex items-start gap-3 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-[#176BFF] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#176BFF] flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover:translate-x-1" />
                   <div>
                     <h5 className="text-xs font-bold text-[#0B2D6B] uppercase tracking-wider">
                       {inst.title}
@@ -157,7 +157,7 @@ export const PaperSubmission: React.FC<PaperSubmissionProps> = ({ onActionClick 
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.65, delay: 0.1 }}
-              className="p-7 sm:p-8 rounded-3xl bg-gradient-to-br from-[#0B2D6B] via-[#0D3B82] to-[#174EA6] text-white shadow-xl border border-white/10 space-y-6 relative overflow-hidden"
+              className="p-7 sm:p-8 rounded-3xl bg-gradient-to-br from-[#0B2D6B] via-[#0D3B82] to-[#174EA6] text-white shadow-xl border border-white/10 space-y-6 relative overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
             >
               {/* Decorative background glow */}
               <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#00A8E8]/20 rounded-full blur-3xl pointer-events-none" />

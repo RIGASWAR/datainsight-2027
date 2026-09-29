@@ -50,7 +50,7 @@ export const Contact: React.FC<ContactProps> = ({ onFormSuccess }) => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
+    <section id="contact" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F5F9FF] via-[#EEF5FF] to-[#F5F9FF] overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#176BFF]/5 rounded-full blur-[160px] pointer-events-none" />
 

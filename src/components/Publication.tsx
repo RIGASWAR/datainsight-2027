@@ -7,7 +7,7 @@ export const Publication: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="publication" className="py-20 md:py-28 relative bg-white overflow-hidden">
+    <section id="publication" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F7FAFF] via-[#EEF5FF]/60 to-[#F7FAFF] overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#00A8E8]/5 rounded-full blur-[140px] pointer-events-none" />
 
@@ -46,7 +46,7 @@ export const Publication: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="p-5 sm:p-6 rounded-2xl bg-[#FFF9E6] border border-[#D9A441]/50 flex items-start gap-3.5 shadow-sm"
+              className="p-5 sm:p-6 rounded-2xl bg-[#FFF9E6] border border-[#D9A441]/50 hover:border-[#D9A441] flex items-start gap-3.5 shadow-sm hover:shadow-md transition-all duration-300"
             >
               <AlertCircle className="w-5 h-5 text-[#D9A441] flex-shrink-0 mt-0.5" />
               <div>
@@ -72,7 +72,7 @@ export const Publication: React.FC = () => {
                     delay: 0.1 + index * 0.1, 
                     ease: [0.16, 1, 0.3, 1] 
                   }}
-                  className="p-5 sm:p-6 rounded-2xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/40 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-3.5 hover:-translate-y-1"
+                  className="p-5 sm:p-6 rounded-2xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-3.5 hover:scale-[1.01] hover:-translate-y-1"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-[#1A2B4A]/60 uppercase tracking-wider">
@@ -107,7 +107,7 @@ export const Publication: React.FC = () => {
             transition={{ duration: 0.75, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 flex items-center justify-center"
           >
-            <div className="w-full max-w-md p-8 sm:p-9 rounded-3xl bg-white border-2 border-[#176BFF]/20 shadow-xl relative overflow-hidden text-center space-y-6 hover:border-[#176BFF]/40 transition-colors">
+            <div className="w-full max-w-md p-8 sm:p-9 rounded-3xl bg-white border-2 border-[#176BFF]/20 shadow-xl relative overflow-hidden text-center space-y-6 hover:border-[#176BFF]/50 hover:shadow-2xl hover:scale-[1.01] hover:-translate-y-1 transition-all duration-300">
               
               {/* Graphic Medallion */}
               <div className="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-[#176BFF] to-[#00A8E8] border border-[#176BFF]/30 flex items-center justify-center shadow-lg shadow-[#176BFF]/25">

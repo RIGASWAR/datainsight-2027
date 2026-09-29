@@ -54,7 +54,7 @@ const CommitteeMemberCard: React.FC<CommitteeCardProps> = ({ member, variant, de
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.65, delay, ease: [0.16, 1, 0.3, 1] }}
-      className={`${cardContainerClasses} hover:-translate-y-1 transition-all text-center flex flex-col items-center justify-between relative overflow-hidden group`}
+      className={`${cardContainerClasses} hover:scale-[1.015] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center justify-between relative overflow-hidden group`}
     >
       {variant === 'chief' && (
         <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#D9A441]/10 rounded-full blur-xl pointer-events-none" />
@@ -100,7 +100,7 @@ export const Committee: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="committee" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
+    <section id="committee" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F4F8FF] via-[#EEF5FF] to-[#F4F8FF] overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#176BFF]/5 rounded-full blur-[160px] pointer-events-none" />
 

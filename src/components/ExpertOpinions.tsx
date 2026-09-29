@@ -75,7 +75,7 @@ export const ExpertOpinions: React.FC = () => {
   };
 
   return (
-    <section id="expert-opinions" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
+    <section id="expert-opinions" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F5F9FF] via-[#EEF5FF]/60 to-[#F5F9FF] overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-[#176BFF]/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 -left-32 w-80 h-80 bg-[#00A8E8]/10 rounded-full blur-[120px] pointer-events-none" />

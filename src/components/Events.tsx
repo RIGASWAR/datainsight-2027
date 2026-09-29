@@ -26,7 +26,7 @@ export const Events: React.FC = () => {
   };
 
   return (
-    <section id="events" className="py-20 md:py-28 relative bg-white overflow-hidden">
+    <section id="events" className="py-20 md:py-28 relative bg-gradient-to-b from-white via-[#F7FAFF] to-white overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-1/3 -left-36 w-96 h-96 bg-[#00A8E8]/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 -right-36 w-80 h-80 bg-[#176BFF]/5 rounded-full blur-[120px] pointer-events-none" />
@@ -89,7 +89,7 @@ export const Events: React.FC = () => {
                   delay: (index % 3) * 0.1, 
                   ease: [0.16, 1, 0.3, 1] 
                 }}
-                className={`rounded-2xl bg-white border border-[#176BFF]/15 p-6 sm:p-7 shadow-sm hover:border-[#176BFF]/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 ${
+                className={`rounded-2xl bg-white border border-[#176BFF]/15 p-6 sm:p-7 shadow-sm hover:border-[#176BFF]/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:scale-[1.015] hover:-translate-y-1 group ${
                   index === 4 ? 'md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none' : ''
                 }`}
               >
@@ -99,7 +99,7 @@ export const Events: React.FC = () => {
                     <span className="text-xs font-black tracking-widest text-[#174EA6] font-mono bg-[#176BFF]/10 px-2.5 py-0.5 rounded-full border border-[#176BFF]/20">
                       EVENT {evt.number}
                     </span>
-                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#176BFF] to-[#00A8E8] text-white flex items-center justify-center shadow-md shadow-[#176BFF]/20">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#176BFF] to-[#00A8E8] text-white flex items-center justify-center shadow-md shadow-[#176BFF]/20 transition-transform duration-300 group-hover:scale-105">
                       <IconComponent className="w-5 h-5" />
                     </div>
                   </div>

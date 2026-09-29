@@ -25,7 +25,7 @@ export const Theme: React.FC = () => {
   };
 
   return (
-    <section id="theme" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
+    <section id="theme" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F4F8FF] via-[#EBF3FF]/70 to-[#F4F8FF] overflow-hidden">
       <div id="themes" className="sr-only" />
       {/* Background Ambience */}
       <div className="absolute top-10 right-10 w-96 h-96 bg-[#00A8E8]/5 rounded-full blur-[120px] pointer-events-none" />
@@ -70,7 +70,7 @@ export const Theme: React.FC = () => {
                   delay: index * 0.12, 
                   ease: [0.16, 1, 0.3, 1] 
                 }}
-                className="p-7 sm:p-8 rounded-2xl bg-white border border-[#176BFF]/20 hover:border-[#176BFF] transition-all duration-300 hover:-translate-y-1.5 shadow-md shadow-[#0B2D6B]/5 flex flex-col justify-between"
+                className="group p-7 sm:p-8 rounded-2xl bg-white hover:bg-gradient-to-br hover:from-white hover:to-[#F4F8FF] border border-[#176BFF]/20 hover:border-[#176BFF]/60 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] shadow-md hover:shadow-xl hover:shadow-[#176BFF]/10 flex flex-col justify-between"
               >
                 <div>
                   {/* Header with Number & Icon */}

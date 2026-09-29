@@ -32,7 +32,7 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
+    <section id="about" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F7FAFF] via-[#EEF5FF]/50 to-[#F7FAFF] overflow-hidden">
       {/* Background Accent Gradients */}
       <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#176BFF]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 right-0 w-80 h-80 bg-[#00A8E8]/5 rounded-full blur-[100px] pointer-events-none" />

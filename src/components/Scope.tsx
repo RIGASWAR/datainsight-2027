@@ -54,7 +54,7 @@ export const Scope: React.FC = () => {
   ];
 
   return (
-    <section id="scope" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
+    <section id="scope" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F7FAFF] via-[#EEF5FF]/60 to-[#F7FAFF] overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-1/4 -right-40 w-96 h-96 bg-[#00A8E8]/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 -left-40 w-80 h-80 bg-[#176BFF]/5 rounded-full blur-[120px] pointer-events-none" />
@@ -97,7 +97,7 @@ export const Scope: React.FC = () => {
                   delay: idx * 0.1, 
                   ease: [0.16, 1, 0.3, 1] 
                 }}
-                className="group relative rounded-2xl bg-white p-7 border border-[#176BFF]/15 shadow-sm hover:border-[#176BFF]/50 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                className="group relative rounded-2xl bg-white p-7 border border-[#176BFF]/15 shadow-sm hover:border-[#176BFF]/45 hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 ease-out flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -136,7 +136,7 @@ export const Scope: React.FC = () => {
               delay: 0.5, 
               ease: [0.16, 1, 0.3, 1] 
             }}
-            className="rounded-2xl p-7 bg-gradient-to-br from-[#06142E] to-[#123673] text-white border border-white/15 shadow-md flex flex-col justify-between"
+            className="rounded-2xl p-7 bg-gradient-to-br from-[#06142E] to-[#123673] text-white border border-white/15 shadow-md hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 ease-out flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between mb-4">

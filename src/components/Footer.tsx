@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUpRight, MapPin } from 'lucide-react';
 import { CONFERENCE_DATA } from '../data/conference';
+import datainsightLogo from '../assets/datainsight_logo.png';
 
 interface FooterProps {
   onActionClick: (actionType: 'submit' | 'register' | 'cfp' | 'sponsors') => void;
@@ -28,24 +29,23 @@ export const Footer: React.FC<FooterProps> = ({ onActionClick, onLegalClick }) =
           
           {/* Col 1: Conference Identity & PSG Host */}
           <div className="lg:col-span-5 space-y-4 text-left">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#0B2D6B] border border-[#176BFF]/40 flex items-center justify-center">
-                <img
-                  src="/logo-icon.svg"
-                  alt="DATAINSIGHT 2027 Logo"
-                  className="w-6 h-6 object-contain"
-                />
-              </div>
-              <div>
-                <span className="text-xl font-extrabold text-brand-on-dark tracking-tight">
-                  DATAINSIGHT 2027
-                </span>
-              </div>
+            {/* Official DATAINSIGHT Logo Branding */}
+            <div className="inline-flex p-2.5 sm:p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-md">
+              <img
+                src={datainsightLogo}
+                alt="DATAINSIGHT 2027 Official Logo"
+                className="h-10 sm:h-12 w-auto max-w-[210px] object-contain drop-shadow-sm"
+              />
             </div>
 
-            <p className="text-sm font-semibold text-[#00A8E8] leading-relaxed">
-              {CONFERENCE_DATA.fullTitle}
-            </p>
+            <div>
+              <span className="text-xl sm:text-2xl font-extrabold text-brand-on-dark tracking-tight block">
+                DATAINSIGHT 2027
+              </span>
+              <p className="text-sm font-semibold text-[#00A8E8] leading-relaxed mt-1">
+                {CONFERENCE_DATA.fullTitle}
+              </p>
+            </div>
 
             <p className="text-sm text-[#C5D4EE] italic">
               {CONFERENCE_DATA.tagline}

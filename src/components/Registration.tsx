@@ -30,7 +30,7 @@ export const Registration: React.FC<RegistrationProps> = ({ onActionClick }) => 
   ];
 
   return (
-    <section id="registration" className="py-20 md:py-28 relative bg-white overflow-hidden">
+    <section id="registration" className="py-20 md:py-28 relative bg-gradient-to-b from-white via-[#F7FAFF] to-white overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-1/3 -right-36 w-96 h-96 bg-[#176BFF]/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 -left-36 w-80 h-80 bg-[#00A8E8]/5 rounded-full blur-[120px] pointer-events-none" />

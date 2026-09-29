@@ -43,7 +43,7 @@ export const AboutPSGCT: React.FC = () => {
   ];
 
   return (
-    <section id="about-psgct" className="py-20 md:py-28 relative bg-white overflow-hidden">
+    <section id="about-psgct" className="py-20 md:py-28 relative bg-gradient-to-b from-white via-[#F7FAFF] to-white overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-10 right-0 w-96 h-96 bg-[#176BFF]/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 left-0 w-80 h-80 bg-[#00A8E8]/5 rounded-full blur-[120px] pointer-events-none" />
@@ -63,7 +63,7 @@ export const AboutPSGCT: React.FC = () => {
             HOST INSTITUTION
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-brand-primary">
-            ABOUT PSG COLLEGE OF TECHNOLOGY
+            ABOUT PSGCT
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#244A91] via-[#00A8E8] to-[#D9A353] mx-auto mt-4 rounded-full" />
           <p className="mt-4 text-base sm:text-lg text-[#1A2B4A]/80">

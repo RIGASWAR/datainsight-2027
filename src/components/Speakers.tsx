@@ -8,7 +8,7 @@ export const Speakers: React.FC = () => {
   const [selectedSlot, setSelectedSlot] = useState<number | null>(null);
 
   return (
-    <section id="speakers" className="py-20 md:py-28 relative bg-white overflow-hidden">
+    <section id="speakers" className="py-20 md:py-28 relative bg-gradient-to-b from-white via-[#F7FAFF] to-white overflow-hidden">
       {/* Background radial highlight */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-80 bg-[#176BFF]/5 rounded-full blur-[150px] pointer-events-none" />
 

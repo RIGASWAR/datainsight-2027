@@ -12,7 +12,7 @@ export const Sponsors: React.FC<SponsorsProps> = ({ onActionClick }) => {
   const sponsors = CONFERENCE_DATA.sponsors;
 
   return (
-    <section id="sponsors" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
+    <section id="sponsors" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F6F9FF] via-[#EEF5FF] to-[#F6F9FF] overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-1/3 -left-36 w-96 h-96 bg-[#176BFF]/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 -right-36 w-80 h-80 bg-[#00A8E8]/10 rounded-full blur-[120px] pointer-events-none" />

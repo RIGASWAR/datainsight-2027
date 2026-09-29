@@ -7,16 +7,16 @@ import {
   Compass, 
   Car, 
   ExternalLink, 
-  Building2, 
   Sparkles, 
-  Map,
-  ChevronDown,
-  Navigation,
-  Clock,
-  Info
+  Map, 
+  ChevronDown, 
+  Navigation, 
+  Clock, 
+  Info 
 } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { CONFERENCE_DATA } from '../data/conference';
+import psgLogo from '../assets/psg_logo.png';
 
 interface VenueProps {
   onMapClick?: () => void;
@@ -33,7 +33,7 @@ export const Venue: React.FC<VenueProps> = () => {
   const { venue } = CONFERENCE_DATA;
 
   return (
-    <section id="venue" className="py-20 md:py-28 relative bg-white overflow-hidden">
+    <section id="venue" className="py-20 md:py-28 relative bg-gradient-to-b from-white via-[#F7FAFF] to-white overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-10 w-96 h-96 bg-[#176BFF]/5 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#00A8E8]/5 rounded-full blur-[140px] pointer-events-none" />
@@ -74,34 +74,39 @@ export const Venue: React.FC<VenueProps> = () => {
           >
             <div className="relative h-full rounded-3xl bg-white border-2 border-[#176BFF]/20 overflow-hidden shadow-xl flex flex-col justify-between group hover:border-[#176BFF]/40 transition-colors">
               
-              {/* Image Graphic / Illustration Area */}
-              <div className="relative w-full flex-1 min-h-[260px] sm:min-h-[300px] bg-gradient-to-br from-[#F5F9FF] via-[#EBF3FF] to-[#E0EDFF] flex flex-col items-center justify-center p-8 text-center overflow-hidden">
+              {/* Graphic / Illustration Area */}
+              <div className="relative w-full flex-1 min-h-[320px] sm:min-h-[360px] bg-gradient-to-br from-[#F5F9FF] via-[#EBF3FF] to-[#E0EDFF] flex flex-col items-center justify-center p-6 sm:p-8 text-center overflow-hidden">
                 <div className="absolute inset-0 cyber-grid opacity-25" />
                 
-                {/* Visual Architectural Landmark Motif */}
-                <div className="relative z-10 w-24 h-24 rounded-2xl bg-white border-2 border-[#176BFF]/30 flex items-center justify-center shadow-md mb-4 group-hover:scale-105 transition-transform duration-300">
-                  <Building2 className="w-12 h-12 text-[#176BFF]" />
+                {/* LEVEL 1: [PSG LOGO] */}
+                <div className="relative z-10 w-24 h-28 sm:w-28 sm:h-32 rounded-2xl bg-white p-2.5 flex items-center justify-center shadow-lg border border-[#176BFF]/20 mb-3 group-hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={psgLogo}
+                    alt="PSG College of Technology official logo"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
 
-                <div className="relative z-10 space-y-1">
-                  <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-[#D9A441]/15 text-[#D9A441] border border-[#D9A441]/30">
-                    PSG COLLEGE OF TECHNOLOGY
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0B2D6B] mt-2">
-                    {venue.institution}
-                  </h3>
-                  <p className="text-sm text-[#1A2B4A]/75 font-medium">
-                    Autonomous Institution &bull; Established 1951 &bull; Coimbatore
-                  </p>
+                {/* LEVEL 2: PSG College of Technology */}
+                <h3 className="relative z-10 text-2xl sm:text-3xl font-extrabold text-[#0B2D6B] tracking-tight">
+                  {venue.institution}
+                </h3>
+
+                {/* LEVEL 3: Autonomous Institution • Established in 1951 • Coimbatore */}
+                <div className="relative z-10 mt-2 text-xs sm:text-sm text-[#1A2B4A]/80 font-semibold space-y-0.5">
+                  <div>Autonomous Institution &bull; Established in 1951</div>
+                  <div className="text-[#174EA6]">Coimbatore, Tamil Nadu, India</div>
                 </div>
 
-                {/* Bottom Overlay Badge */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-white/95 backdrop-blur-md border border-[#176BFF]/20 shadow-sm flex items-center justify-between text-xs sm:text-sm">
-                  <div className="flex items-center gap-2 text-[#1A2B4A] font-medium">
-                    <Sparkles className="w-4 h-4 text-[#D9A441]" />
+                {/* LEVEL 4: [Venue Host Information Box] */}
+                <div className="relative z-10 mt-6 w-full max-w-sm p-4 rounded-2xl bg-white/95 backdrop-blur-md border-2 border-[#176BFF]/25 shadow-md flex items-center justify-between gap-3 text-xs sm:text-sm">
+                  <div className="flex items-center gap-2 text-[#0B2D6B] font-bold text-left">
+                    <Sparkles className="w-4 h-4 text-[#D9A441] flex-shrink-0" />
                     <span>{venue.department}</span>
                   </div>
-                  <span className="text-[#176BFF] font-bold">Venue Host</span>
+                  <span className="px-2.5 py-1 rounded-full text-xs font-extrabold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/20 flex-shrink-0">
+                    Venue Host
+                  </span>
                 </div>
               </div>
 
