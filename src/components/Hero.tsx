@@ -85,17 +85,17 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
           Your browser does not support the video tag.
         </video>
         
-        {/* Subtle dark overlay to let the drone video remain clearly visible and vivid */}
-        <div className="absolute inset-0 bg-black/25 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40 z-10" />
+        {/* Gentle dark gradient overlay to ensure high video clarity and vivid campus footage */}
+        <div className="absolute inset-0 bg-black/15 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35 z-10" />
       </div>
 
-      {/* Centered Translucent Dark Conference Information Box - Transparent Glassmorphism */}
+      {/* Centered Translucent Dark Conference Information Box - Transparent Glassmorphism (~45% opacity) */}
       <motion.div
         initial={shouldReduceMotion ? false : { opacity: 0, y: 25, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-20 w-[94%] sm:w-[90%] md:w-[84%] max-w-3xl lg:max-w-4xl mx-auto rounded-2xl bg-[#061228]/55 sm:bg-[#061228]/50 backdrop-blur-[5px] sm:backdrop-blur-md border border-white/25 shadow-2xl shadow-black/40 p-5 sm:p-7 md:p-9 text-center text-white"
+        className="relative z-20 w-[94%] sm:w-[90%] md:w-[84%] max-w-3xl lg:max-w-4xl mx-auto rounded-2xl bg-[#061228]/48 sm:bg-[#061228]/42 backdrop-blur-[4px] sm:backdrop-blur-[6px] border border-white/25 shadow-2xl shadow-black/30 p-5 sm:p-7 md:p-9 text-center text-white"
       >
         {/* Category Header */}
         <div className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm md:text-[0.95rem] font-extrabold uppercase tracking-[0.22em] text-white/95">

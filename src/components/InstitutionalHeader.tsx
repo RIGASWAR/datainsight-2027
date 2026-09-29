@@ -37,15 +37,15 @@ export const InstitutionalHeader: React.FC = () => {
           </div>
         </div>
 
-        {/* Desktop & Tablet View (>= 640px): Classic centered academic layout with generous, balanced breathing room */}
-        <div className="hidden sm:flex items-center justify-center gap-8 md:gap-12 lg:gap-16 xl:gap-20">
+        {/* Desktop & Tablet View (>= 640px): 3-column grid ensuring mathematically equal logo distance from center anchor */}
+        <div className="hidden sm:grid grid-cols-[1fr_auto_1fr] items-center w-full">
           
-          {/* LEFT: PSG College of Technology official logo */}
-          <div className="flex-shrink-0 flex items-center justify-center">
+          {/* LEFT: PSG College of Technology official logo (aligned toward center with equal gap) */}
+          <div className="flex items-center justify-end pr-6 md:pr-10 lg:pr-14 xl:pr-16">
             <img
               src={psgLogo}
               alt="PSG College of Technology official logo"
-              className="h-20 sm:h-22 md:h-24 lg:h-26 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              className="h-20 sm:h-22 md:h-24 lg:h-26 w-auto max-w-[130px] md:max-w-[150px] lg:max-w-[170px] object-contain transition-transform duration-300 hover:scale-105"
             />
           </div>
 
@@ -54,20 +54,20 @@ export const InstitutionalHeader: React.FC = () => {
             <h1 className="text-xl sm:text-2xl md:text-[1.75rem] lg:text-[1.95rem] xl:text-3xl font-extrabold text-[#244A91] tracking-tight leading-tight whitespace-nowrap">
               PSG COLLEGE OF TECHNOLOGY
             </h1>
-            <p className="text-xs sm:text-sm md:text-base font-semibold text-[#16366B] mt-1 tracking-normal whitespace-nowrap">
+            <p className="text-sm sm:text-base md:text-[1.125rem] lg:text-[1.22rem] font-bold text-[#16366B] mt-1 sm:mt-1.5 tracking-normal whitespace-nowrap">
               Coimbatore, Tamil Nadu, India - 641004
             </p>
-            <p className="text-xs sm:text-sm md:text-base lg:text-[17px] font-bold text-[#D9A353] mt-1 tracking-wider uppercase whitespace-nowrap">
+            <p className="text-sm sm:text-base md:text-[1.2rem] lg:text-[1.35rem] xl:text-[1.45rem] font-extrabold text-[#D9A353] mt-1 sm:mt-1.5 tracking-wider uppercase whitespace-nowrap">
               PSG - DATAINSIGHT
             </p>
           </div>
 
-          {/* RIGHT: Finalized DATAINSIGHT 2027 logo */}
-          <div className="flex-shrink-0 flex items-center justify-center">
+          {/* RIGHT: Finalized DATAINSIGHT 2027 logo (aligned toward center with equal gap) */}
+          <div className="flex items-center justify-start pl-6 md:pl-10 lg:pl-14 xl:pl-16">
             <img
               src={datainsightLogo}
               alt="DATAINSIGHT 2027 finalized official logo"
-              className="h-16 sm:h-18 md:h-20 lg:h-22 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              className="h-16 sm:h-18 md:h-20 lg:h-22 w-auto max-w-[130px] md:max-w-[150px] lg:max-w-[170px] object-contain transition-transform duration-300 hover:scale-105"
             />
           </div>
 
