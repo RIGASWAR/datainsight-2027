@@ -3,42 +3,48 @@ import {
   Network, 
   TrendingUp, 
   Sparkles, 
-  Boxes, 
-  Shield, 
   ShieldCheck, 
   Server, 
-  Zap, 
-  ChevronDown, 
-  ChevronUp, 
-  Layers
+  Layers, 
+  RotateCw, 
+  ArrowRight,
+  Info
 } from 'lucide-react';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { CONFERENCE_DATA } from '../data/conference';
 
 export const Tracks: React.FC = () => {
-  const [expandedTrack, setExpandedTrack] = useState<string | null>('track-01');
+  // Store flipped state per track id
+  const [flippedCards, setFlippedCards] = useState<Record<string, boolean>>({});
   const shouldReduceMotion = useReducedMotion();
 
   const iconMap: Record<string, React.ElementType> = {
     Network,
-    TrendingUp,
     Sparkles,
-    Boxes,
-    Shield,
+    TrendingUp,
     ShieldCheck,
     Server,
-    Zap,
   };
 
-  const toggleTrack = (id: string) => {
-    setExpandedTrack(expandedTrack === id ? null : id);
+  const toggleFlip = (id: string) => {
+    setFlippedCards((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent, id: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleFlip(id);
+    }
   };
 
   return (
     <section id="tracks" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
-      {/* Ambience glow */}
-      <div className="absolute top-1/3 -right-36 w-96 h-96 bg-[#00A8E8]/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 -left-36 w-80 h-80 bg-[#176BFF]/5 rounded-full blur-[120px] pointer-events-none" />
+      {/* Ambience background glows */}
+      <div className="absolute top-1/4 -right-32 w-96 h-96 bg-[#00A8E8]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 -left-32 w-80 h-80 bg-[#176BFF]/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -52,115 +58,150 @@ export const Tracks: React.FC = () => {
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/20 mb-3 shadow-sm">
             <Layers className="w-3.5 h-3.5 text-[#D9A441]" />
-            TECHNICAL AREAS
+            CONFERENCE PROGRAM
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-brand-primary">
-            CONFERENCE TRACKS
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B2D6B]">
+            CONFERENCE TRACKS AND TOPICS
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
           <p className="mt-4 text-base sm:text-lg text-[#1A2B4A]/80">
-            Five specialized technical tracks covering contemporary challenges in multimodal analytics, intelligent systems, and trustworthy computing.
+            DATAINSIGHT 2027 features exactly five official technical tracks. Click or tap any card to view detailed track topics and sub-themes.
           </p>
         </motion.div>
 
-        {/* 5 Tracks Grid with Staggered Entrance */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+        {/* 5 Tracks Grid - Interactive 3D Flip Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-center">
           {CONFERENCE_DATA.tracks.map((track, index) => {
             const IconComponent = iconMap[track.iconName] || Network;
-            const isExpanded = expandedTrack === track.id;
+            const isFlipped = !!flippedCards[track.id];
 
             return (
               <motion.div
                 key={track.id}
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 25 }}
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ 
                   duration: 0.6, 
-                  delay: (index % 4) * 0.1, 
+                  delay: (index % 3) * 0.12, 
                   ease: [0.16, 1, 0.3, 1] 
                 }}
-                className={`rounded-2xl transition-all duration-300 border ${
-                  isExpanded
-                    ? 'border-[#176BFF] bg-white shadow-xl shadow-[#176BFF]/10 ring-1 ring-[#176BFF]/20'
-                    : 'border-[#176BFF]/15 bg-white shadow-sm hover:border-[#176BFF]/40 hover:shadow-md hover:-translate-y-1'
+                className={`[perspective:1200px] h-[360px] sm:h-[370px] w-full ${
+                  index === 4 ? 'md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none' : ''
                 }`}
               >
-                {/* Header (Click to toggle) */}
-                <button
-                  type="button"
-                  onClick={() => toggleTrack(track.id)}
-                  className="w-full p-6 sm:p-7 text-left flex items-start justify-between gap-4 focus:outline-none group"
-                  aria-expanded={isExpanded}
+                {/* 3D Rotating Card Container */}
+                <motion.div
+                  className="w-full h-full relative cursor-pointer select-none rounded-2xl"
+                  style={{ transformStyle: 'preserve-3d' }}
+                  animate={{ rotateY: isFlipped ? 180 : 0 }}
+                  transition={{ 
+                    duration: shouldReduceMotion ? 0.1 : 0.65, 
+                    ease: [0.23, 1, 0.32, 1] 
+                  }}
+                  onClick={() => toggleFlip(track.id)}
+                  onKeyDown={(e) => handleKeyDown(e, track.id)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`${track.trackNumber}: ${track.title}. Click to ${isFlipped ? 'flip back' : 'view topics'}.`}
                 >
-                  <div className="flex items-start gap-4">
-                    {/* Track Icon */}
-                    <div 
-                      className={`w-13 h-13 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm ${
-                        isExpanded
-                          ? 'bg-gradient-to-br from-[#176BFF] to-[#00A8E8] text-white shadow-[#176BFF]/30 scale-105'
-                          : 'bg-[#F5F9FF] border border-[#176BFF]/20 text-[#176BFF] group-hover:scale-105 group-hover:text-[#174EA6]'
-                      }`}
-                    >
-                      <IconComponent className="w-6.5 h-6.5" />
-                    </div>
-
-                    {/* Track Title & Meta */}
+                  {/* FRONT SIDE */}
+                  <div
+                    className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-[#176BFF]/20 shadow-md hover:shadow-xl hover:border-[#176BFF]/50 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between"
+                    style={{
+                      backfaceVisibility: 'hidden',
+                      WebkitBackfaceVisibility: 'hidden',
+                    }}
+                  >
                     <div>
-                      <span className="text-xs font-black tracking-widest text-[#D9A441] uppercase font-mono">
-                        {track.trackNumber}
-                      </span>
-                      <h3 className="text-lg sm:text-xl font-bold text-[#0B2D6B] mt-0.5 leading-snug group-hover:text-[#176BFF] transition-colors">
-                        {track.title}
-                      </h3>
-                      <p className="text-sm sm:text-base text-[#1A2B4A]/85 mt-2 line-clamp-2 leading-relaxed">
-                        {track.overview}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Toggle Indicator */}
-                  <div className="p-2 rounded-lg bg-[#F5F9FF] text-[#174EA6] border border-[#176BFF]/15 flex-shrink-0 group-hover:text-[#176BFF] transition-colors">
-                    {isExpanded ? (
-                      <ChevronUp className="w-5 h-5 text-[#176BFF]" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5" />
-                    )}
-                  </div>
-                </button>
-
-                {/* Expandable Content Area with Smooth Framer Motion Animation */}
-                <AnimatePresence initial={false}>
-                  {isExpanded && (
-                    <motion.div
-                      key="content"
-                      initial={shouldReduceMotion ? false : { height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-6 pt-2 border-t border-[#176BFF]/10 space-y-4">
-                        <div className="p-4.5 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/15 space-y-2.5">
-                          <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-bold text-[#174EA6] uppercase tracking-wider">
-                            <span>Topics & Sub-themes:</span>
-                            <span className="text-[#D9A441] text-xs sm:text-sm font-mono font-bold px-2.5 py-1 rounded-md bg-white border border-[#D9A441]/30">
-                              {track.topics}
-                            </span>
-                          </div>
-                          <p className="text-sm text-[#1A2B4A]/85 leading-relaxed">
-                            Detailed call-for-paper topics for {track.title} will be finalized in the formal conference call.
-                          </p>
-                        </div>
-
-                        <div className="flex items-center justify-between text-xs sm:text-sm text-[#1A2B4A]/75">
-                          <span>Scope: Full Research, Short Papers & Posters</span>
-                          <span className="text-[#0B2D6B] font-semibold">Peer-Reviewed Track</span>
+                      {/* Top Bar: Track Badge & Icon */}
+                      <div className="flex items-center justify-between mb-5">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black tracking-widest text-[#174EA6] bg-[#176BFF]/10 border border-[#176BFF]/20 font-mono">
+                          {track.trackNumber}
+                        </span>
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#176BFF] to-[#00A8E8] text-white flex items-center justify-center shadow-md shadow-[#176BFF]/25">
+                          <IconComponent className="w-6 h-6" />
                         </div>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+
+                      {/* Track Title */}
+                      <h3 className="text-xl sm:text-2xl font-bold text-[#0B2D6B] leading-snug group-hover:text-[#176BFF] transition-colors">
+                        {track.title}
+                      </h3>
+
+                      {/* DATAINSIGHT Visual Accent */}
+                      <div className="w-12 h-1 bg-gradient-to-r from-[#176BFF] to-[#00A8E8] rounded-full my-3.5" />
+
+                      <p className="text-sm text-[#1A2B4A]/75 line-clamp-3 leading-relaxed">
+                        Official technical track for original peer-reviewed research papers and applications at DATAINSIGHT 2027.
+                      </p>
+                    </div>
+
+                    {/* Bottom Prompt: Click to view topics */}
+                    <div className="pt-4 border-t border-[#176BFF]/10 flex items-center justify-between text-sm font-semibold text-[#176BFF] hover:text-[#0B2D6B] transition-colors">
+                      <span className="inline-flex items-center gap-1.5">
+                        <Info className="w-4 h-4 text-[#D9A441]" />
+                        Click to view topics
+                      </span>
+                      <span className="p-1.5 rounded-lg bg-[#176BFF]/10 text-[#176BFF]">
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* BACK SIDE */}
+                  <div
+                    className="absolute inset-0 w-full h-full rounded-2xl bg-gradient-to-br from-[#0B2D6B] via-[#0D3B82] to-[#174EA6] text-white border border-[#00A8E8]/30 shadow-xl p-6 sm:p-7 flex flex-col justify-between"
+                    style={{
+                      backfaceVisibility: 'hidden',
+                      WebkitBackfaceVisibility: 'hidden',
+                      transform: 'rotateY(180deg)',
+                    }}
+                  >
+                    <div>
+                      {/* Top Header */}
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold tracking-wider text-[#D9A441] bg-[#D9A441]/15 border border-[#D9A441]/30 font-mono">
+                          {track.trackNumber} DETAILS
+                        </span>
+                        <span className="text-xs text-white/70">DATAINSIGHT 2027</span>
+                      </div>
+
+                      {/* Title */}
+                      <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">
+                        {track.title}
+                      </h4>
+
+                      {/* Topics / Details Area */}
+                      <div className="mt-4 p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 space-y-2">
+                        <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-cyan-200">
+                          <span>Track Topics</span>
+                          <span className="px-2 py-0.5 rounded bg-[#D9A441]/20 text-[#D9A441] font-mono text-[11px]">
+                            {track.topics}
+                          </span>
+                        </div>
+                        <p className="text-xs sm:text-sm text-white/85 leading-relaxed">
+                          Official Call for Papers topics and detailed sub-areas: <span className="font-semibold text-cyan-300">Topics — TO BE INCLUDED</span> following final notification from the Technical Committee.
+                        </p>
+                      </div>
+
+                      <p className="mt-3 text-xs text-white/70 leading-relaxed">
+                        Peer-reviewed submissions will be evaluated by international program committee reviewers.
+                      </p>
+                    </div>
+
+                    {/* Bottom Prompt: Click to flip back */}
+                    <div className="pt-3 border-t border-white/15 flex items-center justify-between text-sm font-semibold text-cyan-200">
+                      <span className="inline-flex items-center gap-1.5">
+                        <RotateCw className="w-4 h-4 text-[#D9A441]" />
+                        Click to flip back
+                      </span>
+                      <span className="text-xs px-2.5 py-1 rounded-md bg-white/15 text-white">
+                        Return
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
               </motion.div>
             );
           })}

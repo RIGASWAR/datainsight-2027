@@ -3,7 +3,7 @@ import { ArrowUpRight, MapPin } from 'lucide-react';
 import { CONFERENCE_DATA } from '../data/conference';
 
 interface FooterProps {
-  onActionClick: (actionType: 'submit' | 'register' | 'cfp') => void;
+  onActionClick: (actionType: 'submit' | 'register' | 'cfp' | 'sponsors') => void;
   onLegalClick: (type: 'privacy' | 'terms') => void;
 }
 

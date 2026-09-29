@@ -25,7 +25,8 @@ export const Theme: React.FC = () => {
   };
 
   return (
-    <section id="themes" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
+    <section id="theme" className="py-20 md:py-28 relative bg-[#F5F9FF] overflow-hidden">
+      <div id="themes" className="sr-only" />
       {/* Background Ambience */}
       <div className="absolute top-10 right-10 w-96 h-96 bg-[#00A8E8]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#176BFF]/5 rounded-full blur-[120px] pointer-events-none" />

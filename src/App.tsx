@@ -2,17 +2,23 @@ import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { InstitutionalHeader } from './components/InstitutionalHeader';
 import { Hero } from './components/Hero';
+import { AboutPSGCT } from './components/AboutPSGCT';
 import { About } from './components/About';
-import { Highlights } from './components/Highlights';
-import { Theme } from './components/Theme';
-import { ImportantDates } from './components/ImportantDates';
-import { Tracks } from './components/Tracks';
+import { Scope } from './components/Scope';
 import { Speakers } from './components/Speakers';
-import { CallForPapers } from './components/CallForPapers';
+import { Theme } from './components/Theme';
+import { Tracks } from './components/Tracks';
 import { Publication } from './components/Publication';
+import { ImportantDates } from './components/ImportantDates';
+import { PaperSubmission } from './components/PaperSubmission';
+import { Registration } from './components/Registration';
+import { ExpertOpinions } from './components/ExpertOpinions';
+import { Events } from './components/Events';
 import { Committee } from './components/Committee';
+import { AdditionalCommittees } from './components/AdditionalCommittees';
 import { Venue } from './components/Venue';
 import { Contact } from './components/Contact';
+import { Sponsors } from './components/Sponsors';
 import { Footer } from './components/Footer';
 import { BackToTop } from './components/BackToTop';
 import { ScrollProgress } from './components/ScrollProgress';
@@ -59,8 +65,8 @@ export function App() {
         title: 'Conference Sponsorship',
         subtitle: 'Industry & Academic Partnership Opportunities',
         details:
-          'DATAINSIGHT 2027 offers comprehensive sponsorship packages, exhibition booth allocations, and branding opportunities for technology organizations and research institutions. Status: TO BE INCLUDED',
-        statusBadge: 'TO BE INCLUDED',
+          'DATAINSIGHT 2027 offers comprehensive sponsorship packages, exhibition booth allocations, and branding opportunities for technology organizations and research institutions. Status: TO BE ANNOUNCED',
+        statusBadge: 'TO BE ANNOUNCED',
       });
       setModalOpen(true);
     }
@@ -89,7 +95,7 @@ export function App() {
   };
 
   const handleExploreClick = () => {
-    const el = document.getElementById('about');
+    const el = document.getElementById('about-psgct');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -104,15 +110,15 @@ export function App() {
       {/* Subtle Scroll Progress Indicator */}
       <ScrollProgress />
 
-      {/* Top Sticky Navigation */}
+      {/* Top Sticky Navigation with exact 16 items */}
       <Navbar onActionClick={handleActionClick} />
 
       {/* Institutional Header with PSG & DATAINSIGHT Logos */}
       <InstitutionalHeader />
 
-      {/* Main Page Flow */}
+      {/* Main Page Flow - Exact 19 Sections Sequence */}
       <main className="flex-1 flex flex-col">
-        {/* Full-width Drone Video Hero with Centered Translucent Box & Countdown */}
+        {/* 01. Home / Entry Page with Drone Video, Translucent Box & Countdown */}
         <Hero
           onActionClick={handleActionClick}
           onExploreClick={handleExploreClick}
@@ -120,61 +126,91 @@ export function App() {
 
         <SectionDivider variant="cyan-blue" />
 
-        {/* Conference Introduction */}
+        {/* 02. About PSGCT */}
+        <AboutPSGCT />
+
+        <SectionDivider variant="blue-gold" />
+
+        {/* 03. About DATAINSIGHT 2027 (with animated circular multimodal data visualization) */}
         <About />
 
-        <SectionDivider variant="blue-gold" />
-
-        {/* Conference Highlights */}
-        <Highlights />
-
         <SectionDivider variant="gold-cyan" />
 
-        {/* Conference Themes & Convergence */}
-        <Theme />
+        {/* 04. Scope of the Conference */}
+        <Scope />
 
         <SectionDivider variant="cyan-blue" />
 
-        {/* Important Dates Timeline */}
-        <ImportantDates />
-
-        <SectionDivider variant="blue-gold" />
-
-        {/* Conference Tracks */}
-        <Tracks />
-
-        <SectionDivider variant="gold-cyan" />
-
-        {/* Keynote Speakers */}
+        {/* 05. Keynote Speakers and Panelists */}
         <Speakers />
 
-        <SectionDivider variant="cyan-blue" />
-
-        {/* Call for Papers */}
-        <CallForPapers onActionClick={handleActionClick} />
-
         <SectionDivider variant="blue-gold" />
 
-        {/* Publication & Indexing */}
-        <Publication />
+        {/* 06. Theme */}
+        <Theme />
 
         <SectionDivider variant="gold-cyan" />
 
-        {/* Organizing Committee */}
-        <Committee />
+        {/* 07. Conference Tracks and Topics (with 3D flip card interaction) */}
+        <Tracks />
 
         <SectionDivider variant="cyan-blue" />
 
-        {/* Venue & Travel */}
-        <Venue onMapClick={handleMapClick} />
+        {/* 08. Conference Publication */}
+        <Publication />
 
         <SectionDivider variant="blue-gold" />
 
-        {/* Contact Us & Secretariat Form */}
+        {/* 09. Important Dates */}
+        <ImportantDates />
+
+        <SectionDivider variant="gold-cyan" />
+
+        {/* 10. Paper Submission */}
+        <PaperSubmission onActionClick={handleActionClick} />
+
+        <SectionDivider variant="cyan-blue" />
+
+        {/* 11. Registration Details */}
+        <Registration onActionClick={handleActionClick} />
+
+        <SectionDivider variant="blue-gold" />
+
+        {/* 12. Expert Opinions on DATAINSIGHT 2027 (auto-sliding 5-card carousel) */}
+        <ExpertOpinions />
+
+        <SectionDivider variant="gold-cyan" />
+
+        {/* 13. Events */}
+        <Events />
+
+        <SectionDivider variant="cyan-blue" />
+
+        {/* 14. Organizing Committee */}
+        <Committee />
+
+        <SectionDivider variant="blue-gold" />
+
+        {/* 15. Additional Committees and Advisory Bodies */}
+        <AdditionalCommittees />
+
+        <SectionDivider variant="gold-cyan" />
+
+        {/* 16. Conference Venue */}
+        <Venue onMapClick={handleMapClick} />
+
+        <SectionDivider variant="cyan-blue" />
+
+        {/* 17. Contact Us */}
         <Contact onFormSuccess={handleFormSuccess} />
+
+        <SectionDivider variant="blue-gold" />
+
+        {/* 18. Sponsors (EXACTLY 4 sponsor boxes: SPONSOR 1 to SPONSOR 4 TO BE ANNOUNCED) */}
+        <Sponsors onActionClick={handleActionClick} />
       </main>
 
-      {/* Conference Footer */}
+      {/* 19. Footer */}
       <Footer
         onActionClick={handleActionClick}
         onLegalClick={handleLegalClick}

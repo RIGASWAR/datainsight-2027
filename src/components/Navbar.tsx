@@ -10,19 +10,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('Home');
 
-  // Exact 11 navigation items required
+  // Exact 16 navigation items required by Section 4
   const navItems = [
     { name: 'Home', href: '#home', targetId: 'home' },
-    { name: 'About', href: '#about', targetId: 'about' },
-    { name: 'Committee', href: '#committee', targetId: 'committee' },
+    { name: 'About PSGCT', href: '#about-psgct', targetId: 'about-psgct' },
+    { name: 'About DATAINSIGHT', href: '#about', targetId: 'about' },
+    { name: 'Scope', href: '#scope', targetId: 'scope' },
     { name: 'Speakers', href: '#speakers', targetId: 'speakers' },
-    { name: 'Theme', href: '#themes', targetId: 'themes' },
+    { name: 'Theme', href: '#theme', targetId: 'theme' },
+    { name: 'Tracks', href: '#tracks', targetId: 'tracks' },
+    { name: 'Publication', href: '#publication', targetId: 'publication' },
     { name: 'Important Dates', href: '#dates', targetId: 'dates' },
-    { name: 'Registration', href: '#dates', targetId: 'registration', isAction: true },
-    { name: 'Events', href: '#highlights', targetId: 'highlights' },
-    { name: 'Publications', href: '#publication', targetId: 'publication' },
+    { name: 'Paper Submission', href: '#submission', targetId: 'submission' },
+    { name: 'Registration', href: '#registration', targetId: 'registration' },
+    { name: 'Expert Opinions', href: '#expert-opinions', targetId: 'expert-opinions' },
+    { name: 'Events', href: '#events', targetId: 'events' },
+    { name: 'Committee', href: '#committee', targetId: 'committee' },
     { name: 'Venue & Contact', href: '#venue', targetId: 'venue' },
-    { name: 'Sponsors', href: '#contact', targetId: 'sponsors', isAction: true },
+    { name: 'Sponsors', href: '#sponsors', targetId: 'sponsors' },
   ];
 
   // Scrollspy active section detection
@@ -30,19 +35,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + 220;
 
-      // Section ID mapping to nav label
+      // Section ID mapping in reverse order for accurate scrollspy
       const sectionMappings = [
+        { id: 'sponsors', label: 'Sponsors' },
         { id: 'contact', label: 'Venue & Contact' },
         { id: 'venue', label: 'Venue & Contact' },
+        { id: 'advisory-bodies', label: 'Committee' },
         { id: 'committee', label: 'Committee' },
-        { id: 'publication', label: 'Publications' },
-        { id: 'cfp', label: 'Registration' },
-        { id: 'speakers', label: 'Speakers' },
-        { id: 'tracks', label: 'Theme' },
+        { id: 'events', label: 'Events' },
+        { id: 'expert-opinions', label: 'Expert Opinions' },
+        { id: 'registration', label: 'Registration' },
+        { id: 'submission', label: 'Paper Submission' },
         { id: 'dates', label: 'Important Dates' },
-        { id: 'themes', label: 'Theme' },
-        { id: 'highlights', label: 'Events' },
-        { id: 'about', label: 'About' },
+        { id: 'publication', label: 'Publication' },
+        { id: 'tracks', label: 'Tracks' },
+        { id: 'theme', label: 'Theme' },
+        { id: 'speakers', label: 'Speakers' },
+        { id: 'scope', label: 'Scope' },
+        { id: 'about', label: 'About DATAINSIGHT' },
+        { id: 'about-psgct', label: 'About PSGCT' },
         { id: 'home', label: 'Home' },
       ];
 
@@ -78,24 +89,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
     setMobileMenuOpen(false);
     setActiveSection(item.name);
 
-    if (item.name === 'Registration') {
-      onActionClick('register');
-      const target = document.querySelector(item.href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-      return;
-    }
-
-    if (item.name === 'Sponsors') {
-      onActionClick('sponsors');
-      const target = document.querySelector(item.href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-      return;
-    }
-
     const target = document.querySelector(item.href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -104,10 +97,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
 
   return (
     <header className="sticky top-0 left-0 right-0 z-50 bg-[#244A91] border-b border-[#16366B] shadow-md">
-      <div className="max-w-[1560px] mx-auto px-3 sm:px-6">
+      <div className="max-w-[1720px] mx-auto px-2 sm:px-4 lg:px-6">
         
-        {/* Mobile Header Bar (< 1024px) */}
-        <div className="flex lg:hidden items-center justify-between py-2.5">
+        {/* Mobile / Tablet Header Bar (< 1180px) */}
+        <div className="flex xl:hidden items-center justify-between py-2.5">
           <a
             href="#home"
             onClick={(e) => {
@@ -127,14 +120,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           <div className="flex items-center gap-2">
             <button
               onClick={() => onActionClick('submit')}
-              className="px-2.5 py-1 text-xs font-bold bg-[#D9A353] text-[#071329] rounded-md shadow-xs"
+              className="px-2.5 py-1 text-xs font-bold bg-[#D9A353] text-[#071329] rounded-md shadow-xs cursor-pointer"
             >
               Submit Paper
             </button>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 rounded-lg text-white hover:text-[#D9A353] hover:bg-white/10 focus:outline-none"
+              className="p-1.5 rounded-lg text-white hover:text-[#D9A353] hover:bg-white/10 focus:outline-none cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -143,8 +136,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           </div>
         </div>
 
-        {/* Desktop Navigation (>= 1024px): Pure horizontal academic navbar */}
-        <nav className="hidden lg:flex items-center justify-center space-x-1 lg:space-x-1.5 xl:space-x-2 py-2 overflow-x-auto scrollbar-none">
+        {/* Desktop Navigation (>= 1180px): Pure horizontal academic navbar with exact 16 items */}
+        <nav className="hidden xl:flex items-center justify-center space-x-1 2xl:space-x-1.5 py-2 overflow-x-auto scrollbar-none">
           {navItems.map((item) => {
             const isActive = activeSection === item.name;
             return (
@@ -152,10 +145,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`px-2 lg:px-2.5 xl:px-3 py-1.5 text-xs lg:text-[13px] xl:text-[13.5px] font-semibold tracking-wide rounded-md transition-all duration-200 whitespace-nowrap ${
+                className={`px-2 2xl:px-2.5 py-1 text-[11.5px] 2xl:text-[12.5px] font-semibold tracking-tight rounded-md transition-all duration-200 whitespace-nowrap ${
                   isActive
-                    ? 'text-[#D9A353] bg-[#16366B]/90 font-bold shadow-xs border-b-2 border-[#D9A353]'
-                    : 'text-white hover:text-[#D9A353] hover:bg-white/10'
+                    ? 'text-[#D9A353] bg-[#16366B]/95 font-bold shadow-xs border-b-2 border-[#D9A353]'
+                    : 'text-white/95 hover:text-[#D9A353] hover:bg-white/10'
                 }`}
               >
                 {item.name}
@@ -164,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           })}
         </nav>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile & Tablet Navigation Drawer */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -172,9 +165,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: 'easeInOut' }}
-              className="lg:hidden overflow-hidden border-t border-[#16366B] bg-[#1F407F] px-2 py-3"
+              className="xl:hidden overflow-hidden border-t border-[#16366B] bg-[#1F407F] px-3 py-3"
             >
-              <div className="grid grid-cols-2 gap-1.5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 max-h-[70vh] overflow-y-auto pr-1">
                 {navItems.map((item) => {
                   const isActive = activeSection === item.name;
                   return (
@@ -182,7 +175,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item)}
-                      className={`px-3 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-colors ${
+                      className={`px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
                         isActive
                           ? 'bg-[#16366B] text-[#D9A353] font-bold border border-[#D9A353]/40'
                           : 'text-white hover:bg-white/10 hover:text-[#D9A353]'
@@ -200,7 +193,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                     setMobileMenuOpen(false);
                     onActionClick('submit');
                   }}
-                  className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-lg bg-[#D9A353] text-[#071329] shadow-xs"
+                  className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-lg bg-[#D9A353] text-[#071329] shadow-xs cursor-pointer"
                 >
                   Submit Paper
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -210,7 +203,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                     setMobileMenuOpen(false);
                     onActionClick('register');
                   }}
-                  className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-lg bg-white/10 text-white border border-white/20"
+                  className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-lg bg-white/10 text-white border border-white/20 cursor-pointer"
                 >
                   Register
                 </button>
