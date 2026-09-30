@@ -27,7 +27,7 @@ export const AboutPSGCT: React.FC = () => {
     },
     {
       title: 'Academic Stature',
-      desc: "Autonomous institution affiliated with Anna University, accredited with 'A++' Grade by NAAC and ISO 9001:2015 certified.",
+      desc: "Autonomous institution affiliated with Anna University, accredited with 'A+' Grade by NAAC and ISO 9001:2015 certified.",
       icon: Award,
     },
     {
@@ -113,7 +113,7 @@ export const AboutPSGCT: React.FC = () => {
                 <div className="flex items-center gap-3">
                   <ShieldCheck className="w-5 h-5 text-[#D9A353] flex-shrink-0" />
                   <span className="text-xs sm:text-sm font-semibold text-white/95">
-                    NAAC 'A++' Accredited Institution
+                    NAAC A+ Accredited Institution
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -143,7 +143,7 @@ export const AboutPSGCT: React.FC = () => {
                   <div className="text-[11px] font-semibold text-white/80 uppercase tracking-wider mt-0.5">Years Legacy</div>
                 </div>
                 <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-center">
-                  <div className="text-xl sm:text-2xl font-black text-[#00A8E8]">A++</div>
+                  <div className="text-xl sm:text-2xl font-black text-[#00A8E8]">A+</div>
                   <div className="text-[11px] font-semibold text-white/80 uppercase tracking-wider mt-0.5">NAAC Grade</div>
                 </div>
               </div>

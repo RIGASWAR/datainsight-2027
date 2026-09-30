@@ -125,14 +125,14 @@ export const CONFERENCE_DATA = {
     established: '1951',
     founder: "PSG & Sons' Charities Trust",
     affiliation: 'Affiliated to Anna University, Chennai',
-    accreditation: "Accredited with 'A++' Grade by NAAC",
+    accreditation: "Accredited with 'A+' Grade by NAAC",
     description:
       'PSG College of Technology, established in 1951 by the visionary philanthropists of PSG & Sons’ Charities Trust, is an autonomous, premier engineering institution in Coimbatore, Tamil Nadu, India. Revered globally for pioneering industry-institute collaboration, rigorous research culture, and academic excellence, PSG Tech empowers students with transformative education and technological leadership across engineering, technology, applied sciences, and management.',
     departmentIT:
       'The Department of Information Technology, established in 1999, is committed to producing competent engineers and innovators equipped with strong foundations in artificial intelligence, multimodal data systems, cybersecurity, network architectures, and software engineering.',
     highlights: [
       { label: 'Established', value: '1951' },
-      { label: 'Accreditation', value: 'NAAC A++ & ISO 9001:2015' },
+      { label: 'Accreditation', value: 'NAAC A+ & ISO 9001:2015' },
       { label: 'Status', value: 'Govt. Aided Autonomous' },
       { label: 'Campus', value: 'Peelamedu, Coimbatore' },
     ],

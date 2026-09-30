@@ -27,8 +27,8 @@ export const InstitutionalHeader: React.FC = () => {
               Coimbatore, Tamil Nadu, India – 641004
             </p>
             <div className="text-xs font-extrabold tracking-wider uppercase pt-0.5">
-              <span className="text-[#174EA6]">PSG</span>
-              <span className="text-[#D9A441] mx-1">•</span>
+              <span className="text-[#174EA6]">PSG</span>{" "}
+              <span className="text-[#D9A441] font-bold mx-1">–</span>{" "}
               <span className="text-[#0B2D6B]">DATAINSIGHT</span>
             </div>
           </div>
@@ -62,8 +62,8 @@ export const InstitutionalHeader: React.FC = () => {
               Coimbatore, Tamil Nadu, India – 641004
             </p>
             <div className="mt-1 sm:mt-1.5 flex items-center justify-center gap-1.5 text-xs sm:text-sm md:text-base lg:text-[1.05rem] font-extrabold uppercase tracking-wider whitespace-nowrap">
-              <span className="text-[#174EA6]">PSG</span>
-              <span className="text-[#D9A441] font-black">•</span>
+              <span className="text-[#174EA6]">PSG</span>{" "}
+              <span className="text-[#D9A441] font-bold">–</span>{" "}
               <span className="text-[#0B2D6B] tracking-widest">DATAINSIGHT</span>
             </div>
           </div>

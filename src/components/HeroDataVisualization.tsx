@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { 
   Image as ImageIcon, 
-  Mic, 
-  TrendingUp, 
-  Database, 
-  PieChart
+  Volume2, 
+  BarChart3, 
+  Database
 } from 'lucide-react';
 import datainsightLogo from '../assets/datainsight_logo.png';
 
@@ -30,25 +29,27 @@ export const HeroDataVisualization: React.FC<HeroDataVisualizationProps> = ({
       icon: ImageIcon,
       color: '#00A8E8',
       position: '-top-2 -left-2 sm:-top-2.5 sm:-left-2.5',
-      badgePos: 'bottom-full mb-1 left-0',
+      // Position tooltip downward-inward to prevent going behind the sticky navbar
+      badgePos: 'top-full mt-1.5 left-0',
     },
     {
       id: 'audio',
       name: 'Audio',
       concept: 'Acoustic & Voice Signals',
-      icon: Mic,
+      icon: Volume2,
       color: '#176BFF',
       position: '-top-2 -right-2 sm:-top-2.5 sm:-right-2.5',
-      badgePos: 'bottom-full mb-1 right-0',
+      // Position tooltip downward-inward to prevent going behind the sticky navbar
+      badgePos: 'top-full mt-1.5 right-0',
     },
     {
-      id: 'graph',
-      name: 'Line Graph',
-      concept: 'Temporal Trends & Analytics',
-      icon: TrendingUp,
+      id: 'analytics',
+      name: 'Analytics',
+      concept: 'Statistical Data & Analytics',
+      icon: BarChart3,
       color: '#244A91',
       position: '-bottom-2 -left-2 sm:-bottom-2.5 sm:-left-2.5',
-      badgePos: 'top-full mt-1 left-0',
+      badgePos: 'top-full mt-1.5 left-0',
     },
     {
       id: 'database',
@@ -57,7 +58,7 @@ export const HeroDataVisualization: React.FC<HeroDataVisualizationProps> = ({
       icon: Database,
       color: '#D9A441',
       position: '-bottom-2 -right-2 sm:-bottom-2.5 sm:-right-2.5',
-      badgePos: 'top-full mt-1 right-0',
+      badgePos: 'top-full mt-1.5 right-0',
     },
   ];
 
@@ -127,6 +128,13 @@ export const HeroDataVisualization: React.FC<HeroDataVisualizationProps> = ({
         return (
           <div
             key={node.id}
+            role="button"
+            tabIndex={0}
+            aria-label={`${node.name}: ${node.concept}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              setHoveredNode(prev => (prev === node.id ? null : node.id));
+            }}
             onMouseEnter={() => setHoveredNode(node.id)}
             onMouseLeave={() => setHoveredNode(null)}
             className={`absolute ${node.position} z-20 flex items-center justify-center cursor-pointer transition-transform duration-300 ${
@@ -148,13 +156,14 @@ export const HeroDataVisualization: React.FC<HeroDataVisualizationProps> = ({
               />
             </div>
 
-            {/* Hover Tooltip / Label */}
+            {/* Hover / Tap Tooltip - Positioned safely away from the navbar */}
             {isHovered && (
               <motion.div
-                initial={{ opacity: 0, y: 4, scale: 0.9 }}
+                data-testid="hero-node-tooltip"
+                initial={{ opacity: 0, y: 3, scale: 0.92 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                className={`absolute ${node.badgePos} z-30 pointer-events-none whitespace-nowrap px-2 py-0.5 rounded-md bg-[#071A3D] text-white text-[10px] font-bold shadow-lg border border-white/20`}
+                exit={{ opacity: 0, scale: 0.92 }}
+                className={`hero-node-tooltip absolute ${node.badgePos} z-40 pointer-events-none whitespace-nowrap px-2 py-0.5 rounded-md bg-[#071A3D] text-white text-[10px] font-bold shadow-lg border border-white/20`}
               >
                 <div className="flex items-center gap-1">
                   <span style={{ color: node.color }}>●</span>
@@ -173,14 +182,6 @@ export const HeroDataVisualization: React.FC<HeroDataVisualizationProps> = ({
           alt="DATAINSIGHT 2027 Official Logo"
           className={`${logoHeightClasses} w-auto max-w-[150px] sm:max-w-[180px] md:max-w-[210px] lg:max-w-[240px] xl:max-w-[260px] object-contain transition-transform duration-300 group-hover:scale-[1.02] drop-shadow-xs`}
         />
-      </div>
-
-      {/* Bottom Central Insight Indicator Badge: Data -> Fusion -> Insight */}
-      <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white border border-[#176BFF]/25 shadow-xs text-[9px] sm:text-[10px] font-extrabold text-[#0B2D6B] whitespace-nowrap">
-        <PieChart className="w-2.5 h-2.5 text-[#00A8E8]" />
-        <span className="text-[#176BFF]">FUSION</span>
-        <span className="text-[#D9A441]">&rarr;</span>
-        <span className="text-[#D9A441]">INSIGHT</span>
       </div>
     </div>
   );

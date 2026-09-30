@@ -56,13 +56,13 @@ export const About: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
 
-          {/* Official DATAINSIGHT Logo Branding */}
-          <div className="mt-6 flex justify-center items-center">
-            <div className="p-3 sm:p-4 rounded-2xl bg-white border border-[#176BFF]/20 shadow-md shadow-[#0B2D6B]/5 inline-flex items-center justify-center">
+          {/* Official DATAINSIGHT Logo Branding - Noticeably larger, sharp and balanced */}
+          <div className="mt-6 sm:mt-7 flex justify-center items-center">
+            <div className="p-3.5 sm:p-4.5 md:p-5 rounded-2xl bg-white border border-[#176BFF]/20 shadow-md shadow-[#0B2D6B]/5 inline-flex items-center justify-center">
               <img
                 src={datainsightLogo}
                 alt="DATAINSIGHT 2027 Conference Logo"
-                className="h-12 sm:h-16 w-auto max-w-[220px] sm:max-w-[280px] object-contain drop-shadow-sm"
+                className="h-16 sm:h-22 md:h-26 lg:h-28 w-auto max-w-[260px] sm:max-w-[340px] md:max-w-[420px] object-contain drop-shadow-sm"
               />
             </div>
           </div>
