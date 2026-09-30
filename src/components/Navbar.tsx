@@ -95,11 +95,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
   };
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 bg-[#244A91] border-b border-[#16366B] shadow-md">
-      <div className="max-w-[1720px] mx-auto px-2 sm:px-4 lg:px-6">
+    <header className="sticky top-0 left-0 right-0 z-50 bg-[#244A91] border-b border-[#16366B] shadow-md min-h-[56px] sm:min-h-[58px] md:min-h-[60px] lg:min-h-[62px] flex items-center">
+      <div className="w-full max-w-[1800px] mx-auto px-1 sm:px-2 lg:px-3">
         
-        {/* Mobile / Tablet Header Bar (< 1180px) */}
-        <div className="flex xl:hidden items-center justify-between py-2.5">
+        {/* Mobile / Tablet Header Bar (< 1200px) */}
+        <div className="flex xl:hidden items-center justify-between py-2.5 sm:py-3">
           <a
             href="#home"
             onClick={(e) => {
@@ -119,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           <div className="flex items-center gap-2">
             <button
               onClick={() => onActionClick('submit')}
-              className="px-2.5 py-1 text-xs font-bold bg-[#D9A353] text-[#071329] rounded-md shadow-xs cursor-pointer"
+              className="px-2.5 py-1.5 text-xs font-bold bg-[#D9A353] text-[#071329] rounded-md shadow-xs cursor-pointer hover:bg-[#C28E3F] transition-colors"
             >
               Submit Paper
             </button>
@@ -135,8 +135,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           </div>
         </div>
 
-        {/* Desktop Navigation (>= 1180px): Pure horizontal academic navbar with exact 16 items */}
-        <nav className="hidden xl:flex items-center justify-center space-x-1 2xl:space-x-1.5 py-2 overflow-x-auto scrollbar-none">
+        {/* Desktop Navigation (>= 1200px): Pure horizontal academic navbar with exact 16 items */}
+        <nav className="hidden xl:flex items-center justify-center gap-0.5 xl:gap-1 2xl:gap-2 py-2.5 sm:py-3 w-full">
           {navItems.map((item) => {
             const isActive = activeSection === item.name;
             return (
@@ -144,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`px-2 2xl:px-2.5 py-1 text-[11.5px] 2xl:text-[12.5px] font-semibold tracking-tight rounded-md transition-all duration-200 whitespace-nowrap ${
+                className={`px-1 xl:px-1.5 2xl:px-2.5 py-1 text-[10.5px] xl:text-[11px] 2xl:text-[12.5px] font-semibold tracking-tight rounded-md transition-all duration-200 whitespace-nowrap ${
                   isActive
                     ? 'text-[#D9A353] bg-[#16366B]/95 font-bold shadow-xs border-b-2 border-[#D9A353]'
                     : 'text-white/95 hover:text-[#D9A353] hover:bg-white/10'
