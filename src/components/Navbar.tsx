@@ -95,7 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
   };
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 bg-[#244A91] border-b border-[#16366B] shadow-md min-h-[56px] sm:min-h-[58px] md:min-h-[60px] lg:min-h-[62px] flex items-center">
+    <header className="sticky top-0 left-0 right-0 z-50 w-full bg-[#244A91] border-b border-[#16366B] shadow-md min-h-[56px] sm:min-h-[58px] md:min-h-[60px] lg:min-h-[62px] flex items-center">
       <div className="w-full max-w-[1800px] mx-auto px-1 sm:px-2 lg:px-3">
         
         {/* Mobile / Tablet Header Bar (< 1200px) */}

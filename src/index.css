@@ -14,14 +14,24 @@
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {
     background-color: #FAFCFF;
     color: #1A2B4A;
-    overflow-x: hidden;
+    overflow-x: clip;
     line-height: 1.6;
+  }
+
+  /* Section anchor offset so sticky navbar does not cover section headings */
+  section[id],
+  div[id]:not(#root):not(#home) {
+    scroll-margin-top: 4.25rem;
+  }
+
+  #home {
+    scroll-margin-top: 0;
   }
 
   /* Custom sleek light scrollbar */
