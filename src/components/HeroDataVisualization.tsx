@@ -3,10 +3,19 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { 
   Image as ImageIcon, 
   Volume2, 
-  BarChart3, 
   Database
 } from 'lucide-react';
 import datainsightLogo from '../assets/datainsight_logo.png';
+import analyticsHexIcon from '../assets/analytics_hex.png';
+
+// Blue hexagonal analytics/bar-chart symbol from official DATAINSIGHT logo
+const AnalyticsHexIcon: React.FC<{ className?: string; style?: React.CSSProperties }> = () => (
+  <img 
+    src={analyticsHexIcon} 
+    alt="Analytics" 
+    className="w-3.5 h-3.5 sm:w-4 sm:h-4 object-contain select-none pointer-events-none" 
+  />
+);
 
 interface HeroDataVisualizationProps {
   className?: string;
@@ -46,14 +55,14 @@ export const HeroDataVisualization: React.FC<HeroDataVisualizationProps> = ({
       id: 'analytics',
       name: 'Analytics',
       concept: 'Statistical Data & Analytics',
-      icon: BarChart3,
+      icon: AnalyticsHexIcon,
       color: '#244A91',
       position: '-bottom-2 -left-2 sm:-bottom-2.5 sm:-left-2.5',
       badgePos: 'top-full mt-1.5 left-0',
     },
     {
       id: 'database',
-      name: 'Database',
+      name: 'Data',
       concept: 'Heterogeneous Storage & Lakes',
       icon: Database,
       color: '#D9A441',
