@@ -1,6 +1,6 @@
 import React from 'react';
 import psgLogo from '../assets/psg_logo.png';
-import { HeroDataVisualization } from './HeroDataVisualization';
+import datainsightLogo from '../assets/datainsight_logo.png';
 
 export const InstitutionalHeader: React.FC = () => {
   return (
@@ -9,12 +9,12 @@ export const InstitutionalHeader: React.FC = () => {
         
         {/* Mobile View (< 640px): Clean naturally stacked layout ensuring no crowding */}
         <div className="flex sm:hidden flex-col items-center text-center gap-3">
-          {/* Top: PSG Logo - Slightly increased for visual balance */}
-          <div className="flex items-center justify-center p-2.5 rounded-2xl bg-white border border-[#176BFF]/15 shadow-xs">
+          {/* Top: PSG Logo - Clean display without border boxes */}
+          <div className="flex items-center justify-center">
             <img
               src={psgLogo}
               alt="PSG College of Technology official crest"
-              className="h-[4.5rem] w-auto object-contain"
+              className="h-20 sm:h-24 w-auto object-contain"
             />
           </div>
           
@@ -31,24 +31,26 @@ export const InstitutionalHeader: React.FC = () => {
             </div>
           </div>
 
-          {/* Bottom: DATAINSIGHT Logo with Multimodal Visualization */}
-          <div className="pt-0.5">
-            <HeroDataVisualization size="sm" />
+          {/* Bottom: DATAINSIGHT Logo - Clean display without border boxes or decorative icons */}
+          <div className="flex items-center justify-center pt-0.5">
+            <img
+              src={datainsightLogo}
+              alt="DATAINSIGHT 2027 Conference Logo"
+              className="h-14 sm:h-16 w-auto object-contain"
+            />
           </div>
         </div>
 
         {/* Desktop & Tablet View (>= 640px): 3-column symmetrical grid ensuring equal distance from center anchor */}
         <div className="hidden sm:grid grid-cols-[1fr_auto_1fr] items-center w-full">
           
-          {/* LEFT: PSG College of Technology official logo (symmetrically balanced with DATAINSIGHT presentation) */}
+          {/* LEFT: PSG College of Technology official logo */}
           <div className="flex items-center justify-end pr-4 sm:pr-6 md:pr-8 lg:pr-10 xl:pr-12">
-            <div className="p-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 lg:px-7 lg:py-4 xl:px-8 xl:py-4.5 rounded-2xl bg-gradient-to-b from-[#F7FAFF] to-[#EEF5FF]/80 border border-[#176BFF]/20 shadow-md shadow-[#0B2D6B]/6 transition-all duration-300 hover:border-[#176BFF]/50 hover:shadow-lg flex items-center justify-center">
-              <img
-                src={psgLogo}
-                alt="PSG College of Technology official crest"
-                className="h-[4.75rem] sm:h-[5.75rem] md:h-[6.5rem] lg:h-[7.25rem] xl:h-[7.75rem] w-auto max-w-[140px] md:max-w-[165px] lg:max-w-[185px] object-contain transition-transform duration-300 hover:scale-[1.02] drop-shadow-xs"
-              />
-            </div>
+            <img
+              src={psgLogo}
+              alt="PSG College of Technology official crest"
+              className="h-20 sm:h-24 md:h-28 lg:h-32 xl:h-36 w-auto object-contain transition-transform duration-300 hover:scale-[1.03]"
+            />
           </div>
 
           {/* CENTER: Institutional Text - Visual Anchor with Academic Color Palette */}
@@ -64,9 +66,13 @@ export const InstitutionalHeader: React.FC = () => {
             </div>
           </div>
 
-          {/* RIGHT: DATAINSIGHT Logo with Interactive Multimodal Data Visualization */}
+          {/* RIGHT: DATAINSIGHT Logo - Clean display without border boxes or decorative icons */}
           <div className="flex items-center justify-start pl-4 sm:pl-6 md:pl-8 lg:pl-10 xl:pl-12">
-            <HeroDataVisualization size="md" />
+            <img
+              src={datainsightLogo}
+              alt="DATAINSIGHT 2027 Conference Logo"
+              className="h-14 sm:h-[4.25rem] md:h-20 lg:h-24 xl:h-[6.5rem] w-auto object-contain transition-transform duration-300 hover:scale-[1.03]"
+            />
           </div>
 
         </div>

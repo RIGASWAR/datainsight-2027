@@ -34,17 +34,26 @@ export const About: React.FC = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
         </motion.div>
 
-        {/* 3-Column Desktop Layout: Left Content, Center Logo, Right Poster */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        {/* 2-Column Desktop Layout: Left Content (Logo, Description, Stats), Right Poster */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
           
-          {/* Left Column: Official Description + 3 Core Indicators */}
+          {/* Left Column: DATAINSIGHT Logo + Official Description + 3 Core Indicators */}
           <motion.div 
             initial={shouldReduceMotion ? false : { opacity: 0, x: -25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.75, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 space-y-6 text-left"
+            className="lg:col-span-7 space-y-6 text-left"
           >
+            {/* DATAINSIGHT Logo - Enlarged and clearly visible directly below heading, centered within content column */}
+            <div className="flex items-center justify-center">
+              <img
+                src={datainsightLogo}
+                alt="DATAINSIGHT 2027 Conference Logo"
+                className="h-16 sm:h-20 md:h-24 w-auto object-contain drop-shadow-sm transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </div>
+
             {/* Complete Official Description Box */}
             <div className="p-6 sm:p-7 md:p-8 rounded-2xl bg-white border border-[#176BFF]/20 shadow-lg shadow-[#0B2D6B]/5 space-y-4">
               <p className="text-sm sm:text-base text-[#1A2B4A] leading-relaxed text-justify">
@@ -100,35 +109,15 @@ export const About: React.FC = () => {
 
           </motion.div>
 
-          {/* Center Column: Prominently Positioned DATAINSIGHT Logo */}
-          <motion.div 
-            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.75, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-2 flex flex-col items-center justify-center my-4 lg:my-0"
-          >
-            <div className="p-5 sm:p-6 rounded-3xl bg-white border border-[#176BFF]/25 shadow-xl shadow-[#0B2D6B]/8 flex flex-col items-center justify-center text-center w-full max-w-[220px]">
-              <img
-                src={datainsightLogo}
-                alt="DATAINSIGHT 2027 Conference Logo"
-                className="w-full h-auto object-contain drop-shadow-sm"
-              />
-              <span className="mt-3.5 text-[10.5px] font-extrabold uppercase tracking-widest text-[#244A91] bg-[#244A91]/10 px-3 py-1 rounded-full border border-[#244A91]/20">
-                Official Forum
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Right Column: Supplied poster.jpeg replacing multimodal visualization */}
+          {/* Right Column: Enlarged Conference Poster */}
           <motion.div 
             initial={shouldReduceMotion ? false : { opacity: 0, x: 25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-4 flex items-center justify-center"
+            className="lg:col-span-5 flex items-center justify-center w-full"
           >
-            <div className="relative w-full max-w-[440px] rounded-3xl overflow-hidden border border-[#176BFF]/25 shadow-2xl bg-white p-2">
+            <div className="relative w-full max-w-[560px] xl:max-w-[600px] rounded-3xl overflow-hidden border border-[#176BFF]/25 shadow-2xl bg-white p-2.5 sm:p-3">
               <img
                 src={posterImage}
                 alt="DATAINSIGHT 2027 Official Conference Poster"

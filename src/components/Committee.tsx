@@ -70,7 +70,17 @@ const CommitteeMemberCard: React.FC<CommitteeCardProps> = ({ member, variant, de
           alt={member.imageAlt}
           className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           style={{ objectPosition: member.objectPosition || 'center' }}
-          loading="lazy"
+          loading="eager"
+          decoding="async"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (target.dataset.fallbackTried) return;
+            target.dataset.fallbackTried = 'true';
+            const filename = member.image.split('/').pop()?.split('-')[0]?.split('?')[0];
+            if (filename) {
+              target.src = `/committee/${filename}.png`;
+            }
+          }}
         />
       </div>
 

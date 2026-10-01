@@ -69,7 +69,7 @@ export const AboutPSGCT: React.FC = () => {
               <h3 className="text-xl sm:text-2xl font-bold text-[#0B2554] tracking-tight">
                 Pioneering Engineering & Research Stature
               </h3>
-              <p className="text-base sm:text-lg text-[#1A2B4A] leading-relaxed text-justify">
+              <p className="text-sm sm:text-base text-[#1A2B4A] leading-relaxed text-justify">
                 {CONFERENCE_DATA.aboutPSGCT.description}
               </p>
             </div>
@@ -82,7 +82,7 @@ export const AboutPSGCT: React.FC = () => {
               <h4 className="text-xl sm:text-2xl font-black text-[#0B2554]">
                 Department of Information Technology
               </h4>
-              <p className="text-base sm:text-lg text-[#4A5E82] leading-relaxed text-justify">
+              <p className="text-sm sm:text-base text-[#1A2B4A] leading-relaxed text-justify">
                 {CONFERENCE_DATA.aboutPSGCT.departmentIT}
               </p>
             </div>
