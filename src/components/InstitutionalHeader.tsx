@@ -26,10 +26,8 @@ export const InstitutionalHeader: React.FC = () => {
             <p className="text-xs font-bold text-[#2A4B7C]">
               Coimbatore, Tamil Nadu, India – 641004
             </p>
-            <div className="text-xs font-extrabold tracking-wider uppercase pt-0.5">
-              <span className="text-[#174EA6]">PSG</span>{" "}
-              <span className="text-[#D9A441] font-bold mx-1">–</span>{" "}
-              <span className="text-[#0B2D6B]">DATAINSIGHT</span>
+            <div className="text-xs font-bold text-[#174EA6] pt-0.5">
+              Department of Information Technology
             </div>
           </div>
 
@@ -61,10 +59,8 @@ export const InstitutionalHeader: React.FC = () => {
             <p className="text-xs sm:text-sm md:text-base lg:text-[1.1rem] font-bold text-[#2A4B7C] mt-1 tracking-normal whitespace-nowrap">
               Coimbatore, Tamil Nadu, India – 641004
             </p>
-            <div className="mt-1 sm:mt-1.5 flex items-center justify-center gap-1.5 text-xs sm:text-sm md:text-base lg:text-[1.05rem] font-extrabold uppercase tracking-wider whitespace-nowrap">
-              <span className="text-[#174EA6]">PSG</span>{" "}
-              <span className="text-[#D9A441] font-bold">–</span>{" "}
-              <span className="text-[#0B2D6B] tracking-widest">DATAINSIGHT</span>
+            <div className="mt-1 sm:mt-1.5 text-xs sm:text-sm md:text-base lg:text-[1.05rem] font-bold text-[#174EA6] tracking-normal whitespace-nowrap">
+              Department of Information Technology
             </div>
           </div>
 

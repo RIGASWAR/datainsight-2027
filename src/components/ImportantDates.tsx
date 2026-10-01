@@ -191,7 +191,7 @@ export const ImportantDates: React.FC = () => {
         >
           <AlertCircle className="w-5 h-5 text-[#D9A441] flex-shrink-0" />
           <span>
-            Deadlines marked <strong>TO BE INCLUDED</strong> will be officially confirmed and notified to authors.
+            All submission deadlines and schedules are in Indian Standard Time (IST).
           </span>
         </motion.div>
 

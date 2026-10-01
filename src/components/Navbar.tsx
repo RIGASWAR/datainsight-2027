@@ -10,21 +10,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('Home');
 
-  // Exact 16 navigation items required by Section 4
+  // Exact 13 active navigation items matching the updated conference sections
   const navItems = [
     { name: 'Home', href: '#home', targetId: 'home' },
     { name: 'About PSGCT', href: '#about-psgct', targetId: 'about-psgct' },
     { name: 'About DATAINSIGHT', href: '#about', targetId: 'about' },
     { name: 'Scope', href: '#scope', targetId: 'scope' },
     { name: 'Speakers', href: '#speakers', targetId: 'speakers' },
-    { name: 'Theme', href: '#theme', targetId: 'theme' },
     { name: 'Tracks', href: '#tracks', targetId: 'tracks' },
     { name: 'Publication', href: '#publication', targetId: 'publication' },
     { name: 'Important Dates', href: '#dates', targetId: 'dates' },
     { name: 'Paper Submission', href: '#submission', targetId: 'submission' },
     { name: 'Registration', href: '#registration', targetId: 'registration' },
-    { name: 'Expert Opinions', href: '#expert-opinions', targetId: 'expert-opinions' },
-    { name: 'Events', href: '#events', targetId: 'events' },
     { name: 'Committee', href: '#committee', targetId: 'committee' },
     { name: 'Venue & Contact', href: '#venue', targetId: 'venue' },
     { name: 'Sponsors', href: '#sponsors', targetId: 'sponsors' },
@@ -41,14 +38,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
         { id: 'contact', label: 'Venue & Contact' },
         { id: 'venue', label: 'Venue & Contact' },
         { id: 'committee', label: 'Committee' },
-        { id: 'events', label: 'Events' },
-        { id: 'expert-opinions', label: 'Expert Opinions' },
         { id: 'registration', label: 'Registration' },
         { id: 'submission', label: 'Paper Submission' },
         { id: 'dates', label: 'Important Dates' },
         { id: 'publication', label: 'Publication' },
         { id: 'tracks', label: 'Tracks' },
-        { id: 'theme', label: 'Theme' },
         { id: 'speakers', label: 'Speakers' },
         { id: 'scope', label: 'Scope' },
         { id: 'about', label: 'About DATAINSIGHT' },
@@ -95,11 +89,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
   };
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 w-full bg-[#244A91] border-b border-[#16366B] shadow-md min-h-[56px] sm:min-h-[58px] md:min-h-[60px] lg:min-h-[62px] flex items-center">
-      <div className="w-full max-w-[1800px] mx-auto px-1 sm:px-2 lg:px-3">
+    <header className="sticky top-0 left-0 right-0 z-50 w-full bg-[#244A91] border-b border-[#16366B] shadow-md min-h-[64px] sm:min-h-[68px] lg:min-h-[72px] flex items-center">
+      <div className="w-full max-w-[1800px] mx-auto px-2 sm:px-3 lg:px-4">
         
         {/* Mobile / Tablet Header Bar (< 1200px) */}
-        <div className="flex xl:hidden items-center justify-between py-2.5 sm:py-3">
+        <div className="flex xl:hidden items-center justify-between py-3">
           <a
             href="#home"
             onClick={(e) => {
@@ -135,8 +129,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           </div>
         </div>
 
-        {/* Desktop Navigation (>= 1200px): Pure horizontal academic navbar with exact 16 items */}
-        <nav className="hidden xl:flex items-center justify-center gap-0.5 xl:gap-1 2xl:gap-2 py-2.5 sm:py-3 w-full">
+        {/* Desktop Navigation (>= 1200px): Clean horizontal academic navbar with exact 13 items */}
+        <nav className="hidden xl:flex items-center justify-center gap-1 xl:gap-1.5 2xl:gap-3 py-3 w-full">
           {navItems.map((item) => {
             const isActive = activeSection === item.name;
             return (
@@ -144,7 +138,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`px-1 xl:px-1.5 2xl:px-2.5 py-1 text-[10.5px] xl:text-[11px] 2xl:text-[12.5px] font-semibold tracking-tight rounded-md transition-all duration-200 whitespace-nowrap ${
+                className={`px-1.5 xl:px-2.5 2xl:px-3 py-1.5 text-[12px] xl:text-[13px] 2xl:text-[14px] font-semibold tracking-tight rounded-md transition-all duration-200 whitespace-nowrap ${
                   isActive
                     ? 'text-[#D9A353] bg-[#16366B]/95 font-bold shadow-xs border-b-2 border-[#D9A353]'
                     : 'text-white/95 hover:text-[#D9A353] hover:bg-white/10'

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { 
   Network, 
-  TrendingUp, 
   Sparkles, 
   ShieldCheck, 
   Server, 
@@ -21,7 +20,6 @@ export const Tracks: React.FC = () => {
   const iconMap: Record<string, React.ElementType> = {
     Network,
     Sparkles,
-    TrendingUp,
     ShieldCheck,
     Server,
   };
@@ -65,12 +63,12 @@ export const Tracks: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#00A8E8] via-[#176BFF] to-[#D9A441] mx-auto mt-4 rounded-full" />
           <p className="mt-4 text-base sm:text-lg text-[#1A2B4A]/80">
-            DATAINSIGHT 2027 features exactly five official technical tracks. Click or tap any card to view detailed track topics and sub-themes.
+            DATAINSIGHT 2027 features exactly four official technical tracks. Click or tap any card to view detailed track topics and sub-themes.
           </p>
         </motion.div>
 
-        {/* 5 Tracks Grid - Interactive 3D Flip Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-center">
+        {/* Exactly 4 Tracks Grid - Interactive 3D Flip Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 justify-center">
           {CONFERENCE_DATA.tracks.map((track, index) => {
             const IconComponent = iconMap[track.iconName] || Network;
             const isFlipped = !!flippedCards[track.id];
@@ -83,12 +81,10 @@ export const Tracks: React.FC = () => {
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ 
                   duration: 0.6, 
-                  delay: (index % 3) * 0.12, 
+                  delay: index * 0.1, 
                   ease: [0.16, 1, 0.3, 1] 
                 }}
-                className={`[perspective:1200px] h-[410px] sm:h-[420px] w-full ${
-                  index === 4 ? 'md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none' : ''
-                }`}
+                className="[perspective:1200px] h-[410px] sm:h-[420px] w-full"
               >
                 {/* 3D Rotating Card Container */}
                 <motion.div
@@ -132,7 +128,7 @@ export const Tracks: React.FC = () => {
                       {/* DATAINSIGHT Visual Accent */}
                       <div className="w-12 h-1 bg-gradient-to-r from-[#176BFF] to-[#00A8E8] rounded-full" />
 
-                      <p className="text-xs sm:text-sm text-[#1A2B4A]/75 line-clamp-3 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#1A2B4A]/75 leading-relaxed">
                         Official technical track for original peer-reviewed research papers and applications at DATAINSIGHT 2027.
                       </p>
                     </div>
@@ -177,11 +173,11 @@ export const Tracks: React.FC = () => {
                         <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-cyan-200">
                           <span>Track Topics</span>
                           <span className="px-1.5 py-0.5 rounded bg-[#D9A441]/20 text-[#D9A441] font-mono text-[10px]">
-                            {track.topics}
+                            TO BE INCLUDED
                           </span>
                         </div>
                         <p className="text-xs sm:text-sm text-white/85 leading-relaxed">
-                          Official Call for Papers topics and detailed sub-areas: <span className="font-semibold text-cyan-300">Topics — TO BE INCLUDED</span> following final notification from the Technical Committee.
+                          Official Call for Papers topics and sub-themes: <span className="font-semibold text-cyan-300">Detailed topics and sub-themes: TO BE INCLUDED</span> following confirmation from the Technical Committee.
                         </p>
                       </div>
 

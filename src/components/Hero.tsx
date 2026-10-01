@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Calendar, Sparkles } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { CONFERENCE_DATA } from '../data/conference';
 
@@ -90,50 +90,45 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35 z-10" />
       </div>
 
-      {/* Centered Translucent Dark-Blue Conference Information Box - Refined Glassmorphism (~70% opacity) */}
+      {/* Centered Translucent Dark-Blue Conference Information Box */}
       <motion.div
         initial={shouldReduceMotion ? false : { opacity: 0, y: 25, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-20 w-[94%] sm:w-[90%] md:w-[84%] max-w-3xl lg:max-w-4xl mx-auto rounded-2xl bg-[#0C234B]/72 sm:bg-[#0C234B]/70 backdrop-blur-md border border-[#176BFF]/35 shadow-2xl shadow-[#041026]/60 p-5 sm:p-7 md:p-9 text-center text-white"
+        className="relative z-20 w-[94%] sm:w-[90%] md:w-[86%] max-w-3xl lg:max-w-4xl mx-auto rounded-2xl bg-[#0C234B]/75 sm:bg-[#0C234B]/72 backdrop-blur-md border border-[#176BFF]/35 shadow-2xl shadow-[#041026]/60 p-5 sm:p-7 md:p-9 text-center text-white"
       >
-        {/* Category Header */}
-        <div className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm md:text-[0.95rem] font-extrabold uppercase tracking-[0.22em] text-[#FFFFFF]" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.55)' }}>
-          <Sparkles className="w-3.5 h-3.5 text-[#E6B85C]" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }} />
-          <span>INTERNATIONAL CONFERENCE</span>
-        </div>
-
-        {/* Subtle Separator 1 */}
-        <div className="w-20 sm:w-28 h-[1.5px] bg-gradient-to-r from-transparent via-[#38B6FF]/50 to-transparent mx-auto my-2 sm:my-2.5" />
-
-        {/* Linking text "on" */}
-        <div className="text-xs sm:text-sm italic font-semibold text-[#E2EEFF]" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.55)' }}>
-          on
-        </div>
-
-        {/* Subtle Separator 2 */}
-        <div className="w-20 sm:w-28 h-[1.5px] bg-gradient-to-r from-transparent via-[#38B6FF]/50 to-transparent mx-auto my-2 sm:my-2.5" />
-
-        {/* Main Conference Name: DATAINSIGHT 2027 */}
-        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-[#FFFFFF] leading-tight mt-1" style={{ textShadow: '0 2px 5px rgba(0, 0, 0, 0.65)' }}>
-          DATAINSIGHT 2027
+        {/* First — Conference Title, largest text in the information box */}
+        <h1
+          className="text-xl sm:text-2xl md:text-3xl lg:text-[2.25rem] xl:text-[2.45rem] font-black tracking-tight text-white leading-tight max-w-3xl mx-auto"
+          style={{ textShadow: '0 2px 6px rgba(0, 0, 0, 0.7)' }}
+        >
+          International Conference on Multimodal Data Analytics, Intelligence and Security
         </h1>
 
-        {/* Full Conference Title */}
-        <h2 className="mt-2.5 sm:mt-3 text-xs sm:text-base md:text-lg lg:text-xl font-bold text-[#FFFFFF] max-w-2xl mx-auto leading-snug" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.6)' }}>
-          {CONFERENCE_DATA.fullTitle}
+        {/* Second — Conference Name, slightly smaller than the title */}
+        <h2
+          className="mt-3 sm:mt-3.5 text-lg sm:text-xl md:text-2xl lg:text-[1.85rem] xl:text-[2rem] font-extrabold tracking-tight text-[#E6B85C] leading-snug"
+          style={{ textShadow: '0 2px 5px rgba(0, 0, 0, 0.65)' }}
+        >
+          DATAINSIGHT 2027
         </h2>
 
-        {/* Official Tagline */}
-        <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base italic text-[#E2EEFF] font-semibold max-w-xl mx-auto" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.55)' }}>
-          {CONFERENCE_DATA.tagline.replace(/^"|"$/g, '')}
+        {/* Third — Replacement Tagline */}
+        <p
+          className="mt-2 sm:mt-2.5 text-xs sm:text-sm md:text-base lg:text-[1.05rem] italic text-[#E2EEFF] font-semibold max-w-xl mx-auto"
+          style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.6)' }}
+        >
+          Transforming Data into Intelligence, Securing the Future
         </p>
 
         {/* Gold Separator */}
         <div className="w-24 sm:w-36 h-[2px] bg-gradient-to-r from-transparent via-[#E6B85C] to-transparent mx-auto my-3 sm:my-4" />
 
-        {/* Conference Dates */}
-        <div className="inline-flex items-center justify-center gap-2 text-base sm:text-xl md:text-2xl font-extrabold text-[#E6B85C] tracking-wide" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.65)' }}>
+        {/* Event Dates */}
+        <div
+          className="inline-flex items-center justify-center gap-2 text-base sm:text-xl md:text-2xl font-extrabold text-[#E6B85C] tracking-wide"
+          style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.65)' }}
+        >
           <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#E6B85C]" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }} />
           <span>{CONFERENCE_DATA.datesDisplay}</span>
         </div>

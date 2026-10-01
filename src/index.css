@@ -27,7 +27,7 @@
   /* Section anchor offset so sticky navbar does not cover section headings */
   section[id],
   div[id]:not(#root):not(#home) {
-    scroll-margin-top: 4.25rem;
+    scroll-margin-top: 5.25rem;
   }
 
   #home {
