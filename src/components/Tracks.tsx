@@ -40,6 +40,7 @@ export const Tracks: React.FC = () => {
 
   return (
     <section id="tracks" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F5F9FF] via-[#EBF3FF]/60 to-[#F5F9FF] overflow-hidden">
+      <div id="theme" className="sr-only" />
       {/* Ambience background glows */}
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-[#00A8E8]/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 -left-32 w-80 h-80 bg-[#176BFF]/10 rounded-full blur-[120px] pointer-events-none" />

@@ -13,6 +13,7 @@ import { PaperSubmission } from './components/PaperSubmission';
 import { Registration } from './components/Registration';
 import { ExpertOpinions } from './components/ExpertOpinions';
 import { Committee } from './components/Committee';
+import { AdvisoryCommittee } from './components/AdvisoryCommittee';
 import { Venue } from './components/Venue';
 import { Contact } from './components/Contact';
 import { Sponsors } from './components/Sponsors';
@@ -164,6 +165,9 @@ export function App() {
         <Registration onActionClick={handleActionClick} />
 
         {/* 11. Expert Opinions (Preserved in codebase, hidden via reversible flag) */}
+        <div id="expert-opinions" className="sr-only" />
+        <div id="opinions" className="sr-only" />
+        <div id="events" className="sr-only" />
         {SHOW_EXPERT_OPINIONS && (
           <>
             <SectionDivider variant="blue-gold" />
@@ -175,6 +179,11 @@ export function App() {
 
         {/* 12. Organizing Committee */}
         <Committee />
+
+        <SectionDivider variant="blue-gold" />
+
+        {/* 12B. Advisory Committee */}
+        <AdvisoryCommittee />
 
         <SectionDivider variant="blue-gold" />
 

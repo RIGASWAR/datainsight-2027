@@ -10,8 +10,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('Home');
 
-  // Exact 13 active navigation items matching the updated conference sections
-  const navItems = [
+  // Exact 13 active desktop navigation items (preserving established desktop layout)
+  const desktopNavItems = [
     { name: 'Home', href: '#home', targetId: 'home' },
     { name: 'About PSGCT', href: '#about-psgct', targetId: 'about-psgct' },
     { name: 'About DATAINSIGHT', href: '#about', targetId: 'about' },
@@ -27,6 +27,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
     { name: 'Sponsors', href: '#sponsors', targetId: 'sponsors' },
   ];
 
+  // Exact 17 mobile navigation items strictly matching the requested page order
+  const mobileNavItems = [
+    { name: 'Home', href: '#home', targetId: 'home' },
+    { name: 'About PSGCT', href: '#about-psgct', targetId: 'about-psgct' },
+    { name: 'About DATAINSIGHT', href: '#about', targetId: 'about' },
+    { name: 'Scope', href: '#scope', targetId: 'scope' },
+    { name: 'Speakers', href: '#speakers', targetId: 'speakers' },
+    { name: 'Theme', href: '#theme', targetId: 'theme' },
+    { name: 'Tracks', href: '#tracks', targetId: 'tracks' },
+    { name: 'Publication', href: '#publication', targetId: 'publication' },
+    { name: 'Important Dates', href: '#dates', targetId: 'dates' },
+    { name: 'Paper Submission', href: '#submission', targetId: 'submission' },
+    { name: 'Registration', href: '#registration', targetId: 'registration' },
+    { name: 'Expert Opinions', href: '#opinions', targetId: 'opinions' },
+    { name: 'Events', href: '#events', targetId: 'events' },
+    { name: 'Committee', href: '#committee', targetId: 'committee' },
+    { name: 'Advisory Committee', href: '#advisory', targetId: 'advisory' },
+    { name: 'Venue & Contact', href: '#venue', targetId: 'venue' },
+    { name: 'Sponsors', href: '#sponsors', targetId: 'sponsors' },
+  ];
+
   // Scrollspy active section detection
   useEffect(() => {
     const handleScroll = () => {
@@ -37,12 +58,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
         { id: 'sponsors', label: 'Sponsors' },
         { id: 'contact', label: 'Venue & Contact' },
         { id: 'venue', label: 'Venue & Contact' },
+        { id: 'advisory', label: 'Advisory Committee' },
         { id: 'committee', label: 'Committee' },
+        { id: 'events', label: 'Events' },
+        { id: 'opinions', label: 'Expert Opinions' },
+        { id: 'expert-opinions', label: 'Expert Opinions' },
         { id: 'registration', label: 'Registration' },
         { id: 'submission', label: 'Paper Submission' },
         { id: 'dates', label: 'Important Dates' },
         { id: 'publication', label: 'Publication' },
         { id: 'tracks', label: 'Tracks' },
+        { id: 'theme', label: 'Theme' },
         { id: 'speakers', label: 'Speakers' },
         { id: 'scope', label: 'Scope' },
         { id: 'about', label: 'About DATAINSIGHT' },
@@ -76,7 +102,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    item: typeof navItems[0]
+    item: { name: string; href: string; targetId?: string }
   ) => {
     e.preventDefault();
     setMobileMenuOpen(false);
@@ -131,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
 
         {/* Desktop Navigation (>= 1200px): Clean horizontal academic navbar with exact 13 items */}
         <nav className="hidden xl:flex items-center justify-center gap-1 xl:gap-1.5 2xl:gap-3 py-3 w-full">
-          {navItems.map((item) => {
+          {desktopNavItems.map((item) => {
             const isActive = activeSection === item.name;
             return (
               <a
@@ -150,7 +176,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
           })}
         </nav>
 
-        {/* Mobile & Tablet Navigation Drawer */}
+        {/* Mobile & Tablet Navigation Drawer: Vertical display strictly following chronological page structure */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -160,21 +186,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
               transition={{ duration: 0.25, ease: 'easeInOut' }}
               className="xl:hidden overflow-hidden border-t border-[#16366B] bg-[#1F407F] px-3 py-3"
             >
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 max-h-[70vh] overflow-y-auto pr-1">
-                {navItems.map((item) => {
+              <div className="flex flex-col gap-1 max-h-[68vh] overflow-y-auto pr-1">
+                {mobileNavItems.map((item) => {
                   const isActive = activeSection === item.name;
                   return (
                     <a
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item)}
-                      className={`px-2.5 py-2 text-[11px] sm:text-xs font-semibold rounded-lg transition-colors leading-snug break-words flex items-center justify-center text-center ${
+                      className={`px-3 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-colors leading-snug flex items-center justify-between text-left ${
                         isActive
                           ? 'bg-[#16366B] text-[#D9A353] font-bold border border-[#D9A353]/40'
                           : 'text-white hover:bg-white/10 hover:text-[#D9A353]'
                       }`}
                     >
-                      {item.name}
+                      <span>{item.name}</span>
                     </a>
                   );
                 })}
@@ -209,3 +235,4 @@ export const Navbar: React.FC<NavbarProps> = ({ onActionClick }) => {
     </header>
   );
 };
+
