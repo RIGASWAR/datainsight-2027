@@ -85,7 +85,7 @@ export const Tracks: React.FC = () => {
                   delay: index * 0.1, 
                   ease: [0.16, 1, 0.3, 1] 
                 }}
-                className="[perspective:1200px] h-[390px] sm:h-[400px] w-full"
+                className="[perspective:1200px] h-[430px] sm:h-[440px] w-full"
               >
                 {/* 3D Rotating Card Container */}
                 <motion.div
@@ -110,7 +110,7 @@ export const Tracks: React.FC = () => {
                       WebkitBackfaceVisibility: 'hidden',
                     }}
                   >
-                    <div className="flex-1 flex flex-col min-h-0 space-y-3.5">
+                    <div className="flex-1 flex flex-col min-h-0 space-y-3">
                       {/* Top Bar: Track Badge & Icon */}
                       <div className="flex items-center justify-between gap-3 shrink-0">
                         <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black tracking-wider text-[#D9A441] bg-[#D9A441]/15 border border-[#D9A441]/30 font-mono whitespace-nowrap">
@@ -121,25 +121,25 @@ export const Tracks: React.FC = () => {
                         </div>
                       </div>
 
-                      {/* Track Name */}
-                      <div className="shrink-0">
-                        <span className="text-xs uppercase tracking-widest font-mono text-cyan-300 font-bold">
-                          TRACK NAME: {track.shortName}
-                        </span>
-                        <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-snug mt-1">
+                      {/* Hierarchy: TRACK TITLE -> TRACK NAME -> TRACK FOCUS */}
+                      <div className="shrink-0 space-y-1">
+                        <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-snug">
                           {track.title}
                         </h3>
+                        <p className="text-sm sm:text-base font-bold text-cyan-300 uppercase font-mono tracking-wide">
+                          TRACK NAME: {track.shortName}
+                        </p>
                       </div>
 
                       {/* DATAINSIGHT Visual Accent */}
                       <div className="w-12 h-1 bg-gradient-to-r from-[#00A8E8] to-[#D9A441] rounded-full shrink-0" />
 
                       {/* Track Focus */}
-                      <div className="space-y-1">
-                        <span className="text-xs font-semibold text-[#D9A441] uppercase tracking-wider block">
+                      <div className="space-y-1.5">
+                        <span className="text-sm font-bold text-[#D9A441] uppercase tracking-wider block">
                           Track Focus:
                         </span>
-                        <p className="text-xs sm:text-sm text-white/85 leading-relaxed">
+                        <p className="text-sm sm:text-base text-white/95 font-medium leading-relaxed">
                           {track.overview}
                         </p>
                       </div>

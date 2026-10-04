@@ -20,7 +20,7 @@ const CommitteeMemberCard: React.FC<CommitteeCardProps> = ({ member, variant, de
 
   const cardContainerClasses =
     variant === 'top'
-      ? 'p-6 sm:p-7 rounded-2xl bg-white border border-[#176BFF]/20 hover:border-[#176BFF]/50 shadow-md hover:shadow-xl'
+      ? 'p-6 sm:p-7 rounded-2xl bg-white border border-[#176BFF]/20 hover:border-[#176BFF]/50 shadow-md hover:shadow-xl w-full max-w-[340px] sm:max-w-[360px] min-h-[460px] sm:min-h-[480px]'
       : variant === 'secretary'
         ? 'p-5 sm:p-6 rounded-2xl bg-white border-2 border-[#D9A441]/40 secretary-card-shimmer shadow-sm hover:shadow-md'
         : 'p-5 sm:p-6 rounded-2xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/45 shadow-sm hover:shadow-md';
@@ -78,9 +78,14 @@ const CommitteeMemberCard: React.FC<CommitteeCardProps> = ({ member, variant, de
           <p className="text-sm sm:text-base font-semibold text-[#174EA6] leading-snug">
             {member.designation}
           </p>
-          {(member.department || member.institution) && (
+          {member.department && (
+            <p className="text-xs sm:text-sm text-[#1A2B4A]/80 leading-snug">
+              {member.department}
+            </p>
+          )}
+          {member.institution && (
             <p className="text-xs sm:text-sm text-[#1A2B4A]/70 leading-relaxed">
-              {member.department ? `${member.department}, ${member.institution || 'PSG College of Technology'}` : member.institution}
+              {member.institution}
             </p>
           )}
         </div>
@@ -125,19 +130,28 @@ export const Committee: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* 1. TOP ROW: Chief Patron, Patron, Convener - EXACTLY equal dimensions */}
-        <div className="max-w-6xl mx-auto mb-14">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        {/* 1. TOP TIERS: Chief Patron, Patron, Convener - 3 Vertical Levels, 1 Centered Card Per Level, EXACTLY Equal Dimensions */}
+        <div className="max-w-md mx-auto space-y-8 mb-14">
+          {/* LEVEL 1: Chief Patron */}
+          <div className="w-full flex justify-center">
             <CommitteeMemberCard 
               member={CONFERENCE_DATA.committee.chiefPatron} 
               variant="top" 
               delay={0.05} 
             />
+          </div>
+
+          {/* LEVEL 2: Patron */}
+          <div className="w-full flex justify-center">
             <CommitteeMemberCard 
               member={CONFERENCE_DATA.committee.patron} 
               variant="top" 
               delay={0.1} 
             />
+          </div>
+
+          {/* LEVEL 3: Convener */}
+          <div className="w-full flex justify-center">
             <CommitteeMemberCard 
               member={CONFERENCE_DATA.committee.convener} 
               variant="top" 

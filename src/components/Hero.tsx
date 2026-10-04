@@ -99,9 +99,9 @@ export const Hero: React.FC<HeroProps> = () => {
       >
         {/* Conference Information Hierarchy */}
         <div className="space-y-1 sm:space-y-1.5">
-          {/* 1. DATAINSIGHT 2027 — Visually prominent with subtle gold shimmer */}
+          {/* 1. DATAINSIGHT 2027 — Visually prominent with elegant dark golden color */}
           <h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight gold-shimmer-text"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-[#C89427]"
             style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.75)' }}
           >
             DATAINSIGHT 2027
@@ -141,15 +141,15 @@ export const Hero: React.FC<HeroProps> = () => {
         </p>
 
         {/* Gold Separator */}
-        <div className="w-24 sm:w-36 h-[2px] bg-gradient-to-r from-transparent via-[#E6B85C] to-transparent mx-auto my-3 sm:my-4" />
+        <div className="w-24 sm:w-36 h-[2px] bg-gradient-to-r from-transparent via-[#C89427] to-transparent mx-auto my-3 sm:my-4" />
 
-        {/* Event Dates — with subtle gold shimmer */}
+        {/* Event Dates — with elegant dark golden color */}
         <div
           className="inline-flex items-center justify-center gap-2 text-base sm:text-xl md:text-2xl font-extrabold tracking-wide"
           style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.65)' }}
         >
-          <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#E6B85C]" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }} />
-          <span className="gold-shimmer-text">{CONFERENCE_DATA.datesDisplay}</span>
+          <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#C89427]" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }} />
+          <span className="text-[#C89427]">{CONFERENCE_DATA.datesDisplay}</span>
         </div>
 
         {/* Dynamic Countdown Timer Component */}

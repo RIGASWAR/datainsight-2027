@@ -56,7 +56,7 @@ export const About: React.FC = () => {
           transition={{ duration: 0.75, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="flex items-center justify-center w-full mb-14"
         >
-          <div className="relative w-full max-w-3xl lg:max-w-4xl rounded-3xl overflow-hidden border border-[#176BFF]/25 shadow-2xl bg-white p-3 sm:p-4">
+          <div className="relative w-full max-w-xl md:max-w-2xl rounded-3xl overflow-hidden border border-[#176BFF]/25 shadow-2xl bg-white p-3 sm:p-4">
             <img
               src={posterImage}
               alt="DATAINSIGHT 2027 Official Conference Poster"
