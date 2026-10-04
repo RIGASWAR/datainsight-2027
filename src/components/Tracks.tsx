@@ -102,9 +102,9 @@ export const Tracks: React.FC = () => {
                   tabIndex={0}
                   aria-label={`${track.trackNumber}: ${track.title}. Click to ${isFlipped ? 'flip back' : 'view topics'}.`}
                 >
-                  {/* FRONT SIDE */}
+                  {/* FRONT SIDE - DATAINSIGHT Blue Theme */}
                   <div
-                    className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-[#176BFF]/20 shadow-md hover:shadow-xl hover:border-[#176BFF]/50 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between overflow-hidden"
+                    className="absolute inset-0 w-full h-full rounded-2xl bg-gradient-to-br from-[#0B2D6B] via-[#0D3B82] to-[#174EA6] text-white border border-[#00A8E8]/35 shadow-xl hover:shadow-2xl hover:border-[#00A8E8]/60 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between overflow-hidden"
                     style={{
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
@@ -113,42 +113,53 @@ export const Tracks: React.FC = () => {
                     <div className="flex-1 flex flex-col min-h-0 space-y-3.5">
                       {/* Top Bar: Track Badge & Icon */}
                       <div className="flex items-center justify-between gap-3 shrink-0">
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black tracking-wider text-[#174EA6] bg-[#176BFF]/10 border border-[#176BFF]/20 font-mono whitespace-nowrap">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black tracking-wider text-[#D9A441] bg-[#D9A441]/15 border border-[#D9A441]/30 font-mono whitespace-nowrap">
                           {track.trackNumber}
                         </span>
-                        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#176BFF] to-[#00A8E8] text-white flex items-center justify-center shadow-md shadow-[#176BFF]/25 shrink-0">
+                        <div className="w-11 h-11 rounded-xl bg-white/10 text-cyan-200 border border-white/20 flex items-center justify-center shadow-md shrink-0">
                           <IconComponent className="w-5 h-5" />
                         </div>
                       </div>
 
-                      {/* Track Title */}
-                      <h3 className="text-lg sm:text-xl font-bold text-[#0B2D6B] leading-snug group-hover:text-[#176BFF] transition-colors shrink-0">
-                        {track.title}
-                      </h3>
+                      {/* Track Name */}
+                      <div className="shrink-0">
+                        <span className="text-xs uppercase tracking-widest font-mono text-cyan-300 font-bold">
+                          TRACK NAME: {track.shortName}
+                        </span>
+                        <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-snug mt-1">
+                          {track.title}
+                        </h3>
+                      </div>
 
                       {/* DATAINSIGHT Visual Accent */}
-                      <div className="w-12 h-1 bg-gradient-to-r from-[#176BFF] to-[#00A8E8] rounded-full shrink-0" />
+                      <div className="w-12 h-1 bg-gradient-to-r from-[#00A8E8] to-[#D9A441] rounded-full shrink-0" />
 
-                      <p className="text-xs sm:text-sm text-[#1A2B4A]/75 leading-relaxed">
-                        Official technical track for original peer-reviewed research papers and applications at DATAINSIGHT 2027.
-                      </p>
+                      {/* Track Focus */}
+                      <div className="space-y-1">
+                        <span className="text-xs font-semibold text-[#D9A441] uppercase tracking-wider block">
+                          Track Focus:
+                        </span>
+                        <p className="text-xs sm:text-sm text-white/85 leading-relaxed">
+                          {track.overview}
+                        </p>
+                      </div>
                     </div>
 
-                    {/* Bottom Prompt: Click to view topics - firmly inside */}
-                    <div className="pt-3.5 mt-2 border-t border-[#176BFF]/10 flex items-center justify-between text-xs sm:text-sm font-semibold text-[#176BFF] hover:text-[#0B2D6B] transition-colors shrink-0">
+                    {/* Bottom Prompt: Click to view topics */}
+                    <div className="pt-3.5 mt-2 border-t border-white/15 flex items-center justify-between text-xs sm:text-sm font-semibold text-cyan-200 shrink-0">
                       <span className="inline-flex items-center gap-1.5">
                         <Info className="w-4 h-4 text-[#D9A441]" />
                         Click to view topics
                       </span>
-                      <span className="p-1.5 rounded-lg bg-[#176BFF]/10 text-[#176BFF]">
+                      <span className="p-1.5 rounded-lg bg-white/10 text-white group-hover:translate-x-1 transition-transform">
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
                   </div>
 
-                  {/* BACK SIDE */}
+                  {/* BACK SIDE - White Background */}
                   <div
-                    className="absolute inset-0 w-full h-full rounded-2xl bg-gradient-to-br from-[#0B2D6B] via-[#0D3B82] to-[#174EA6] text-white border border-[#00A8E8]/30 shadow-xl p-6 sm:p-7 flex flex-col justify-between overflow-hidden"
+                    className="absolute inset-0 w-full h-full rounded-2xl bg-white text-[#1A2B4A] border border-[#176BFF]/25 shadow-xl p-6 sm:p-7 flex flex-col justify-between overflow-hidden"
                     style={{
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
@@ -158,41 +169,41 @@ export const Tracks: React.FC = () => {
                     <div className="flex-1 flex flex-col min-h-0 space-y-3">
                       {/* Top Header */}
                       <div className="flex items-center justify-between gap-3 shrink-0">
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider text-[#D9A441] bg-[#D9A441]/15 border border-[#D9A441]/30 font-mono whitespace-nowrap">
-                          {track.trackNumber} DETAILS
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider text-[#174EA6] bg-[#176BFF]/10 border border-[#176BFF]/25 font-mono whitespace-nowrap">
+                          {track.trackNumber} TOPICS
                         </span>
-                        <span className="text-xs text-white/70 font-medium">DATAINSIGHT 2027</span>
+                        <span className="text-xs text-[#4A5E82] font-semibold">DATAINSIGHT 2027</span>
                       </div>
 
-                      {/* Title */}
-                      <h4 className="text-base sm:text-lg font-bold text-white leading-snug shrink-0">
+                      {/* Track Title */}
+                      <h4 className="text-base sm:text-lg font-bold text-[#0B2D6B] leading-snug shrink-0">
                         {track.title}
                       </h4>
 
-                      {/* Topics / Details Area - scrollable only if needed */}
-                      <div className="flex-1 min-h-0 overflow-y-auto pr-2 space-y-2.5 p-3.5 sm:p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/15">
-                        <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-cyan-200">
-                          <span>Track Topics</span>
-                          <span className="px-2 py-0.5 rounded bg-[#D9A441]/20 text-[#D9A441] font-mono text-[10px]">
+                      {/* Topics Covered Area */}
+                      <div className="flex-1 min-h-0 overflow-y-auto pr-2 space-y-2.5 p-3.5 sm:p-4 rounded-xl bg-[#F4F8FF] border border-[#176BFF]/15">
+                        <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#174EA6]">
+                          <span>Topics Covered Under Track</span>
+                          <span className="px-2 py-0.5 rounded bg-[#D9A441]/15 text-[#B88422] font-mono text-[10px] font-bold">
                             TO BE INCLUDED
                           </span>
                         </div>
-                        <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
-                          Official Call for Papers topics and sub-themes: <span className="font-semibold text-cyan-300">Detailed topics and sub-themes: TO BE INCLUDED</span> following confirmation from the Technical Committee.
+                        <p className="text-xs sm:text-sm text-[#1A2B4A] leading-relaxed">
+                          Official Call for Papers topics and sub-themes for this track: <span className="font-semibold text-[#174EA6]">Detailed topics and sub-themes: TO BE INCLUDED</span> following confirmation from the Technical Program Committee.
                         </p>
-                        <p className="text-xs text-white/75 leading-relaxed pt-1">
-                          Peer-reviewed submissions will be evaluated by international program committee reviewers.
+                        <p className="text-xs text-[#4A5E82] leading-relaxed pt-1">
+                          Prospective authors are invited to submit original, unpublished research papers aligned with {track.shortName}.
                         </p>
                       </div>
                     </div>
 
-                    {/* Bottom Prompt: Click to flip back - firmly anchored inside card */}
-                    <div className="pt-3.5 mt-2 border-t border-white/20 flex items-center justify-between text-xs sm:text-sm font-semibold text-cyan-200 shrink-0">
+                    {/* Bottom Prompt: Click to flip back / Return control */}
+                    <div className="pt-3.5 mt-2 border-t border-[#176BFF]/15 flex items-center justify-between text-xs sm:text-sm font-semibold text-[#176BFF] shrink-0">
                       <span className="inline-flex items-center gap-1.5">
                         <RotateCw className="w-4 h-4 text-[#D9A441]" />
                         Click to flip back
                       </span>
-                      <span className="text-xs px-2.5 py-1 rounded-md bg-white/15 text-white font-medium">
+                      <span className="text-xs px-2.5 py-1 rounded-md bg-[#176BFF]/10 text-[#176BFF] font-bold">
                         Return
                       </span>
                     </div>

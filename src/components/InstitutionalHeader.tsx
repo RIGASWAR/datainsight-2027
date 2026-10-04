@@ -9,34 +9,34 @@ export const InstitutionalHeader: React.FC = () => {
         
         {/* Mobile View (< 640px): Clean naturally stacked layout ensuring no crowding */}
         <div className="flex sm:hidden flex-col items-center text-center gap-3">
-          {/* Top: PSG Logo - Clean display without border boxes */}
+          {/* Top: PSG Logo - Visually enlarged and balanced */}
           <div className="flex items-center justify-center">
             <img
               src={psgLogo}
               alt="PSG College of Technology official crest"
-              className="h-20 sm:h-24 w-auto object-contain"
+              className="h-24 sm:h-28 w-auto object-contain"
             />
           </div>
           
-          {/* Middle: Centered Institutional Text with Refined Color Hierarchy */}
-          <div className="space-y-0.5">
-            <h1 className="text-lg font-black text-[#0B2D6B] tracking-tight leading-snug">
+          {/* Middle: Centered Institutional Text with Exact Requested Hierarchy */}
+          <div className="space-y-1">
+            <h1 className="text-xl font-black text-[#0B2D6B] tracking-tight leading-snug">
               PSG COLLEGE OF TECHNOLOGY
             </h1>
-            <p className="text-xs font-bold text-[#2A4B7C]">
+            <p className="text-[11px] font-semibold text-[#3B5B8C]">
               Coimbatore, Tamil Nadu, India – 641004
             </p>
-            <div className="text-xs font-bold text-[#174EA6] pt-0.5">
-              Department of Information Technology
+            <div className="text-xs font-black text-[#174EA6] uppercase tracking-wider pt-0.5">
+              DEPARTMENT OF INFORMATION TECHNOLOGY
             </div>
           </div>
 
-          {/* Bottom: DATAINSIGHT Logo - Clean display without border boxes or decorative icons */}
+          {/* Bottom: DATAINSIGHT Logo - Visually enlarged to equal weight with PSG crest */}
           <div className="flex items-center justify-center pt-0.5">
             <img
               src={datainsightLogo}
               alt="DATAINSIGHT 2027 Conference Logo"
-              className="h-14 sm:h-16 w-auto object-contain"
+              className="h-16 sm:h-20 w-auto object-contain"
             />
           </div>
         </div>
@@ -44,34 +44,37 @@ export const InstitutionalHeader: React.FC = () => {
         {/* Desktop & Tablet View (>= 640px): 3-column symmetrical grid ensuring equal distance from center anchor */}
         <div className="hidden sm:grid grid-cols-[1fr_auto_1fr] items-center w-full">
           
-          {/* LEFT: PSG College of Technology official logo */}
+          {/* LEFT: PSG College of Technology official logo - visibly larger */}
           <div className="flex items-center justify-end pr-4 sm:pr-6 md:pr-8 lg:pr-10 xl:pr-12">
             <img
               src={psgLogo}
               alt="PSG College of Technology official crest"
-              className="h-20 sm:h-24 md:h-28 lg:h-32 xl:h-36 w-auto object-contain transition-transform duration-300 hover:scale-[1.03]"
+              className="h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40 w-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
             />
           </div>
 
-          {/* CENTER: Institutional Text - Visual Anchor with Academic Color Palette */}
+          {/* CENTER: Institutional Text - Exact Requested Typography Hierarchy */}
           <div className="flex flex-col items-center justify-center text-center px-3 sm:px-5 md:px-7 shrink-0">
-            <h1 className="text-xl sm:text-2xl md:text-[1.7rem] lg:text-[1.95rem] xl:text-[2.1rem] font-black tracking-tight text-[#0B2D6B] leading-tight whitespace-nowrap">
+            {/* Line 1: PSG COLLEGE OF TECHNOLOGY (Largest) */}
+            <h1 className="text-xl sm:text-2xl md:text-[1.8rem] lg:text-[2.1rem] xl:text-[2.35rem] font-black tracking-tight text-[#0B2D6B] leading-tight whitespace-nowrap">
               PSG COLLEGE OF TECHNOLOGY
             </h1>
-            <p className="text-xs sm:text-sm md:text-base lg:text-[1.1rem] font-bold text-[#2A4B7C] mt-1 tracking-normal whitespace-nowrap">
+            {/* Line 2: Coimbatore, Tamil Nadu, India – 641004 (Smaller than Department of Information Technology) */}
+            <p className="text-[11px] sm:text-xs md:text-sm lg:text-[0.95rem] font-medium text-[#4A648C] mt-1 tracking-normal whitespace-nowrap">
               Coimbatore, Tamil Nadu, India – 641004
             </p>
-            <div className="mt-1 sm:mt-1.5 text-xs sm:text-sm md:text-base lg:text-[1.05rem] font-bold text-[#174EA6] tracking-normal whitespace-nowrap">
-              Department of Information Technology
+            {/* Line 3: DEPARTMENT OF INFORMATION TECHNOLOGY (ALL CAPS, clearly larger than the location line) */}
+            <div className="mt-1 sm:mt-1.5 text-xs sm:text-sm md:text-base lg:text-[1.2rem] font-extrabold text-[#174EA6] uppercase tracking-wide whitespace-nowrap">
+              DEPARTMENT OF INFORMATION TECHNOLOGY
             </div>
           </div>
 
-          {/* RIGHT: DATAINSIGHT Logo - Clean display without border boxes or decorative icons */}
+          {/* RIGHT: DATAINSIGHT Logo - Visibly larger, equal visual weight to PSG logo */}
           <div className="flex items-center justify-start pl-4 sm:pl-6 md:pl-8 lg:pl-10 xl:pl-12">
             <img
               src={datainsightLogo}
               alt="DATAINSIGHT 2027 Conference Logo"
-              className="h-14 sm:h-[4.25rem] md:h-20 lg:h-24 xl:h-[6.5rem] w-auto object-contain transition-transform duration-300 hover:scale-[1.03]"
+              className="h-16 sm:h-[4.75rem] md:h-[5.5rem] lg:h-[6.5rem] xl:h-[7.25rem] w-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
             />
           </div>
 

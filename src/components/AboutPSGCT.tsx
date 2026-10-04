@@ -3,6 +3,7 @@ import { Building2 } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { CONFERENCE_DATA } from '../data/conference';
 import collegeImage from '../assets/college.png';
+import eblockImage from '../assets/eblock.png';
 
 export const AboutPSGCT: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -36,57 +37,90 @@ export const AboutPSGCT: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Two-Column Grid: Left College Image, Right Two Content Boxes */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        {/* Two-Row Grid Layout: 
+            Row 1: Left College Image, Right Pioneering Engineering & Research Stature
+            Row 2: Left E-block Image, Right Department of Information Technology
+        */}
+        <div className="space-y-10 sm:space-y-12">
           
-          {/* Left Column: College Image */}
-          <motion.div
-            initial={shouldReduceMotion ? false : { opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 flex items-center justify-center"
-          >
-            <div className="relative w-full rounded-3xl overflow-hidden border border-[#244A91]/20 shadow-2xl bg-white p-2">
-              <img
-                src={collegeImage}
-                alt="PSG College of Technology Campus"
-                className="w-full h-auto rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.02]"
-              />
-            </div>
-          </motion.div>
-
-          {/* Right Column: Two Content Boxes */}
-          <motion.div
-            initial={shouldReduceMotion ? false : { opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.75, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 space-y-6 text-left"
-          >
-            {/* First Content Box */}
-            <div className="p-6 sm:p-8 rounded-2xl bg-[#F5F9FF] border border-[#244A91]/15 shadow-sm space-y-3.5">
-              <h3 className="text-xl sm:text-2xl font-bold text-[#0B2554] tracking-tight">
-                Pioneering Engineering & Research Stature
-              </h3>
-              <p className="text-sm sm:text-base text-[#1A2B4A] leading-relaxed text-justify">
-                {CONFERENCE_DATA.aboutPSGCT.description}
-              </p>
-            </div>
-
-            {/* Second Content Box */}
-            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#244A91]/20 shadow-md space-y-3 border-l-4 border-l-[#244A91]">
-              <div className="text-xs sm:text-sm font-bold text-[#D9A353] uppercase tracking-wider">
-                Organizing Department
+          {/* ROW 1 */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            {/* Left: College Image */}
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5 flex items-center justify-center"
+            >
+              <div className="relative w-full h-full min-h-[250px] sm:min-h-[280px] rounded-3xl overflow-hidden border border-[#244A91]/20 shadow-xl bg-white p-2 flex items-center justify-center">
+                <img
+                  src={collegeImage}
+                  alt="PSG College of Technology Campus"
+                  className="w-full h-full max-h-[300px] rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.02]"
+                />
               </div>
-              <h4 className="text-xl sm:text-2xl font-black text-[#0B2554]">
-                Department of Information Technology
-              </h4>
-              <p className="text-sm sm:text-base text-[#1A2B4A] leading-relaxed text-justify">
-                {CONFERENCE_DATA.aboutPSGCT.departmentIT}
-              </p>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            {/* Right: Pioneering Engineering & Research Stature Box */}
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.75, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7 flex flex-col justify-center"
+            >
+              <div className="p-6 sm:p-8 rounded-3xl bg-[#F5F9FF] border border-[#244A91]/15 shadow-sm space-y-3.5 h-full flex flex-col justify-center">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#0B2554] tracking-tight">
+                  Pioneering Engineering & Research Stature
+                </h3>
+                <p className="text-sm sm:text-base text-[#1A2B4A] leading-relaxed text-justify">
+                  {CONFERENCE_DATA.aboutPSGCT.description}
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* ROW 2 */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            {/* Left: E-block Image */}
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.75, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5 flex items-center justify-center"
+            >
+              <div className="relative w-full h-full min-h-[250px] sm:min-h-[280px] rounded-3xl overflow-hidden border border-[#244A91]/20 shadow-xl bg-white p-2 flex items-center justify-center">
+                <img
+                  src={eblockImage}
+                  alt="PSG College of Technology E-Block"
+                  className="w-full h-full max-h-[300px] rounded-2xl object-cover transition-transform duration-500 hover:scale-[1.02]"
+                />
+              </div>
+            </motion.div>
+
+            {/* Right: Department of Information Technology Box */}
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.75, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7 flex flex-col justify-center"
+            >
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#244A91]/20 shadow-md space-y-3 border-l-4 border-l-[#244A91] h-full flex flex-col justify-center">
+                <div className="text-xs sm:text-sm font-bold text-[#D9A353] uppercase tracking-wider">
+                  Organizing Department
+                </div>
+                <h4 className="text-xl sm:text-2xl font-black text-[#0B2554]">
+                  Department of Information Technology
+                </h4>
+                <p className="text-sm sm:text-base text-[#1A2B4A] leading-relaxed text-justify">
+                  {CONFERENCE_DATA.aboutPSGCT.departmentIT}
+                </p>
+              </div>
+            </motion.div>
+          </div>
 
         </div>
 

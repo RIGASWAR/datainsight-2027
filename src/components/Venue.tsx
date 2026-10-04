@@ -17,6 +17,8 @@ import {
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { CONFERENCE_DATA } from '../data/conference';
 import psgLogo from '../assets/psg_logo.png';
+import airportImage from '../assets/airport.avif';
+import railwayImage from '../assets/railway.jpeg';
 
 interface VenueProps {
   onMapClick?: () => void;
@@ -345,8 +347,8 @@ export const Venue: React.FC<VenueProps> = () => {
               aria-expanded={activeAccordion === 'nearest-airport'}
             >
               <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-xl bg-[#00A8E8]/10 border border-[#00A8E8]/25 flex items-center justify-center text-[#00A8E8] flex-shrink-0">
-                  <Plane className="w-5 h-5" />
+                <div className="w-12 h-12 rounded-xl overflow-hidden border border-[#00A8E8]/30 flex items-center justify-center flex-shrink-0 bg-white shadow-xs">
+                  <img src={airportImage} alt="Nearest Airport visual" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h4 className="text-base sm:text-lg font-bold text-[#0B2D6B]">
@@ -378,9 +380,14 @@ export const Venue: React.FC<VenueProps> = () => {
                   className="overflow-hidden"
                 >
                   <div className="px-5 pb-6 sm:px-6 sm:pb-7 pt-2 border-t border-[#176BFF]/10 space-y-4">
-                    <p className="text-sm sm:text-base text-[#1A2B4A] leading-relaxed">
-                      {venue.airport.description}
-                    </p>
+                    <div className="flex flex-col sm:flex-row gap-5 items-center">
+                      <div className="w-full sm:w-52 h-32 rounded-xl overflow-hidden border border-[#176BFF]/20 shrink-0 shadow-sm">
+                        <img src={airportImage} alt="Coimbatore International Airport" className="w-full h-full object-cover" />
+                      </div>
+                      <p className="text-sm sm:text-base text-[#1A2B4A] leading-relaxed">
+                        {venue.airport.description}
+                      </p>
+                    </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="p-4 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/15 space-y-2">
@@ -435,8 +442,8 @@ export const Venue: React.FC<VenueProps> = () => {
               aria-expanded={activeAccordion === 'nearest-railway'}
             >
               <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-xl bg-[#D9A441]/10 border border-[#D9A441]/25 flex items-center justify-center text-[#D9A441] flex-shrink-0">
-                  <Train className="w-5 h-5" />
+                <div className="w-12 h-12 rounded-xl overflow-hidden border border-[#D9A441]/30 flex items-center justify-center flex-shrink-0 bg-white shadow-xs">
+                  <img src={railwayImage} alt="Nearest Railway Station visual" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h4 className="text-base sm:text-lg font-bold text-[#0B2D6B]">
@@ -468,9 +475,14 @@ export const Venue: React.FC<VenueProps> = () => {
                   className="overflow-hidden"
                 >
                   <div className="px-5 pb-6 sm:px-6 sm:pb-7 pt-2 border-t border-[#176BFF]/10 space-y-4">
-                    <p className="text-sm sm:text-base text-[#1A2B4A] leading-relaxed">
-                      {venue.railway.description}
-                    </p>
+                    <div className="flex flex-col sm:flex-row gap-5 items-center">
+                      <div className="w-full sm:w-52 h-32 rounded-xl overflow-hidden border border-[#176BFF]/20 shrink-0 shadow-sm">
+                        <img src={railwayImage} alt="Coimbatore Junction Railway Station" className="w-full h-full object-cover" />
+                      </div>
+                      <p className="text-sm sm:text-base text-[#1A2B4A] leading-relaxed">
+                        {venue.railway.description}
+                      </p>
+                    </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="p-4 rounded-xl bg-[#F5F9FF] border border-[#176BFF]/15 space-y-2">

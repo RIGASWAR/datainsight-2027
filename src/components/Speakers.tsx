@@ -92,9 +92,19 @@ export const Speakers: React.FC = () => {
                         <span className="text-[#4A5E82] font-medium shrink-0">Designation:</span>
                         <span className="font-semibold text-[#0B2554]">{speaker.designation}</span>
                       </div>
+                      {speaker.department && (
+                        <div className="flex items-start gap-1.5">
+                          <span className="text-[#4A5E82] font-medium shrink-0">Department:</span>
+                          <span className="font-semibold text-[#0B2554]">{speaker.department}</span>
+                        </div>
+                      )}
                       <div className="flex items-start gap-1.5">
-                        <span className="text-[#4A5E82] font-medium shrink-0">Institution:</span>
-                        <span className="font-semibold text-[#0B2554]">{speaker.institution}</span>
+                        <span className="text-[#4A5E82] font-medium shrink-0">
+                          {speaker.isIndustry ? 'Company:' : 'Institution:'}
+                        </span>
+                        <span className="font-bold text-[#0B2554] text-sm sm:text-base">
+                          {speaker.isIndustry ? speaker.company : speaker.institution}
+                        </span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <Globe className="w-3.5 h-3.5 text-[#00A8E8] shrink-0" />

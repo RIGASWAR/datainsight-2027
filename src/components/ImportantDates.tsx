@@ -48,7 +48,7 @@ export const ImportantDates: React.FC = () => {
             />
           </div>
           
-          <div className="grid grid-cols-5 gap-4 relative z-10">
+          <div className="grid grid-cols-5 gap-4 relative z-10 items-stretch">
             {CONFERENCE_DATA.importantDates.map((item, index) => {
               return (
                 <motion.div 
@@ -61,7 +61,7 @@ export const ImportantDates: React.FC = () => {
                     delay: 0.15 + index * 0.12, 
                     ease: [0.16, 1, 0.3, 1] 
                   }}
-                  className="flex flex-col items-center text-center group"
+                  className="flex flex-col items-center text-center group h-full justify-between"
                 >
                   
                   {/* Milestone Node with activation scale */}
@@ -70,7 +70,7 @@ export const ImportantDates: React.FC = () => {
                     whileInView={{ scale: item.isHighlighted ? 1.1 : 1 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.5, delay: 0.2 + index * 0.12 }}
-                    className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-md mb-6 ${
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-md mb-6 shrink-0 ${
                       item.isHighlighted
                         ? 'bg-gradient-to-br from-[#D9A441] to-[#b38827] text-white ring-4 ring-[#D9A441]/30 border-2 border-white'
                         : 'bg-[#176BFF] border-2 border-white text-white group-hover:scale-110 group-hover:border-[#00A8E8]'
@@ -83,26 +83,26 @@ export const ImportantDates: React.FC = () => {
                     )}
                   </motion.div>
 
-                  {/* Date Card with slide into position */}
+                  {/* Date Card with standardized equal dimensions */}
                   <div 
-                    className={`w-full p-5 sm:p-5.5 rounded-2xl bg-white transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between min-h-[160px] shadow-sm ${
+                    className={`w-full p-5 rounded-2xl bg-white transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between h-[190px] shadow-sm ${
                       item.isHighlighted 
                         ? 'border-2 border-[#D9A441] shadow-lg shadow-[#D9A441]/15' 
                         : 'border border-[#176BFF]/20 hover:border-[#176BFF] hover:shadow-md'
                     }`}
                   >
-                    <div>
+                    <div className="flex flex-col items-center">
                       <span className="text-xs font-bold text-[#176BFF] uppercase tracking-wider block mb-1.5">
                         Step 0{index + 1}
                       </span>
-                      <h4 className="text-base font-bold text-[#0B2D6B] leading-snug">
+                      <h4 className="text-sm sm:text-base font-bold text-[#0B2D6B] leading-snug min-h-[3rem] flex items-center justify-center text-center">
                         {item.title}
                       </h4>
                     </div>
 
-                    <div className="mt-3.5 pt-3.5 border-t border-gray-100">
+                    <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-center">
                       <span 
-                        className={`inline-block px-3 py-1.5 rounded-lg text-sm font-extrabold tracking-wide ${
+                        className={`inline-block px-3 py-1.5 rounded-lg text-xs sm:text-sm font-extrabold tracking-wide whitespace-nowrap ${
                           item.isHighlighted
                             ? 'bg-[#D9A441] text-white shadow-xs'
                             : 'bg-[#F5F9FF] text-[#174EA6] border border-[#176BFF]/20'

@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
-import { Globe2, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { Globe2, Globe, ExternalLink, ChevronDown, Users } from 'lucide-react';
 import { CONFERENCE_DATA, type AdvisoryMember } from '../data/conference';
 
 interface AdvisoryCardProps {
@@ -17,13 +17,13 @@ const AdvisoryMemberCard: React.FC<AdvisoryCardProps> = ({ member, delay = 0.05 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-      className="p-5 sm:p-6 rounded-2xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/50 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-full"
+      className="p-5 sm:p-6 rounded-2xl bg-white border border-[#176BFF]/15 hover:border-[#176BFF]/50 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-full h-full"
     >
-      <div>
+      <div className="w-full">
         {/* Member Portrait */}
         <div className="w-[140px] sm:w-[150px] h-[170px] sm:h-[185px] mx-auto rounded-2xl overflow-hidden border-2 border-[#176BFF]/25 group-hover:border-[#176BFF]/60 shadow-md shadow-[#0B2D6B]/5 group-hover:shadow-lg transition-all mb-4 bg-[#F5F9FF] shrink-0">
           <img
-            src={member.image}
+            src={member.image || '/speakers/avatar-placeholder.png'}
             alt={`Portrait of ${member.name}`}
             className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
             style={{ objectPosition: member.objectPosition || 'top' }}
@@ -33,7 +33,7 @@ const AdvisoryMemberCard: React.FC<AdvisoryCardProps> = ({ member, delay = 0.05 
               const target = e.currentTarget;
               if (target.dataset.fallbackTried) return;
               target.dataset.fallbackTried = 'true';
-              const filename = member.image.split('/').pop()?.split('-')[0]?.split('?')[0];
+              const filename = member.image?.split('/').pop()?.split('-')[0]?.split('?')[0];
               if (filename) {
                 target.src = `/advisory/${filename}`;
               }
@@ -41,21 +41,39 @@ const AdvisoryMemberCard: React.FC<AdvisoryCardProps> = ({ member, delay = 0.05 
           />
         </div>
 
-        {/* Member Name */}
-        <h3 className="text-base sm:text-lg font-bold text-[#0B2D6B] group-hover:text-[#176BFF] transition-colors leading-snug text-center">
+        {/* Member Name with Title */}
+        <h3 className="text-base sm:text-lg font-bold text-[#0B2D6B] group-hover:text-[#176BFF] transition-colors leading-snug text-center mb-3">
           {member.name}
         </h3>
 
-        {/* Designation & Institution */}
-        <div className="mt-2 space-y-1 text-center">
-          <p className="text-xs sm:text-sm font-semibold text-[#174EA6] leading-snug">
-            {member.designation}
-          </p>
-          {member.institution && (
-            <p className="text-xs text-[#1A2B4A]/70 leading-relaxed">
-              {member.institution}
-            </p>
+        {/* Hierarchy: Designation -> Department -> Institution/Company -> Country */}
+        <div className="space-y-1.5 text-xs sm:text-sm text-[#1A2B4A]">
+          <div className="flex items-start gap-1.5">
+            <span className="text-[#4A5E82] font-medium shrink-0">Designation:</span>
+            <span className="font-semibold text-[#0B2554]">{member.designation}</span>
+          </div>
+          
+          {member.department && (
+            <div className="flex items-start gap-1.5">
+              <span className="text-[#4A5E82] font-medium shrink-0">Department:</span>
+              <span className="font-semibold text-[#0B2554]">{member.department}</span>
+            </div>
           )}
+
+          <div className="flex items-start gap-1.5">
+            <span className="text-[#4A5E82] font-medium shrink-0">
+              {member.isIndustry ? 'Company:' : 'Institution:'}
+            </span>
+            <span className="font-bold text-[#0B2554]">
+              {member.isIndustry ? member.company : member.institution}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <Globe className="w-3.5 h-3.5 text-[#00A8E8] shrink-0" />
+            <span className="text-[#4A5E82] font-medium">Country:</span>
+            <span className="font-semibold text-[#0B2554]">{member.country}</span>
+          </div>
         </div>
 
         {/* Area of Expertise */}
@@ -70,15 +88,21 @@ const AdvisoryMemberCard: React.FC<AdvisoryCardProps> = ({ member, delay = 0.05 
 
       {/* View Profile Button */}
       <div className="mt-5 pt-3 border-t border-[#176BFF]/10">
-        <a
-          href={member.profileUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full py-2 px-3 rounded-lg text-xs font-bold text-[#176BFF] bg-white hover:bg-[#176BFF] hover:text-white border border-[#176BFF]/25 shadow-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer"
-        >
-          <span>View Profile</span>
-          <ExternalLink className="w-3.5 h-3.5" />
-        </a>
+        {member.profileUrl && member.profileUrl !== 'TO BE CONFIRMED' ? (
+          <a
+            href={member.profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-2 px-3 rounded-lg text-xs font-bold text-[#176BFF] bg-white hover:bg-[#176BFF] hover:text-white border border-[#176BFF]/25 shadow-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+          >
+            <span>View Profile</span>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+        ) : (
+          <span className="w-full py-2 px-3 rounded-lg text-xs font-medium text-[#4A5E82] bg-slate-50 border border-slate-200 shadow-xs flex items-center justify-center gap-1.5 cursor-not-allowed">
+            <span>Profile: TO BE CONFIRMED</span>
+          </span>
+        )}
       </div>
     </motion.div>
   );
@@ -86,6 +110,15 @@ const AdvisoryMemberCard: React.FC<AdvisoryCardProps> = ({ member, delay = 0.05 
 
 export const AdvisoryCommittee: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const internationalMembers = CONFERENCE_DATA.advisoryCommittee.filter(
+    (member) => member.category === 'international'
+  );
+
+  const nationalMembers = CONFERENCE_DATA.advisoryCommittee.filter(
+    (member) => member.category === 'national'
+  );
 
   return (
     <section id="advisory" className="py-20 md:py-28 relative bg-gradient-to-b from-[#F7FAFF] via-white to-[#F7FAFF] overflow-hidden">
@@ -100,7 +133,7 @@ export const AdvisoryCommittee: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10"
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/20 mb-3 shadow-xs">
             <Globe2 className="w-3.5 h-3.5 text-[#D9A441]" />
@@ -115,16 +148,78 @@ export const AdvisoryCommittee: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* 16 Advisory Committee Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-7">
-          {CONFERENCE_DATA.advisoryCommittee.map((member, idx) => (
-            <AdvisoryMemberCard
-              key={member.id}
-              member={member}
-              delay={0.04 * (idx % 4)}
-            />
-          ))}
+        {/* Collapsible Action Button */}
+        <div className="flex justify-center mb-10">
+          <button
+            type="button"
+            onClick={() => setIsExpanded(!isExpanded)}
+            aria-expanded={isExpanded}
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-[#176BFF] to-[#00A8E8] hover:from-[#1358D6] hover:to-[#0092CA] shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer group"
+          >
+            <Users className="w-5 h-5 text-[#FFE699]" />
+            <span>{isExpanded ? 'Click to Hide Advisory Committee' : 'Click to View Advisory Committee'}</span>
+            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+          </button>
         </div>
+
+        {/* Collapsible Content: International subsection first, National subsection second */}
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="overflow-hidden space-y-16"
+            >
+              {/* SUBSECTION 1: INTERNATIONAL (comes first) */}
+              <div>
+                <div className="text-center mb-8">
+                  <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-wider text-brand-primary">
+                    INTERNATIONAL ADVISORY COMMITTEE
+                  </h3>
+                  <div className="w-16 h-1 bg-[#176BFF] mx-auto mt-2 rounded-full" />
+                  <p className="mt-2 text-xs sm:text-sm text-[#4A5E82]">
+                    Renowned professors, scientists, and global industry architects from premier international institutions
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-7 items-stretch">
+                  {internationalMembers.map((member, idx) => (
+                    <AdvisoryMemberCard
+                      key={member.id}
+                      member={member}
+                      delay={0.04 * (idx % 4)}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* SUBSECTION 2: NATIONAL (comes second) */}
+              <div>
+                <div className="text-center mb-8">
+                  <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-wider text-brand-primary">
+                    NATIONAL ADVISORY COMMITTEE
+                  </h3>
+                  <div className="w-16 h-1 bg-[#D9A441] mx-auto mt-2 rounded-full" />
+                  <p className="mt-2 text-xs sm:text-sm text-[#4A5E82]">
+                    Eminent academicians, CSIR scientists, and industry leaders from premier Indian institutions
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-7 items-stretch">
+                  {nationalMembers.map((member, idx) => (
+                    <AdvisoryMemberCard
+                      key={member.id}
+                      member={member}
+                      delay={0.04 * (idx % 4)}
+                    />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       </div>
     </section>

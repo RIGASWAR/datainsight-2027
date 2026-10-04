@@ -1,6 +1,8 @@
 import chiefPatronPhoto from '../assets/committee/g_sir.png';
 import patronPhoto from '../assets/committee/p_mam.png';
 import convenerPhoto from '../assets/committee/v_sir.png';
+import coConvenerAnithaPhoto from '../assets/committee/anitha_mam.png';
+import coConvenerKarthikaPhoto from '../assets/committee/karthika_mam.png';
 import secSarathambekaiPhoto from '../assets/committee/s_mam.png';
 import secVairamPhoto from '../assets/committee/v_mam.png';
 import secHemapriyaPhoto from '../assets/committee/t_mam.png';
@@ -18,7 +20,7 @@ import advLerinaPhoto from '../assets/advisory/lerina.jpeg';
 import advMarappanPhoto from '../assets/advisory/marappan.jpeg';
 import advSitikanthaPhoto from '../assets/advisory/sitikantha.jpeg';
 import advKarthikPhoto from '../assets/advisory/karthick.jpeg';
-import advValentinaPhoto from '../assets/advisory/valentina.jpeg';
+import advValentinaPhoto from '../assets/advisory/valentina.png';
 import advNajibPhoto from '../assets/advisory/najib.png';
 import advThiyagarajanPhoto from '../assets/advisory/thiyagarajan.png';
 import advTanveerPhoto from '../assets/advisory/tanveer.jpeg';
@@ -27,6 +29,8 @@ import advGrazzielaPhoto from '../assets/advisory/grazziela.jpeg';
 import advAakankshaPhoto from '../assets/advisory/aakanksha.jpeg';
 import advSrividhyaPhoto from '../assets/advisory/srividhya.jpeg';
 import advDiegoPhoto from '../assets/advisory/diego.jpeg';
+import advDucTanPhoto from '../assets/advisory/duc_tan.jpg';
+import advSoorajPhoto from '../assets/advisory/sooraj.png';
 
 export interface NavItem {
   name: string;
@@ -71,24 +75,32 @@ export interface SpeakerItem {
   id: string;
   name: string;
   designation: string;
-  institution: string;
+  department?: string;
+  institution?: string;
+  company?: string;
   country: string;
   biography: string;
   image: string;
   profileUrl: string;
   specialization?: string;
   isPlaceholder?: boolean;
+  isIndustry?: boolean;
 }
 
 export interface AdvisoryMember {
   id: string;
   name: string;
   designation: string;
-  institution: string;
+  department?: string;
+  institution?: string;
+  company?: string;
+  country: string;
   expertise?: string;
-  image: string;
+  image?: string;
   profileUrl: string;
   objectPosition?: string;
+  category: 'international' | 'national';
+  isIndustry?: boolean;
 }
 
 export interface CommitteeMember {
@@ -108,6 +120,7 @@ export interface CommitteeSecretary {
   name: string;
   role: string;
   designation: string;
+  department?: string;
   institution?: string;
   image: string;
   imageAlt: string;
@@ -118,6 +131,7 @@ export interface CommitteeData {
   chiefPatron: CommitteeMember;
   patron: CommitteeMember;
   convener: CommitteeMember;
+  coConveners: CommitteeMember[];
   organizingSecretaries: CommitteeSecretary[];
   additionalRoles: {
     category: string;
@@ -337,187 +351,311 @@ export const CONFERENCE_DATA = {
   speakers: [
     {
       id: 'spk-1',
-      name: 'Navisha Prabhakar',
+      name: 'Dr. Diego Oliva',
+      designation: 'Professor',
+      department: 'Department of Computer Sciences',
+      institution: 'Universidad de Guadalajara',
+      country: 'Mexico',
+      specialization: 'Metaheuristic Optimization, Evolutionary AI (EvoXAI) & Image Processing',
+      biography: 'Renowned international scholar and Professor at CUCEI, Universidad de Guadalajara, specializing in evolutionary algorithms, explainable AI, and computer vision with over 14,000 academic citations.',
+      image: speakerDiegoPhoto,
+      profileUrl: 'https://www.linkedin.com/in/diegoliva/',
+      isPlaceholder: false,
+      isIndustry: false,
+    },
+    {
+      id: 'spk-2',
+      name: 'Ms. Navisha Prabhakar',
       designation: 'Regional Head – Education (South & West)',
-      institution: 'Google Cloud',
+      department: 'Google for Education',
+      company: 'Google Cloud',
       country: 'India',
       specialization: 'Cloud Computing, Digital Transformation, Agentic AI & Educational Tech',
       biography: 'Seasoned sales, marketing, and technology leader with extensive experience driving cloud adoption, Agentic AI campuses, and digital education ecosystems at Google Cloud and Microsoft.',
       image: speakerNavishaPhoto,
       profileUrl: 'https://www.linkedin.com/in/navisha-prabhakar-81ba485a/',
       isPlaceholder: false,
+      isIndustry: true,
     },
     {
-      id: 'spk-2',
+      id: 'spk-3',
       name: 'Dr. Srividhya Kannan',
       designation: 'Applied AI and Innovation Manager',
-      institution: 'Boeing',
+      department: 'Enterprise Safety & Mission Assurance',
+      company: 'Boeing',
       country: 'India',
       specialization: 'Artificial Intelligence, Computer Vision, Deep Learning & Autonomous Systems',
       biography: 'Distinguished researcher and technical leader in AI, computer vision, and autonomous vehicle technologies; formerly Senior Manager and AI leader at Continental with numerous international patents and publications.',
       image: speakerSrividhyaPhoto,
       profileUrl: 'https://www.linkedin.com/in/dr-srividhya-kannan-2a035267/',
       isPlaceholder: false,
-    },
-    {
-      id: 'spk-3',
-      name: 'Dr. Diego Oliva',
-      designation: 'Associate Professor, Dept. of Computer Sciences',
-      institution: 'Universidad de Guadalajara',
-      country: 'Mexico',
-      specialization: 'Metaheuristic Optimization, Evolutionary AI (EvoXAI) & Image Processing',
-      biography: 'Renowned international scholar and professor at CUCEI, Universidad de Guadalajara, specializing in evolutionary algorithms, explainable AI, and computer vision with over 14,000 academic citations.',
-      image: speakerDiegoPhoto,
-      profileUrl: 'https://www.linkedin.com/in/diegoliva/',
-      isPlaceholder: false,
+      isIndustry: true,
     },
   ],
   advisoryCommittee: [
+    // INTERNATIONAL SUBSECTION (Professors -> Assoc Professors -> Asst Professors -> Industry)
     {
-      id: 'adv-1',
-      name: 'Dr. Badri Narayan Subudhi',
-      designation: 'Associate Professor, Dept. of Electrical Engineering',
-      institution: 'Indian Institute of Technology (IIT) Jammu',
-      expertise: 'Computer Vision, Deep Learning, Image Processing & Remote Sensing',
-      image: advBadriPhoto,
-      profileUrl: 'https://sites.google.com/view/badrisubudhi/home',
-    },
-    {
-      id: 'adv-2',
-      name: 'Dr. Manish Aggarwal',
-      designation: 'Associate Professor, School of AI & Data Science',
-      institution: 'Indian Institute of Technology (IIT) Jodhpur',
-      expertise: 'Uncertainty in ML, Explainable AI, Decision Making & Green Energy',
-      image: advManishPhoto,
-      profileUrl: 'https://www.iitj.ac.in/People/Profile/ddba8a5b-64ce-4634-83a4-7cc3df7d6721',
-    },
-    {
-      id: 'adv-3',
-      name: 'Dr. Jasmine Beulah Salome S',
-      designation: 'Associate Professor, Dept. of Electrical Engg. & Computer Science',
-      institution: 'George Fox University',
-      expertise: 'Wireless Sensor Networks, Artificial Intelligence, IoT & Machine Learning',
-      image: advJasminePhoto,
-      profileUrl: 'https://www.linkedin.com/in/drjasminebeulah?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-    },
-    {
-      id: 'adv-4',
-      name: 'Prof. Dr. Lerina Aversano',
-      designation: 'Full Professor of Computer Engineering',
-      institution: 'University of Sannio / University of Foggia, Italy',
-      expertise: 'Software Engineering, AI in Digital Health, Data Integration & Quality',
-      image: advLerinaPhoto,
-      profileUrl: 'https://www.linkedin.com/in/lerina-aversano-6525384?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-    },
-    {
-      id: 'adv-5',
-      name: 'Dr. M. Sathish',
-      designation: 'Senior Principal Scientist & Head, EPS Division',
-      institution: 'CSIR-Central Electrochemical Research Institute (CSIR-CECRI)',
-      expertise: 'Nanomaterials, Electrochemical Energy Storage & Supercapacitors',
-      image: advMarappanPhoto,
-      profileUrl: 'https://www.linkedin.com/in/marappan-sathish-17098619?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-    },
-    {
-      id: 'adv-6',
-      name: 'Dr. Sitikantha Roy',
-      designation: 'Associate Professor, Dept. of Applied Mechanics',
-      institution: 'Indian Institute of Technology (IIT) Delhi',
-      expertise: 'Biomechanics, Soft Robotics, Smart Materials & Brain-Machine Interfaces',
-      image: advSitikanthaPhoto,
-      profileUrl: 'https://www.linkedin.com/in/sitikantha-roy-43a9049?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-    },
-    {
-      id: 'adv-7',
-      name: 'Dr. Karthik Vaidhyanathan',
-      designation: 'Assistant Professor, Software Engineering Research Center',
-      institution: 'IIIT Hyderabad, India',
-      expertise: 'Software Architecture, Machine Learning Systems, MLOps & Self-Adaptive Systems',
-      image: advKarthikPhoto,
-      profileUrl: 'https://www.linkedin.com/in/karthikv1392?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-    },
-    {
-      id: 'adv-8',
-      name: 'Valentina',
-      designation: 'TO BE CONFIRMED',
-      institution: 'TO BE CONFIRMED',
-      expertise: 'Data Analytics & Computational Intelligence',
+      id: 'adv-int-1',
+      name: 'Dr. Valentina Emila Balas',
+      designation: 'Professor',
+      department: 'Department of Automatics and Applied Software',
+      institution: 'Aurel Vlaicu University of Arad',
+      country: 'Romania',
+      expertise: 'Intelligent Systems, Fuzzy Logic & Soft Computing',
       image: advValentinaPhoto,
-      profileUrl: 'https://www.linkedin.com/in/vabalas?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+      profileUrl: 'https://www.linkedin.com/in/vabalas',
+      category: 'international',
+      isIndustry: false,
     },
     {
-      id: 'adv-9',
-      name: 'Dr. Najib Ben Aoun',
-      designation: 'Assistant Professor, College of Computer Science & IT',
-      institution: 'Al-Baha University, Saudi Arabia',
-      expertise: 'Computer Vision, Medical Image Analysis, Deep Learning & Biometrics',
-      image: advNajibPhoto,
-      profileUrl: 'https://www.linkedin.com/in/najib-ben-aoun-96a88637?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+      id: 'adv-int-2',
+      name: 'Dr. Duc-Tan Tran',
+      designation: 'Professor & Head of Group, Smart Sensing and Applications',
+      department: 'Faculty of Electrical and Electronic Engineering',
+      institution: 'Phenikaa University',
+      country: 'Vietnam',
+      expertise: 'Smart Sensing, Signal Processing & Intelligent Systems',
+      image: advDucTanPhoto,
+      profileUrl: 'https://ssalab.phenikaa-uni.edu.vn/members/coremembers',
+      category: 'international',
+      isIndustry: false,
     },
     {
-      id: 'adv-10',
-      name: 'Dr. Thiyagarajan',
-      designation: 'TO BE CONFIRMED',
-      institution: 'TO BE CONFIRMED',
-      expertise: 'Information Technology & Intelligent Systems',
-      image: advThiyagarajanPhoto,
-      profileUrl: 'https://www.linkedin.com/in/tiyags?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+      id: 'adv-int-3',
+      name: 'Dr. Lerina Aversano',
+      designation: 'Full Professor',
+      department: 'Department of Law, Economics, Management and Quantitative Methods',
+      institution: 'University of Sannio',
+      country: 'Italy',
+      expertise: 'Software Engineering, AI in Digital Health & Data Quality',
+      image: advLerinaPhoto,
+      profileUrl: 'https://www.linkedin.com/in/lerina-aversano-51474910/',
+      category: 'international',
+      isIndustry: false,
     },
     {
-      id: 'adv-11',
-      name: 'Prof. Dr. M. Tanveer',
-      designation: 'Professor & Ramanujan Fellow, Dept. of Mathematics',
-      institution: 'Indian Institute of Technology (IIT) Indore',
-      expertise: 'Machine Learning, Optimization, Deep Learning & Biomedical Applications',
-      image: advTanveerPhoto,
-      profileUrl: 'https://www.linkedin.com/in/m-tanveer-13905662?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-    },
-    {
-      id: 'adv-12',
-      name: 'Prof. Dr. Gang Li',
-      designation: 'Professor, School of Information Technology',
-      institution: 'Deakin University, Australia',
+      id: 'adv-int-4',
+      name: 'Dr. Gang Li',
+      designation: 'Professor',
+      department: 'School of Information Technology',
+      institution: 'Deakin University',
+      country: 'Australia',
       expertise: 'Data Privacy, Artificial Intelligence, Machine Learning & Cyber Security',
       image: advGangLiPhoto,
-      profileUrl: 'https://experts.deakin.edu.au/28663-gang-li',
+      profileUrl: 'https://www.linkedin.com/in/gang-li-7589b222/',
+      category: 'international',
+      isIndustry: false,
     },
     {
-      id: 'adv-13',
-      name: 'Dr. Grazziela Figueredo',
-      designation: 'Associate Professor in Health Data Science',
-      institution: 'University of Nottingham, United Kingdom',
-      expertise: 'Health Data Science, Federated Analytics, Explainable AI & Systems Simulation',
-      image: advGrazzielaPhoto,
-      profileUrl: 'https://www.linkedin.com/in/grazziela-figueredo-1185696/?isSelfProfile=false',
-    },
-    {
-      id: 'adv-14',
-      name: 'Dr. Aakanksha Sharaff',
-      designation: 'Associate Professor, Dept. of Computer Science & Engineering',
-      institution: 'National Institute of Technology (NIT) Raipur',
-      expertise: 'Data Science, Artificial Intelligence, Cyber Security & Text Mining',
-      image: advAakankshaPhoto,
-      profileUrl: 'https://www.linkedin.com/in/aakanksha-sharaff-2b2214119/?isSelfProfile=false',
-    },
-    {
-      id: 'adv-15',
-      name: 'Dr. Srividhya Kannan',
-      designation: 'Applied AI and Innovation Manager',
-      institution: 'Boeing',
-      expertise: 'Artificial Intelligence, Autonomous Systems, 3D Vision & Deep Learning',
-      image: advSrividhyaPhoto,
-      profileUrl: 'https://www.linkedin.com/in/dr-srividhya-kannan-2a035267/?isSelfProfile=false',
-    },
-    {
-      id: 'adv-16',
+      id: 'adv-int-5',
       name: 'Dr. Diego Oliva',
-      designation: 'Associate Professor, Dept. of Computer Sciences',
-      institution: 'Universidad de Guadalajara, Mexico',
+      designation: 'Professor',
+      department: 'Department of Computer Sciences',
+      institution: 'Universidad de Guadalajara',
+      country: 'Mexico',
       expertise: 'Metaheuristic Optimization, Evolutionary AI (EvoXAI) & Image Processing',
       image: advDiegoPhoto,
       profileUrl: 'https://scholar.google.com/citations?user=N5mk5rYAAAAJ&hl=es',
+      category: 'international',
+      isIndustry: false,
     },
-  ],
+    {
+      id: 'adv-int-6',
+      name: 'Dr. Jasmine Gnanadurai',
+      designation: 'Associate Professor',
+      department: 'Department of Electrical Engineering and Computer Science',
+      institution: 'George Fox University',
+      country: 'USA',
+      expertise: 'Wireless Sensor Networks, Artificial Intelligence, IoT & Machine Learning',
+      image: advJasminePhoto,
+      profileUrl: 'https://www.linkedin.com/in/drjasminebeulah',
+      category: 'international',
+      isIndustry: false,
+    },
+    {
+      id: 'adv-int-7',
+      name: 'Dr. Grazziela Figueredo',
+      designation: 'Associate Professor',
+      department: 'School of Computer Science',
+      institution: 'University of Nottingham',
+      country: 'United Kingdom',
+      expertise: 'Health Data Science, Federated Analytics, Explainable AI & Systems Simulation',
+      image: advGrazzielaPhoto,
+      profileUrl: 'https://www.linkedin.com/in/grazziela-figueredo-1a84701a/',
+      category: 'international',
+      isIndustry: false,
+    },
+    {
+      id: 'adv-int-8',
+      name: 'Dr. Najib Ben Aoun',
+      designation: 'Assistant Professor',
+      department: 'College of Computer Science and Information Technology',
+      institution: 'Al-Baha University',
+      country: 'Saudi Arabia',
+      expertise: 'Computer Vision, Medical Image Analysis, Deep Learning & Biometrics',
+      image: advNajibPhoto,
+      profileUrl: 'https://www.linkedin.com/in/najib-ben-aoun-943b1853/',
+      category: 'international',
+      isIndustry: false,
+    },
+    {
+      id: 'adv-int-9',
+      name: 'Mr. Sooraj Shajahan',
+      designation: 'Senior Staff Cloud Architect',
+      department: 'Enterprise Architecture & Cloud Solutions',
+      company: 'Cloudera',
+      country: 'Ireland',
+      expertise: 'Cloud Solutions, Enterprise Architecture, Data Platforms & AI',
+      image: advSoorajPhoto,
+      profileUrl: 'https://www.linkedin.com/in/soorajshajahan',
+      category: 'international',
+      isIndustry: true,
+    },
+
+    // NATIONAL SUBSECTION (Professors -> Assoc Professors -> Asst Professors -> Scientists -> Industry)
+    {
+      id: 'adv-nat-1',
+      name: 'Dr. M. Tanveer',
+      designation: 'Professor & Ramanujan Fellow',
+      department: 'Discipline of Mathematics',
+      institution: 'Indian Institute of Technology (IIT) Indore',
+      country: 'India',
+      expertise: 'Machine Learning, Optimization, Deep Learning & Biomedical Applications',
+      image: advTanveerPhoto,
+      profileUrl: 'https://www.linkedin.com/in/m-tanveer-13905662/',
+      category: 'national',
+      isIndustry: false,
+    },
+    {
+      id: 'adv-nat-2',
+      name: 'Dr. Badri Narayan Subudhi',
+      designation: 'Associate Professor',
+      department: 'Department of Electrical Engineering',
+      institution: 'Indian Institute of Technology (IIT) Jammu',
+      country: 'India',
+      expertise: 'Computer Vision, Deep Learning, Image Processing & Remote Sensing',
+      image: advBadriPhoto,
+      profileUrl: 'https://sites.google.com/view/badrisubudhi/home',
+      category: 'national',
+      isIndustry: false,
+    },
+    {
+      id: 'adv-nat-3',
+      name: 'Dr. Manish Aggarwal',
+      designation: 'Associate Professor',
+      department: 'Department of Computer Science & Engineering',
+      institution: 'Indian Institute of Technology (IIT) Jodhpur',
+      country: 'India',
+      expertise: 'Uncertainty in ML, Explainable AI, Decision Making & Green Energy',
+      image: advManishPhoto,
+      profileUrl: 'https://www.iitj.ac.in/People/Profile/ddba8a5b-64ce-4634-83a4-7cc3df7d6721',
+      category: 'national',
+      isIndustry: false,
+    },
+    {
+      id: 'adv-nat-4',
+      name: 'Dr. Sitikantha Roy',
+      designation: 'Associate Professor',
+      department: 'Department of Applied Mechanics',
+      institution: 'Indian Institute of Technology (IIT) Delhi',
+      country: 'India',
+      expertise: 'Biomechanics, Soft Robotics, Smart Materials & Brain-Machine Interfaces',
+      image: advSitikanthaPhoto,
+      profileUrl: 'https://www.linkedin.com/in/sitikantha-roy-83679815/',
+      category: 'national',
+      isIndustry: false,
+    },
+    {
+      id: 'adv-nat-5',
+      name: 'Dr. Aakanksha Sharaff',
+      designation: 'Associate Professor',
+      department: 'Department of Computer Science & Engineering',
+      institution: 'National Institute of Technology (NIT) Raipur',
+      country: 'India',
+      expertise: 'Data Science, Artificial Intelligence, Cyber Security & Text Mining',
+      image: advAakankshaPhoto,
+      profileUrl: 'https://www.linkedin.com/in/dr-aakanksha-sharaff-b52b347b/',
+      category: 'national',
+      isIndustry: false,
+    },
+    {
+      id: 'adv-nat-6',
+      name: 'Dr. Karthik Vaidhyanathan',
+      designation: 'Assistant Professor',
+      department: 'Software Engineering Research Center',
+      institution: 'IIIT Hyderabad',
+      country: 'India',
+      expertise: 'Software Architecture, Machine Learning Systems, MLOps & Self-Adaptive Systems',
+      image: advKarthikPhoto,
+      profileUrl: 'https://www.linkedin.com/in/karthik-vaidhyanathan-ph-d-71b56950/',
+      category: 'national',
+      isIndustry: false,
+    },
+    {
+      id: 'adv-nat-7',
+      name: 'Dr. M. Sathish',
+      designation: 'Senior Principal Scientist & Head',
+      department: 'Electrochemical Power Sources Division',
+      institution: 'CSIR-Central Electrochemical Research Institute (CSIR-CECRI)',
+      country: 'India',
+      expertise: 'Nanomaterials, Electrochemical Energy Storage & Supercapacitors',
+      image: advMarappanPhoto,
+      profileUrl: 'https://www.linkedin.com/in/dr-m-sathish-24419958/',
+      category: 'national',
+      isIndustry: false,
+    },
+    {
+      id: 'adv-nat-8',
+      name: 'Dr. S. Thiyagarajan',
+      designation: 'Head of Virtual Development and Framework, Segment Radar',
+      department: 'Segment Radar',
+      company: 'Aumovio Technical Center India',
+      country: 'India',
+      expertise: 'Radar Systems, Autonomous Driving & Virtual Frameworks',
+      image: advThiyagarajanPhoto,
+      profileUrl: 'https://www.linkedin.com/in/tiyags',
+      category: 'national',
+      isIndustry: true,
+    },
+    {
+      id: 'adv-nat-9',
+      name: 'Dr. Swati Sirsant',
+      designation: 'Deputy Manager, Research and Development',
+      department: 'Research and Development',
+      company: 'HINCOL (HPCL-Colas France)',
+      country: 'India',
+      expertise: 'Materials Engineering, R&D & Infrastructure Materials',
+      profileUrl: 'TO BE CONFIRMED',
+      category: 'national',
+      isIndustry: true,
+    },
+    {
+      id: 'adv-nat-10',
+      name: 'Dr. Srividhya Kannan',
+      designation: 'Applied AI and Innovation Manager',
+      department: 'Enterprise Safety & Mission Assurance',
+      company: 'Boeing',
+      country: 'India',
+      expertise: 'Artificial Intelligence, Autonomous Systems, 3D Vision & Deep Learning',
+      image: advSrividhyaPhoto,
+      profileUrl: 'https://www.linkedin.com/in/dr-srividhya-kannan-2a035267/',
+      category: 'national',
+      isIndustry: true,
+    },
+    {
+      id: 'adv-nat-11',
+      name: 'Ms. Navisha Prabhakar',
+      designation: 'Regional Head – Education (South & West)',
+      department: 'Google for Education',
+      company: 'Google Cloud',
+      country: 'India',
+      expertise: 'Cloud Computing, Digital Transformation, Agentic AI & Educational Tech',
+      image: speakerNavishaPhoto,
+      profileUrl: 'https://www.linkedin.com/in/navisha-prabhakar-81ba485a/',
+      category: 'national',
+      isIndustry: true,
+    },
+  ] as AdvisoryMember[],
   callForPapers: {
     heading: 'Share Your Research. Shape the Future of Intelligent and Secure Data.',
     description:
@@ -667,10 +805,10 @@ export const CONFERENCE_DATA = {
     },
   ],
   sponsors: [
-    { id: 'sponsor-1', label: 'SPONSOR 1', status: 'TO BE ANNOUNCED' },
-    { id: 'sponsor-2', label: 'SPONSOR 2', status: 'TO BE ANNOUNCED' },
-    { id: 'sponsor-3', label: 'SPONSOR 3', status: 'TO BE ANNOUNCED' },
-    { id: 'sponsor-4', label: 'SPONSOR 4', status: 'TO BE ANNOUNCED' },
+    { id: 'sponsor-1', label: 'SPONSOR 1', status: 'WILL BE UPDATED SOON' },
+    { id: 'sponsor-2', label: 'SPONSOR 2', status: 'WILL BE UPDATED SOON' },
+    { id: 'sponsor-3', label: 'SPONSOR 3', status: 'WILL BE UPDATED SOON' },
+    { id: 'sponsor-4', label: 'SPONSOR 4', status: 'WILL BE UPDATED SOON' },
   ],
   committee: {
     chiefPatron: {
@@ -701,11 +839,35 @@ export const CONFERENCE_DATA = {
       title: 'Convener',
       designation: 'Professor and Head',
       department: 'Department of Information Technology',
-      institution: 'Department of Information Technology, PSG College of Technology',
+      institution: 'PSG College of Technology',
       image: convenerPhoto,
       imageAlt: 'Photograph of Dr. B. Vinoth Kumar, Convener',
       objectPosition: 'center',
     },
+    coConveners: [
+      {
+        name: 'Dr. K. Anitha Kumari',
+        role: 'Co-Convener',
+        title: 'Co-Convener',
+        designation: 'Professor',
+        department: 'Department of Information Technology',
+        institution: 'PSG College of Technology',
+        image: coConvenerAnithaPhoto,
+        imageAlt: 'Photograph of Dr. K. Anitha Kumari, Co-Convener',
+        objectPosition: 'center',
+      },
+      {
+        name: 'Dr. D. Karthika Renuka',
+        role: 'Co-Convener',
+        title: 'Co-Convener',
+        designation: 'Professor',
+        department: 'Department of Information Technology',
+        institution: 'PSG College of Technology',
+        image: coConvenerKarthikaPhoto,
+        imageAlt: 'Photograph of Dr. D. Karthika Renuka, Co-Convener',
+        objectPosition: 'center',
+      },
+    ],
     organizingSecretaries: [
       {
         name: 'Dr. S. Sarathambekai',

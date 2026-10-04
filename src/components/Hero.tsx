@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { CONFERENCE_DATA } from '../data/conference';
 
 interface HeroProps {
-  onActionClick: (actionType: 'submit' | 'register' | 'cfp') => void;
-  onExploreClick: () => void;
+  onActionClick?: (actionType: 'submit' | 'register' | 'cfp') => void;
+  onExploreClick?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => {
+export const Hero: React.FC<HeroProps> = () => {
   const shouldReduceMotion = useReducedMotion();
 
   // Dynamic countdown state
@@ -97,25 +97,44 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-20 w-[94%] sm:w-[90%] md:w-[86%] max-w-3xl lg:max-w-4xl mx-auto rounded-2xl bg-[#0C234B]/75 sm:bg-[#0C234B]/72 backdrop-blur-md border border-[#176BFF]/35 shadow-2xl shadow-[#041026]/60 p-5 sm:p-7 md:p-9 text-center text-white"
       >
-        {/* First — Conference Title, largest text in the information box */}
-        <h1
-          className="text-xl sm:text-2xl md:text-3xl lg:text-[2.25rem] xl:text-[2.45rem] font-black tracking-tight text-white leading-tight max-w-3xl mx-auto"
-          style={{ textShadow: '0 2px 6px rgba(0, 0, 0, 0.7)' }}
-        >
-          International Conference on Multimodal Data Analytics, Intelligence and Security
-        </h1>
+        {/* Conference Information Hierarchy */}
+        <div className="space-y-1 sm:space-y-1.5">
+          {/* 1. DATAINSIGHT 2027 — Visually prominent with subtle gold shimmer */}
+          <h1
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight gold-shimmer-text"
+            style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.75)' }}
+          >
+            DATAINSIGHT 2027
+          </h1>
 
-        {/* Second — Conference Name, slightly smaller than the title */}
-        <h2
-          className="mt-3 sm:mt-3.5 text-lg sm:text-xl md:text-2xl lg:text-[1.85rem] xl:text-[2rem] font-extrabold tracking-tight text-[#E6B85C] leading-snug"
-          style={{ textShadow: '0 2px 5px rgba(0, 0, 0, 0.65)' }}
-        >
-          DATAINSIGHT 2027
-        </h2>
+          {/* 2. International Conference */}
+          <h2
+            className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold tracking-tight text-white/95 leading-snug pt-1"
+            style={{ textShadow: '0 2px 6px rgba(0, 0, 0, 0.7)' }}
+          >
+            International Conference
+          </h2>
+
+          {/* 3. on */}
+          <div
+            className="text-xs sm:text-sm font-semibold text-[#8AB4FF] uppercase tracking-widest"
+            style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.7)' }}
+          >
+            on
+          </div>
+
+          {/* 4. Multimodal Data Analytics, Intelligence and Security */}
+          <h3
+            className="text-base sm:text-lg md:text-xl lg:text-2xl font-extrabold tracking-tight text-[#E2EEFF] leading-snug max-w-2xl mx-auto"
+            style={{ textShadow: '0 2px 6px rgba(0, 0, 0, 0.7)' }}
+          >
+            Multimodal Data Analytics, Intelligence and Security
+          </h3>
+        </div>
 
         {/* Third — Replacement Tagline */}
         <p
-          className="mt-2 sm:mt-2.5 text-xs sm:text-sm md:text-base lg:text-[1.05rem] italic text-[#E2EEFF] font-semibold max-w-xl mx-auto"
+          className="mt-2.5 sm:mt-3 text-xs sm:text-sm md:text-base italic text-[#E2EEFF]/90 font-medium max-w-xl mx-auto"
           style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.6)' }}
         >
           Transforming Data into Intelligence, Securing the Future
@@ -124,13 +143,13 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
         {/* Gold Separator */}
         <div className="w-24 sm:w-36 h-[2px] bg-gradient-to-r from-transparent via-[#E6B85C] to-transparent mx-auto my-3 sm:my-4" />
 
-        {/* Event Dates */}
+        {/* Event Dates — with subtle gold shimmer */}
         <div
-          className="inline-flex items-center justify-center gap-2 text-base sm:text-xl md:text-2xl font-extrabold text-[#E6B85C] tracking-wide"
+          className="inline-flex items-center justify-center gap-2 text-base sm:text-xl md:text-2xl font-extrabold tracking-wide"
           style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.65)' }}
         >
           <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#E6B85C]" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }} />
-          <span>{CONFERENCE_DATA.datesDisplay}</span>
+          <span className="gold-shimmer-text">{CONFERENCE_DATA.datesDisplay}</span>
         </div>
 
         {/* Dynamic Countdown Timer Component */}
@@ -158,30 +177,62 @@ export const Hero: React.FC<HeroProps> = ({ onActionClick, onExploreClick }) => 
           )}
         </div>
 
-        {/* Action CTAs inside the conference box */}
-        <div className="mt-5 sm:mt-7 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5">
-          <button
-            onClick={() => onActionClick('submit')}
-            className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-[#244A91] hover:bg-[#16366B] text-white border border-white/25 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
+        {/* Exactly 5 Hero Action Buttons */}
+        <div className="mt-5 sm:mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 md:gap-3">
+          <a
+            href="#submission"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('submission')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-[#244A91] hover:bg-[#16366B] text-white border border-white/20 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all cursor-pointer whitespace-nowrap"
           >
-            <span>SUBMIT PAPER</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+            <span>Call for Papers</span>
+          </a>
 
-          <button
-            onClick={() => onActionClick('register')}
-            className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl font-extrabold text-xs sm:text-sm bg-[#D9A353] hover:bg-[#C28E3F] text-[#071329] shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
+          <a
+            href="#speakers"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('speakers')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-white/10 hover:bg-white/20 text-white border border-white/25 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 backdrop-blur-sm transition-all cursor-pointer whitespace-nowrap"
           >
-            <span>REGISTER</span>
-          </button>
+            <span>Keynote Speakers</span>
+          </a>
 
-          <button
-            onClick={onExploreClick}
-            className="inline-flex items-center gap-1 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-white/85 hover:text-white hover:bg-white/10 border border-white/15 transition-all cursor-pointer"
+          <a
+            href="#tracks"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('tracks')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-white/10 hover:bg-white/20 text-white border border-white/25 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 backdrop-blur-sm transition-all cursor-pointer whitespace-nowrap"
           >
-            <span>EXPLORE</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#D9A353]" />
-          </button>
+            <span>Tracks</span>
+          </a>
+
+          <a
+            href="#dates"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('dates')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-white/10 hover:bg-white/20 text-white border border-white/25 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 backdrop-blur-sm transition-all cursor-pointer whitespace-nowrap"
+          >
+            <span>Important Dates</span>
+          </a>
+
+          <a
+            href="#registration"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-extrabold text-xs sm:text-sm bg-[#D9A353] hover:bg-[#C28E3F] text-[#071329] shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all cursor-pointer whitespace-nowrap"
+          >
+            <span>Registration</span>
+          </a>
         </div>
 
       </motion.div>
