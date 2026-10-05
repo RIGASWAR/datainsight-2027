@@ -63,15 +63,6 @@ const AdvisoryMemberCard: React.FC<AdvisoryCardProps> = ({ member, delay = 0.05 
             <span className="font-semibold text-[#0B2554]">{member.location || member.country}</span>
           </div>
         </div>
-
-        {/* Area of Expertise */}
-        {member.expertise && (
-          <div className="mt-3 pt-2.5 border-t border-[#176BFF]/10 text-center">
-            <span className="inline-block text-[11px] font-medium text-[#4A5E82] bg-[#176BFF]/5 rounded-md px-2 py-1 border border-[#176BFF]/10 leading-relaxed">
-              {member.expertise}
-            </span>
-          </div>
-        )}
       </div>
 
       {/* View Profile Button */}
