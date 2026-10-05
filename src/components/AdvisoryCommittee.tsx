@@ -48,31 +48,19 @@ const AdvisoryMemberCard: React.FC<AdvisoryCardProps> = ({ member, delay = 0.05 
 
         {/* Hierarchy: Designation -> Department -> Institution/Company -> Country */}
         <div className="space-y-1.5 text-xs sm:text-sm text-[#1A2B4A]">
-          <div className="flex items-start gap-1.5">
-            <span className="text-[#4A5E82] font-medium shrink-0">Designation:</span>
-            <span className="font-semibold text-[#0B2554]">{member.designation}</span>
-          </div>
+          <p className="font-semibold text-[#174EA6]">{member.designation}</p>
           
           {member.department && (
-            <div className="flex items-start gap-1.5">
-              <span className="text-[#4A5E82] font-medium shrink-0">Department:</span>
-              <span className="font-semibold text-[#0B2554]">{member.department}</span>
-            </div>
+            <p className="text-[#4A5E82] font-medium">{member.department}</p>
           )}
 
-          <div className="flex items-start gap-1.5">
-            <span className="text-[#4A5E82] font-medium shrink-0">
-              {member.isIndustry ? 'Company:' : 'Institution:'}
-            </span>
-            <span className="font-bold text-[#0B2554]">
-              {member.isIndustry ? member.company : member.institution}
-            </span>
-          </div>
+          <p className="font-bold text-[#0B2554]">
+            {member.isIndustry ? member.company : member.institution}
+          </p>
 
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 text-[#4A5E82]">
             <Globe className="w-3.5 h-3.5 text-[#00A8E8] shrink-0" />
-            <span className="text-[#4A5E82] font-medium">Country:</span>
-            <span className="font-semibold text-[#0B2554]">{member.country}</span>
+            <span className="font-semibold text-[#0B2554]">{member.location || member.country}</span>
           </div>
         </div>
 

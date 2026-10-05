@@ -88,44 +88,18 @@ export const Speakers: React.FC = () => {
                     </h3>
 
                     <div className="space-y-1.5 text-xs sm:text-sm text-[#1A2B4A]">
-                      <div className="flex items-start gap-1.5">
-                        <span className="text-[#4A5E82] font-medium shrink-0">Designation:</span>
-                        <span className="font-semibold text-[#0B2554]">{speaker.designation}</span>
-                      </div>
+                      <p className="font-semibold text-[#174EA6]">{speaker.designation}</p>
                       {speaker.department && (
-                        <div className="flex items-start gap-1.5">
-                          <span className="text-[#4A5E82] font-medium shrink-0">Department:</span>
-                          <span className="font-semibold text-[#0B2554]">{speaker.department}</span>
-                        </div>
+                        <p className="text-[#4A5E82] font-medium">{speaker.department}</p>
                       )}
-                      <div className="flex items-start gap-1.5">
-                        <span className="text-[#4A5E82] font-medium shrink-0">
-                          {speaker.isIndustry ? 'Company:' : 'Institution:'}
-                        </span>
-                        <span className="font-bold text-[#0B2554] text-sm sm:text-base">
-                          {speaker.isIndustry ? speaker.company : speaker.institution}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
+                      <p className="font-bold text-[#0B2554] text-sm sm:text-base">
+                        {speaker.isIndustry ? speaker.company : speaker.institution}
+                      </p>
+                      <div className="flex items-center gap-1.5 text-[#4A5E82]">
                         <Globe className="w-3.5 h-3.5 text-[#00A8E8] shrink-0" />
-                        <span className="text-[#4A5E82] font-medium">Country:</span>
                         <span className="font-semibold text-[#0B2554]">{speaker.country}</span>
                       </div>
                     </div>
-
-                    {speaker.specialization && (
-                      <div className="pt-2">
-                        <span className="inline-block px-2.5 py-1 text-[11px] font-medium bg-[#176BFF]/5 text-[#174EA6] rounded-md border border-[#176BFF]/10 leading-relaxed">
-                          {speaker.specialization}
-                        </span>
-                      </div>
-                    )}
-
-                    {speaker.biography && (
-                      <div className="pt-2 border-t border-[#176BFF]/10 text-xs text-[#4A5E82] italic leading-relaxed">
-                        {speaker.biography}
-                      </div>
-                    )}
                   </div>
                 </div>
 

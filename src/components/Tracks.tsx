@@ -85,7 +85,7 @@ export const Tracks: React.FC = () => {
                   delay: index * 0.1, 
                   ease: [0.16, 1, 0.3, 1] 
                 }}
-                className="[perspective:1200px] h-[430px] sm:h-[440px] w-full"
+                className="[perspective:1200px] h-[520px] sm:h-[540px] md:h-[560px] w-full"
               >
                 {/* 3D Rotating Card Container */}
                 <motion.div
@@ -110,7 +110,7 @@ export const Tracks: React.FC = () => {
                       WebkitBackfaceVisibility: 'hidden',
                     }}
                   >
-                    <div className="flex-1 flex flex-col min-h-0 space-y-3">
+                    <div className="flex-1 flex flex-col min-h-0 space-y-4">
                       {/* Top Bar: Track Badge & Icon */}
                       <div className="flex items-center justify-between gap-3 shrink-0">
                         <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black tracking-wider text-[#D9A441] bg-[#D9A441]/15 border border-[#D9A441]/30 font-mono whitespace-nowrap">
@@ -122,7 +122,7 @@ export const Tracks: React.FC = () => {
                       </div>
 
                       {/* Hierarchy: TRACK TITLE -> TRACK NAME -> TRACK FOCUS */}
-                      <div className="shrink-0 space-y-1">
+                      <div className="shrink-0 space-y-1.5">
                         <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-snug">
                           {track.title}
                         </h3>
@@ -140,7 +140,7 @@ export const Tracks: React.FC = () => {
                           Track Focus:
                         </span>
                         <p className="text-sm sm:text-base text-white/95 font-medium leading-relaxed">
-                          {track.overview}
+                          {track.focus || track.overview}
                         </p>
                       </div>
                     </div>
@@ -180,20 +180,31 @@ export const Tracks: React.FC = () => {
                         {track.title}
                       </h4>
 
-                      {/* Topics Covered Area */}
-                      <div className="flex-1 min-h-0 overflow-y-auto pr-2 space-y-2.5 p-3.5 sm:p-4 rounded-xl bg-[#F4F8FF] border border-[#176BFF]/15">
-                        <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#174EA6]">
-                          <span>Topics Covered Under Track</span>
-                          <span className="px-2 py-0.5 rounded bg-[#D9A441]/15 text-[#B88422] font-mono text-[10px] font-bold">
-                            TO BE INCLUDED
-                          </span>
+                      {/* Topics Covered & Core Question Area with Internal Scroll */}
+                      <div className="flex-1 min-h-0 overflow-y-auto pr-2 space-y-3.5 p-3.5 sm:p-4 rounded-xl bg-[#F4F8FF] border border-[#176BFF]/15">
+                        <div>
+                          <div className="text-xs font-bold uppercase tracking-wider text-[#174EA6] pb-1.5 border-b border-[#176BFF]/15 mb-2.5">
+                            TRACK TOPICS
+                          </div>
+                          <ul className="space-y-1.5 text-xs sm:text-sm text-[#1A2B4A]">
+                            {track.topics.map((topic, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#176BFF] mt-1.5 shrink-0" />
+                                <span className="leading-snug">{topic}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <p className="text-xs sm:text-sm text-[#1A2B4A] leading-relaxed">
-                          Official Call for Papers topics and sub-themes for this track: <span className="font-semibold text-[#174EA6]">Detailed topics and sub-themes: TO BE INCLUDED</span> following confirmation from the Technical Program Committee.
-                        </p>
-                        <p className="text-xs text-[#4A5E82] leading-relaxed pt-1">
-                          Prospective authors are invited to submit original, unpublished research papers aligned with {track.shortName}.
-                        </p>
+
+                        {/* Core Question - Clearly Separated */}
+                        <div className="p-3 sm:p-3.5 rounded-lg bg-white border border-[#D9A441]/30 shadow-xs space-y-1">
+                          <span className="text-xs font-bold uppercase tracking-wider text-[#D9A441] block">
+                            Core Question:
+                          </span>
+                          <p className="text-xs sm:text-sm font-semibold text-[#0B2D6B] italic leading-relaxed">
+                            "{track.coreQuestion}"
+                          </p>
+                        </div>
                       </div>
                     </div>
 

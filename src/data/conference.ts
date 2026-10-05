@@ -32,6 +32,7 @@ import advDiegoPhoto from '../assets/advisory/diego.jpeg';
 import advDucTanPhoto from '../assets/advisory/duc_tan.jpg';
 import advSoorajPhoto from '../assets/advisory/sooraj.png';
 import advSwatiPhoto from '../assets/advisory/swati.jpeg';
+import advVinodPhoto from '../assets/advisory/vinod.jpeg';
 
 export interface NavItem {
   name: string;
@@ -66,10 +67,14 @@ export interface ImportantDate {
 export interface TrackItem {
   id: string;
   trackNumber: string;
+  shortName: string;
   title: string;
   iconName: string;
   overview: string;
-  topics: string;
+  focus: string;
+  topics: string[];
+  coreQuestion: string;
+  description?: string;
 }
 
 export interface SpeakerItem {
@@ -96,6 +101,7 @@ export interface AdvisoryMember {
   institution?: string;
   company?: string;
   country: string;
+  location?: string;
   expertise?: string;
   image?: string;
   profileUrl: string;
@@ -250,9 +256,23 @@ export const CONFERENCE_DATA = {
       shortName: 'DATA',
       title: 'Multimodal Data Processing and Analytics',
       iconName: 'Network',
-      overview: 'Multimodal Data Processing and Analytics',
-      description: 'Multimodal Data Processing and Analytics',
-      topics: 'Detailed topics and sub-themes: TO BE INCLUDED',
+      overview: 'Process and analyze multimodal data',
+      focus: 'Process and analyze multimodal data',
+      description: 'Process and analyze multimodal data',
+      topics: [
+        'Multimodal data processing and fusion',
+        'Text, image, video and audio analytics',
+        'Structured and unstructured data',
+        'Data integration and preprocessing',
+        'Data quality and curation',
+        'Big data analytics',
+        'Streaming and real-time analytics',
+        'Graph and spatiotemporal analytics',
+        'IoT and sensor data analytics',
+        'Multimodal information retrieval',
+        'Visual analytics and data visualization',
+      ],
+      coreQuestion: 'How do we transform diverse data into meaningful analytical information?',
     },
     {
       id: 'track-02',
@@ -260,9 +280,25 @@ export const CONFERENCE_DATA = {
       shortName: 'INTELLIGENCE',
       title: 'Artificial Intelligence, Data Science and Knowledge Discovery',
       iconName: 'Sparkles',
-      overview: 'Artificial Intelligence, Data Science and Knowledge Discovery',
-      description: 'Artificial Intelligence, Data Science and Knowledge Discovery',
-      topics: 'Detailed topics and sub-themes: TO BE INCLUDED',
+      overview: 'Generate knowledge, insights and decisions',
+      focus: 'Generate knowledge, insights and decisions',
+      description: 'Generate knowledge, insights and decisions',
+      topics: [
+        'Machine learning and deep learning',
+        'Generative AI and foundation models',
+        'Large language models and multimodal AI',
+        'AI agents and agentic AI',
+        'Computational intelligence',
+        'Evolutionary and memetic algorithms',
+        'Data mining and knowledge discovery',
+        'Knowledge graphs and reasoning',
+        'Predictive and prescriptive analytics',
+        'Decision intelligence',
+        'Recommendation systems',
+        'Explainable and trustworthy AI',
+        'Human-AI decision-making',
+      ],
+      coreQuestion: 'How do we transform analytics into intelligence, knowledge, insights and decisions?',
     },
     {
       id: 'track-03',
@@ -270,9 +306,28 @@ export const CONFERENCE_DATA = {
       shortName: 'SECURE',
       title: 'Cybersecurity, Privacy and Trustworthy Intelligence',
       iconName: 'ShieldCheck',
-      overview: 'Cybersecurity, Privacy and Trustworthy Intelligence',
-      description: 'Cybersecurity, Privacy and Trustworthy Intelligence',
-      topics: 'Detailed topics and sub-themes: TO BE INCLUDED',
+      overview: 'Protect data and intelligence',
+      focus: 'Protect data and intelligence',
+      description: 'Protect data and intelligence',
+      topics: [
+        'Data security and privacy',
+        'Privacy-preserving analytics',
+        'Privacy-preserving machine learning',
+        'Cybersecurity',
+        'Cyber threat intelligence',
+        'Intrusion detection',
+        'AI/ML security',
+        'Adversarial machine learning',
+        'Generative AI and LLM security',
+        'Secure data sharing',
+        'Data integrity and provenance',
+        'Digital forensics',
+        'Zero-trust security',
+        'Blockchain and smart-contract security',
+        'IoT and edge security',
+        'Responsible and trustworthy AI',
+      ],
+      coreQuestion: 'How do we protect data, intelligence and intelligent systems?',
     },
     {
       id: 'track-04',
@@ -280,9 +335,27 @@ export const CONFERENCE_DATA = {
       shortName: 'COMPUTE',
       title: 'Computing Architectures for Data-Driven Systems',
       iconName: 'Server',
-      overview: 'Computing Architectures for Data-Driven Systems',
-      description: 'Computing Architectures for Data-Driven Systems',
-      topics: 'Detailed topics and sub-themes: TO BE INCLUDED',
+      overview: 'Provide the computing foundation to support everything at scale',
+      focus: 'Provide the computing foundation to support everything at scale',
+      description: 'Provide the computing foundation to support everything at scale',
+      topics: [
+        'Cloud and cloud-native computing',
+        'Edge and fog computing',
+        'Distributed computing',
+        'Data-intensive computing',
+        'High-performance computing',
+        'Edge-cloud architectures',
+        'IoT computing architectures',
+        'Serverless computing',
+        'Real-time computing',
+        'Digital twins',
+        '5G/6G-enabled computing',
+        'Energy-efficient computing',
+        'Secure computing architectures',
+        'Trusted computing',
+        'Emerging computing architectures',
+      ],
+      coreQuestion: 'What computing infrastructure is required to process, analyze, secure and operationalize data and intelligence at scale?',
     },
   ],
   themes: [
@@ -657,6 +730,18 @@ export const CONFERENCE_DATA = {
       category: 'national',
       isIndustry: true,
     },
+    {
+      id: 'adv-nat-12',
+      name: 'Mr. Vinodh Kumar',
+      designation: 'Associate Director',
+      company: 'Deloitte South Asia',
+      country: 'India',
+      location: 'Chennai',
+      image: advVinodPhoto,
+      profileUrl: 'https://www.linkedin.com/in/donivrules/?isSelfProfile=false',
+      category: 'national',
+      isIndustry: true,
+    },
   ] as AdvisoryMember[],
   callForPapers: {
     heading: 'Share Your Research. Shape the Future of Intelligent and Secure Data.',
@@ -848,25 +933,25 @@ export const CONFERENCE_DATA = {
     },
     coConveners: [
       {
-        name: 'Dr. K. Anitha Kumari',
-        role: 'Co-Convener',
-        title: 'Co-Convener',
-        designation: 'Professor',
-        department: 'Department of Information Technology',
-        institution: 'PSG College of Technology',
-        image: coConvenerAnithaPhoto,
-        imageAlt: 'Photograph of Dr. K. Anitha Kumari, Co-Convener',
-        objectPosition: 'center',
-      },
-      {
-        name: 'Dr. D. Karthika Renuka',
+        name: 'Dr. D. Karthiga Renuka',
         role: 'Co-Convener',
         title: 'Co-Convener',
         designation: 'Professor',
         department: 'Department of Information Technology',
         institution: 'PSG College of Technology',
         image: coConvenerKarthikaPhoto,
-        imageAlt: 'Photograph of Dr. D. Karthika Renuka, Co-Convener',
+        imageAlt: 'Photograph of Dr. D. Karthiga Renuka, Co-Convener',
+        objectPosition: 'center',
+      },
+      {
+        name: 'Dr. K. Anita Kumari',
+        role: 'Co-Convener',
+        title: 'Co-Convener',
+        designation: 'Professor',
+        department: 'Department of Information Technology',
+        institution: 'PSG College of Technology',
+        image: coConvenerAnithaPhoto,
+        imageAlt: 'Photograph of Dr. K. Anita Kumari, Co-Convener',
         objectPosition: 'center',
       },
     ],
