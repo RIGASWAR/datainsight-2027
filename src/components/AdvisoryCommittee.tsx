@@ -60,7 +60,7 @@ const AdvisoryMemberCard: React.FC<AdvisoryCardProps> = ({ member, delay = 0.05 
 
           <div className="flex items-center gap-1.5 text-[#4A5E82]">
             <Globe className="w-3.5 h-3.5 text-[#00A8E8] shrink-0" />
-            <span className="font-semibold text-[#0B2554]">{member.location || member.country}</span>
+            <span className="font-semibold text-[#0B2554]">{member.country}</span>
           </div>
         </div>
       </div>

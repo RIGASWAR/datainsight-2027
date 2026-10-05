@@ -32,7 +32,8 @@ import advDiegoPhoto from '../assets/advisory/diego.jpeg';
 import advDucTanPhoto from '../assets/advisory/duc_tan.jpg';
 import advSoorajPhoto from '../assets/advisory/sooraj.png';
 import advSwatiPhoto from '../assets/advisory/swati.jpeg';
-import advVinodPhoto from '../assets/advisory/vinod.jpeg';
+import advVinodPhoto from '../assets/advisory/vinod.png';
+import advDebtirthaPhoto from '../assets/advisory/debtirtha.png';
 
 export interface NavItem {
   name: string;
@@ -736,9 +737,19 @@ export const CONFERENCE_DATA = {
       designation: 'Associate Director',
       company: 'Deloitte South Asia',
       country: 'India',
-      location: 'Chennai',
       image: advVinodPhoto,
       profileUrl: 'https://www.linkedin.com/in/donivrules/?isSelfProfile=false',
+      category: 'national',
+      isIndustry: true,
+    },
+    {
+      id: 'adv-nat-13',
+      name: 'Debtirtha Banerjee',
+      designation: 'Director, Technology and Transformation',
+      company: 'Deloitte India',
+      country: 'India',
+      image: advDebtirthaPhoto,
+      profileUrl: 'https://www.linkedin.com/in/debtirthab/?isSelfProfile=false',
       category: 'national',
       isIndustry: true,
     },
