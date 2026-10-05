@@ -744,7 +744,7 @@ export const CONFERENCE_DATA = {
     },
     {
       id: 'adv-nat-13',
-      name: 'Debtirtha Banerjee',
+      name: 'Mr. Debtirtha Banerjee',
       designation: 'Director, Technology and Transformation',
       company: 'Deloitte India',
       country: 'India',
