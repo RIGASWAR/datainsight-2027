@@ -137,7 +137,7 @@ export const Tracks: React.FC = () => {
                       {/* Track Focus */}
                       <div className="space-y-1.5">
                         <span className="text-sm font-bold text-[#D9A441] uppercase tracking-wider block">
-                          Track Focus:
+                          FOCUS
                         </span>
                         <p className="text-sm sm:text-base text-white/95 font-medium leading-relaxed">
                           {track.focus || track.overview}

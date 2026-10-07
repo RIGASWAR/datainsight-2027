@@ -78,8 +78,7 @@ export const Speakers: React.FC = () => {
 
                   {/* Speaker Info Body */}
                   <div className="p-6 space-y-3.5 bg-white">
-                    <div className="flex items-center justify-between text-xs font-semibold text-[#1A2B4A]/70">
-                      <span>Distinguished Speaker 0{index + 1}</span>
+                    <div className="flex items-center justify-between text-xs font-semibold text-[#176BFF]">
                       <span className="font-semibold text-[#176BFF]">Keynote / Panel</span>
                     </div>
 

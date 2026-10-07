@@ -55,7 +55,7 @@ const AdvisoryMemberCard: React.FC<AdvisoryCardProps> = ({ member, delay = 0.05 
           )}
 
           <p className="font-bold text-[#0B2554]">
-            {member.isIndustry ? member.company : member.institution}
+            {member.company || member.institution}
           </p>
 
           <div className="flex items-center gap-1.5 text-[#4A5E82]">
@@ -91,12 +91,12 @@ export const AdvisoryCommittee: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const internationalMembers = CONFERENCE_DATA.advisoryCommittee.filter(
-    (member) => member.category === 'international'
+  const academicMembers = CONFERENCE_DATA.advisoryCommittee.filter(
+    (member) => member.panel === 'academic'
   );
 
-  const nationalMembers = CONFERENCE_DATA.advisoryCommittee.filter(
-    (member) => member.category === 'national'
+  const industryMembers = CONFERENCE_DATA.advisoryCommittee.filter(
+    (member) => member.panel === 'industry'
   );
 
   return (
@@ -116,7 +116,7 @@ export const AdvisoryCommittee: React.FC = () => {
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-[#176BFF]/10 text-[#176BFF] border border-[#176BFF]/20 mb-3 shadow-xs">
             <Globe2 className="w-3.5 h-3.5 text-[#D9A441]" />
-            INTERNATIONAL &amp; NATIONAL ADVISORY BOARD
+            ACADEMIC &amp; INDUSTRY ADVISORY PANELS
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-brand-primary">
             ADVISORY COMMITTEE
@@ -141,7 +141,7 @@ export const AdvisoryCommittee: React.FC = () => {
           </button>
         </div>
 
-        {/* Collapsible Content: International subsection first, National subsection second */}
+        {/* Collapsible Content: Academic panel first, Industry panel second */}
         <AnimatePresence>
           {isExpanded && (
             <motion.div
@@ -151,20 +151,20 @@ export const AdvisoryCommittee: React.FC = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="overflow-hidden space-y-16"
             >
-              {/* SUBSECTION 1: INTERNATIONAL (comes first) */}
+              {/* SUBSECTION 1: ACADEMIC ADVISORY PANEL (comes first) */}
               <div>
                 <div className="text-center mb-8">
                   <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-wider text-brand-primary">
-                    INTERNATIONAL ADVISORY COMMITTEE
+                    ACADEMIC ADVISORY PANEL
                   </h3>
                   <div className="w-16 h-1 bg-[#176BFF] mx-auto mt-2 rounded-full" />
                   <p className="mt-2 text-xs sm:text-sm text-[#4A5E82]">
-                    Renowned professors, scientists, and global industry architects from premier international institutions
+                    Renowned professors, scientists, and researchers from premier global and Indian universities
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-7 items-stretch">
-                  {internationalMembers.map((member, idx) => (
+                  {academicMembers.map((member, idx) => (
                     <AdvisoryMemberCard
                       key={member.id}
                       member={member}
@@ -174,20 +174,20 @@ export const AdvisoryCommittee: React.FC = () => {
                 </div>
               </div>
 
-              {/* SUBSECTION 2: NATIONAL (comes second) */}
+              {/* SUBSECTION 2: INDUSTRY ADVISORY PANEL (comes second) */}
               <div>
                 <div className="text-center mb-8">
                   <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-wider text-brand-primary">
-                    NATIONAL ADVISORY COMMITTEE
+                    INDUSTRY ADVISORY PANEL
                   </h3>
                   <div className="w-16 h-1 bg-[#D9A441] mx-auto mt-2 rounded-full" />
                   <p className="mt-2 text-xs sm:text-sm text-[#4A5E82]">
-                    Eminent academicians, CSIR scientists, and industry leaders from premier Indian institutions
+                    Distinguished technology architects, executives, and research leaders from premier global industries
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-7 items-stretch">
-                  {nationalMembers.map((member, idx) => (
+                  {industryMembers.map((member, idx) => (
                     <AdvisoryMemberCard
                       key={member.id}
                       member={member}
