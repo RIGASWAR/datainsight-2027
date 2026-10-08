@@ -180,31 +180,19 @@ export const Tracks: React.FC = () => {
                         {track.title}
                       </h4>
 
-                      {/* Topics Covered & Core Question Area with Internal Scroll */}
-                      <div className="flex-1 min-h-0 overflow-y-auto pr-2 space-y-3.5 p-3.5 sm:p-4 rounded-xl bg-[#F4F8FF] border border-[#176BFF]/15">
-                        <div>
-                          <div className="text-xs font-bold uppercase tracking-wider text-[#174EA6] pb-1.5 border-b border-[#176BFF]/15 mb-2.5">
-                            TRACK TOPICS
-                          </div>
-                          <ul className="space-y-1.5 text-xs sm:text-sm text-[#1A2B4A]">
-                            {track.topics.map((topic, i) => (
-                              <li key={i} className="flex items-start gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#176BFF] mt-1.5 shrink-0" />
-                                <span className="leading-snug">{topic}</span>
-                              </li>
-                            ))}
-                          </ul>
+                      {/* Topics Covered Area with Internal Scroll */}
+                      <div className="flex-1 min-h-0 overflow-y-auto pr-2 p-3.5 sm:p-4 rounded-xl bg-[#F4F8FF] border border-[#176BFF]/15">
+                        <div className="text-xs font-bold uppercase tracking-wider text-[#174EA6] pb-1.5 border-b border-[#176BFF]/15 mb-2.5">
+                          TRACK TOPICS
                         </div>
-
-                        {/* Core Question - Clearly Separated */}
-                        <div className="p-3 sm:p-3.5 rounded-lg bg-white border border-[#D9A441]/30 shadow-xs space-y-1">
-                          <span className="text-xs font-bold uppercase tracking-wider text-[#D9A441] block">
-                            Core Question:
-                          </span>
-                          <p className="text-xs sm:text-sm font-semibold text-[#0B2D6B] italic leading-relaxed">
-                            "{track.coreQuestion}"
-                          </p>
-                        </div>
+                        <ul className="space-y-1.5 text-xs sm:text-sm text-[#1A2B4A]">
+                          {track.topics.map((topic, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#176BFF] mt-1.5 shrink-0" />
+                              <span className="leading-snug">{topic}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
 

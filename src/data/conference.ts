@@ -35,6 +35,7 @@ import advSwatiPhoto from '../assets/advisory/swati.jpeg';
 import advVinodPhoto from '../assets/advisory/vinod.png';
 import advDebtirthaPhoto from '../assets/advisory/debtirtha.png';
 import advSandipPhoto from '../assets/advisory/sandip.png';
+import advBadrinathPhoto from '../assets/advisory/badrinath.jpeg';
 
 export interface NavItem {
   name: string;
@@ -567,10 +568,21 @@ export const CONFERENCE_DATA = {
       panel: 'academic',
       isIndustry: false,
     },
+    {
+      id: 'adv-acad-8',
+      name: 'Dr. Badrinath Ramamurthy',
+      designation: 'Professor',
+      institution: 'International Institute of Information Technology, Bangalore (IIIT-B)',
+      country: 'India',
+      image: advBadrinathPhoto,
+      profileUrl: 'https://www.linkedin.com/in/rbadrinath?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+      panel: 'academic',
+      isIndustry: false,
+    },
 
     // 3. International Associate Professors
     {
-      id: 'adv-acad-8',
+      id: 'adv-acad-9',
       name: 'Dr. Jasmine Gnanadurai',
       designation: 'Associate Professor',
       department: 'Department of Electrical Engineering and Computer Science',
@@ -582,7 +594,7 @@ export const CONFERENCE_DATA = {
       isIndustry: false,
     },
     {
-      id: 'adv-acad-9',
+      id: 'adv-acad-10',
       name: 'Dr. Grazziela Figueredo',
       designation: 'Associate Professor',
       department: 'School of Computer Science',
@@ -596,7 +608,7 @@ export const CONFERENCE_DATA = {
 
     // 4. Indian Associate Professors
     {
-      id: 'adv-acad-10',
+      id: 'adv-acad-11',
       name: 'Dr. Badri Narayan Subudhi',
       designation: 'Associate Professor',
       department: 'Department of Electrical Engineering',
@@ -608,7 +620,7 @@ export const CONFERENCE_DATA = {
       isIndustry: false,
     },
     {
-      id: 'adv-acad-11',
+      id: 'adv-acad-12',
       name: 'Dr. Manish Aggarwal',
       designation: 'Associate Professor',
       department: 'Department of Computer Science & Engineering',
@@ -620,7 +632,7 @@ export const CONFERENCE_DATA = {
       isIndustry: false,
     },
     {
-      id: 'adv-acad-12',
+      id: 'adv-acad-13',
       name: 'Dr. Sitikantha Roy',
       designation: 'Associate Professor',
       department: 'Department of Applied Mechanics',
@@ -632,7 +644,7 @@ export const CONFERENCE_DATA = {
       isIndustry: false,
     },
     {
-      id: 'adv-acad-13',
+      id: 'adv-acad-14',
       name: 'Dr. Aakanksha Sharaff',
       designation: 'Associate Professor',
       department: 'Department of Computer Science & Engineering',
@@ -646,7 +658,7 @@ export const CONFERENCE_DATA = {
 
     // 5. International Assistant Professors
     {
-      id: 'adv-acad-14',
+      id: 'adv-acad-15',
       name: 'Dr. Najib Ben Aoun',
       designation: 'Assistant Professor',
       department: 'College of Computer Science and Information Technology',
@@ -660,7 +672,7 @@ export const CONFERENCE_DATA = {
 
     // 6. Indian Assistant Professors
     {
-      id: 'adv-acad-15',
+      id: 'adv-acad-16',
       name: 'Dr. Karthik Vaidhyanathan',
       designation: 'Assistant Professor',
       department: 'Software Engineering Research Center',
@@ -927,10 +939,7 @@ export const CONFERENCE_DATA = {
     },
   ],
   sponsors: [
-    { id: 'sponsor-1', label: 'SPONSOR 1', status: 'WILL BE UPDATED SOON' },
-    { id: 'sponsor-2', label: 'SPONSOR 2', status: 'WILL BE UPDATED SOON' },
-    { id: 'sponsor-3', label: 'SPONSOR 3', status: 'WILL BE UPDATED SOON' },
-    { id: 'sponsor-4', label: 'SPONSOR 4', status: 'WILL BE UPDATED SOON' },
+    { id: 'sponsor-placeholder', status: 'TO BE UPDATED SOON' },
   ],
   committee: {
     chiefPatron: {
@@ -968,25 +977,25 @@ export const CONFERENCE_DATA = {
     },
     coConveners: [
       {
-        name: 'Dr. D. Karthiga Renuka',
+        name: 'Dr. Karthika Renuka D',
         role: 'Co-Convener',
         title: 'Co-Convener',
         designation: 'Professor',
         department: 'Department of Information Technology',
         institution: 'PSG College of Technology',
         image: coConvenerKarthikaPhoto,
-        imageAlt: 'Photograph of Dr. D. Karthiga Renuka, Co-Convener',
+        imageAlt: 'Photograph of Dr. Karthika Renuka D, Co-Convener',
         objectPosition: 'center',
       },
       {
-        name: 'Dr. K. Anita Kumari',
+        name: 'Dr. Anitha Kumari K',
         role: 'Co-Convener',
         title: 'Co-Convener',
         designation: 'Professor',
         department: 'Department of Information Technology',
         institution: 'PSG College of Technology',
         image: coConvenerAnithaPhoto,
-        imageAlt: 'Photograph of Dr. K. Anita Kumari, Co-Convener',
+        imageAlt: 'Photograph of Dr. Anitha Kumari K, Co-Convener',
         objectPosition: 'center',
       },
     ],
