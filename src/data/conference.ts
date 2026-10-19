@@ -19,7 +19,6 @@ import advJasminePhoto from '../assets/advisory/jasmine.png';
 import advLerinaPhoto from '../assets/advisory/lerina.jpeg';
 import advMarappanPhoto from '../assets/advisory/marappan.jpeg';
 import advSitikanthaPhoto from '../assets/advisory/sitikantha.jpeg';
-import advKarthikPhoto from '../assets/advisory/karthick.jpeg';
 import advValentinaPhoto from '../assets/advisory/valentina.png';
 import advNajibPhoto from '../assets/advisory/najib.png';
 import advThiyagarajanPhoto from '../assets/advisory/thiyagarajan.png';
@@ -36,6 +35,9 @@ import advVinodPhoto from '../assets/advisory/vinod.png';
 import advDebtirthaPhoto from '../assets/advisory/debtirtha.png';
 import advSandipPhoto from '../assets/advisory/sandip.png';
 import advBadrinathPhoto from '../assets/advisory/badrinath.jpeg';
+import advDebasishPhoto from '../assets/advisory/debasish.png';
+import advVijayaPhoto from '../assets/advisory/vijaya.png';
+import advAnandPhoto from '../assets/advisory/anand.png';
 
 export interface NavItem {
   name: string;
@@ -542,10 +544,22 @@ export const CONFERENCE_DATA = {
       panel: 'academic',
       isIndustry: false,
     },
+    {
+      id: 'adv-acad-6',
+      name: 'Dr. Anand Paul',
+      designation: 'Professor',
+      department: 'Department of Data Science',
+      institution: 'Louisiana State University HSC, New Orleans, Louisiana, USA',
+      country: 'USA',
+      image: advAnandPhoto,
+      profileUrl: 'https://www.linkedin.com/in/anand-paul-911191195/?isSelfProfile=false',
+      panel: 'academic',
+      isIndustry: false,
+    },
 
     // 2. Indian Professors
     {
-      id: 'adv-acad-6',
+      id: 'adv-acad-7',
       name: 'Dr. M. Tanveer',
       designation: 'Professor & Ramanujan Fellow',
       department: 'Discipline of Mathematics',
@@ -557,7 +571,7 @@ export const CONFERENCE_DATA = {
       isIndustry: false,
     },
     {
-      id: 'adv-acad-7',
+      id: 'adv-acad-8',
       name: 'Dr. Sandip Chakraborty',
       designation: 'Professor',
       department: 'Department of Computer Science and Engineering',
@@ -569,7 +583,7 @@ export const CONFERENCE_DATA = {
       isIndustry: false,
     },
     {
-      id: 'adv-acad-8',
+      id: 'adv-acad-9',
       name: 'Dr. Badrinath Ramamurthy',
       designation: 'Professor',
       institution: 'International Institute of Information Technology, Bangalore (IIIT-B)',
@@ -579,10 +593,22 @@ export const CONFERENCE_DATA = {
       panel: 'academic',
       isIndustry: false,
     },
+    {
+      id: 'adv-acad-10',
+      name: 'Dr. Debasish Jena',
+      designation: 'Professor',
+      department: 'Department of CSE',
+      institution: 'IIIT Bhubaneswar, India',
+      country: 'India',
+      image: advDebasishPhoto,
+      profileUrl: 'https://www.linkedin.com/in/debasish-jena-smieee-506a1a9/?isSelfProfile=false',
+      panel: 'academic',
+      isIndustry: false,
+    },
 
     // 3. International Associate Professors
     {
-      id: 'adv-acad-9',
+      id: 'adv-acad-11',
       name: 'Dr. Jasmine Gnanadurai',
       designation: 'Associate Professor',
       department: 'Department of Electrical Engineering and Computer Science',
@@ -594,7 +620,7 @@ export const CONFERENCE_DATA = {
       isIndustry: false,
     },
     {
-      id: 'adv-acad-10',
+      id: 'adv-acad-12',
       name: 'Dr. Grazziela Figueredo',
       designation: 'Associate Professor',
       department: 'School of Computer Science',
@@ -605,10 +631,22 @@ export const CONFERENCE_DATA = {
       panel: 'academic',
       isIndustry: false,
     },
+    {
+      id: 'adv-acad-13',
+      name: 'Dr. Vijaya B. Kolachalama',
+      designation: 'Associate Professor',
+      department: 'Department of Computer Science',
+      institution: 'Boston University, USA',
+      country: 'USA',
+      image: advVijayaPhoto,
+      profileUrl: 'https://www.linkedin.com/in/vijaya-b-kolachalama-92095574/?isSelfProfile=false',
+      panel: 'academic',
+      isIndustry: false,
+    },
 
     // 4. Indian Associate Professors
     {
-      id: 'adv-acad-11',
+      id: 'adv-acad-14',
       name: 'Dr. Badri Narayan Subudhi',
       designation: 'Associate Professor',
       department: 'Department of Electrical Engineering',
@@ -620,7 +658,7 @@ export const CONFERENCE_DATA = {
       isIndustry: false,
     },
     {
-      id: 'adv-acad-12',
+      id: 'adv-acad-15',
       name: 'Dr. Manish Aggarwal',
       designation: 'Associate Professor',
       department: 'Department of Computer Science & Engineering',
@@ -632,7 +670,7 @@ export const CONFERENCE_DATA = {
       isIndustry: false,
     },
     {
-      id: 'adv-acad-13',
+      id: 'adv-acad-16',
       name: 'Dr. Sitikantha Roy',
       designation: 'Associate Professor',
       department: 'Department of Applied Mechanics',
@@ -644,7 +682,7 @@ export const CONFERENCE_DATA = {
       isIndustry: false,
     },
     {
-      id: 'adv-acad-14',
+      id: 'adv-acad-17',
       name: 'Dr. Aakanksha Sharaff',
       designation: 'Associate Professor',
       department: 'Department of Computer Science & Engineering',
@@ -658,7 +696,7 @@ export const CONFERENCE_DATA = {
 
     // 5. International Assistant Professors
     {
-      id: 'adv-acad-15',
+      id: 'adv-acad-18',
       name: 'Dr. Najib Ben Aoun',
       designation: 'Assistant Professor',
       department: 'College of Computer Science and Information Technology',
@@ -670,26 +708,12 @@ export const CONFERENCE_DATA = {
       isIndustry: false,
     },
 
-    // 6. Indian Assistant Professors
-    {
-      id: 'adv-acad-16',
-      name: 'Dr. Karthik Vaidhyanathan',
-      designation: 'Assistant Professor',
-      department: 'Software Engineering Research Center',
-      institution: 'IIIT Hyderabad',
-      country: 'India',
-      image: advKarthikPhoto,
-      profileUrl: 'https://www.linkedin.com/in/karthikv1392/?isSelfProfile=false',
-      panel: 'academic',
-      isIndustry: false,
-    },
-
     // ==========================================
     // INDUSTRY ADVISORY PANEL (EXACT REQUESTED ORDER)
     // 1. Mr. Debtirtha Banerjee
     // 2. Ms. Navisha Prabhakar
     // 3. Dr. Srividhya Kannan
-    // 4. Dr. S. Thiyagarajan
+    // 4. Mr. S. Thiyagarajan
     // 5. Dr. M. Sathish
     // 6. Mr. Vinodh Kumar
     // 7. Dr. Swati Sirsant
@@ -732,7 +756,7 @@ export const CONFERENCE_DATA = {
     },
     {
       id: 'adv-ind-4',
-      name: 'Dr. S. Thiyagarajan',
+      name: 'Mr. S. Thiyagarajan',
       designation: 'Head of Virtual Development and Framework, Segment Radar',
       department: 'Segment Radar',
       company: 'Aumovio Technical Center India',
